@@ -1,0 +1,90 @@
+TrLifeInspire
+
+for who is this site:
+	-tourists already in turkey.
+	-people who intend to visit turkey.
+	-
+
+
+big map with 6 trips. after clicking on a trip. map will zoom in to that trip.
+-trips:
+  -each trip has:
+	-cover image.
+	-description.
+	-price (make reservation before 6 hours and get 10% discount).
+	-form:
+		-date picker(or date range picker).
+		-nb of persons( children <3 years does not count).
+		-location of persons if faild he can type the name of his location.city, street, building, hotel name.
+			-whatsapp button to submit.
+
+	-call us.
+	-video of the area/trip(shots taken from youtube).
+
+
+TBL_TRIP(with images):
+-ID.
+-Title
+-sub-title.
+-details.
+-city.
+-TBL_INCLUDES_ID(table jdid, with images)
+-Price.
+-DISCOUNT_PRICE.
+-TBL_FEATURES_ID(table jdid, with images).
+-video_URL. (NULLABLE)
+-TBL_TAGS_ID.(NULLABLE)
+-IS_COMING_SOON_OR_AVAILABEL(bool).(true by default)
+-OFFER_highlight_TEXt.(NULLABLE)
+
+TBL_STAFF_PROFILES:
+-ID.
+-Title.
+-DESC.
+-image.
+-EMAIL.(NULLABLE)
+-phone.(NULLABLE)
+
+
+TBL_RESERVATION_QUERY:
+-TRIP_ID(from TBL_TRIP).
+-nb-of-adults.
+-nb-of-kids.
+-pick-up-address(NULLABLE)
+-trip-date.
+-QUERY-DESCRIPTION.
+
+TBL_TAG:
+-TAG_ID.
+-TRIP_ID.
+_DESCRIPTION.
+
+
+
+
+TBL_SOCIAL_MEDIA_LINKS:
+-ID.
+-Title.
+-LINK.
+
+
+TBL_REVIEW:
+-ID.
+-REVIEW_TITLE.
+-REVIEW_TEXT.
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	

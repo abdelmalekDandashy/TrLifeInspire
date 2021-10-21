@@ -1,0 +1,22 @@
+*. You have to add reference to the following  nuget packages
+    *. EnyimMemcachedCore
+    *. Microsoft.Extensions.Logging
+    *. Newtonsoft.Json
+    *. System.Configuration.ConfigurationManager
+
+*. In the BLC_Initial.cs :
+   *. Add the following property: 
+      public MemcachedClient My_MemcachedClient { get; set; }
+
+   *. In the Parameterized constructor add the following code
+       this.My_MemcachedClient = Init_MemcachedClient();
+
+*. In the App.config add the following entries
+   <add key="CACHING_ENABLED" value="1"/>
+   <add key="MEMCACHED_IP" value="192.168.1.9"/>
+   <add key="MEMCACHED_PORT" value="11211"/>
+
+*. Run the memcached server using the following command
+   memcached.exe -v -I 5M -m 1024
+
+    N.B: Sure first assure that you are in the memcached server directory
