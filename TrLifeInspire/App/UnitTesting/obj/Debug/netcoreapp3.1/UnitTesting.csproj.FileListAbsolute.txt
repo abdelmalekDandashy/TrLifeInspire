@@ -97,3 +97,16 @@ D:\hadiProject\TrLifeInspire\App\UnitTesting\obj\Debug\netcoreapp3.1\UnitTesting
 D:\hadiProject\TrLifeInspire\App\UnitTesting\obj\Debug\netcoreapp3.1\UnitTesting.AssemblyInfo.cs
 D:\hadiProject\TrLifeInspire\App\UnitTesting\obj\Debug\netcoreapp3.1\UnitTesting.dll
 D:\hadiProject\TrLifeInspire\App\UnitTesting\obj\Debug\netcoreapp3.1\UnitTesting.pdb
+D:\hadiProject\TrLifeInspire\App\UnitTesting\bin\Debug\netcoreapp3.1\UnitTesting.exe
+D:\hadiProject\TrLifeInspire\App\UnitTesting\bin\Debug\netcoreapp3.1\UnitTesting.dll.config
+D:\hadiProject\TrLifeInspire\App\UnitTesting\bin\Debug\netcoreapp3.1\UnitTesting.deps.json
+D:\hadiProject\TrLifeInspire\App\UnitTesting\bin\Debug\netcoreapp3.1\UnitTesting.runtimeconfig.json
+D:\hadiProject\TrLifeInspire\App\UnitTesting\bin\Debug\netcoreapp3.1\UnitTesting.runtimeconfig.dev.json
+D:\hadiProject\TrLifeInspire\App\UnitTesting\bin\Debug\netcoreapp3.1\UnitTesting.dll
+D:\hadiProject\TrLifeInspire\App\UnitTesting\bin\Debug\netcoreapp3.1\UnitTesting.pdb
+D:\hadiProject\TrLifeInspire\App\UnitTesting\bin\Debug\netcoreapp3.1\CoreTools.dll
+D:\hadiProject\TrLifeInspire\App\UnitTesting\bin\Debug\netcoreapp3.1\CoreCrypto.dll
+D:\hadiProject\TrLifeInspire\App\UnitTesting\bin\Debug\netcoreapp3.1\DALC.pdb
+D:\hadiProject\TrLifeInspire\App\UnitTesting\obj\Debug\netcoreapp3.1\UnitTesting.csproj.CoreCompileInputs.cache
+D:\hadiProject\TrLifeInspire\App\UnitTesting\obj\Debug\netcoreapp3.1\UnitTesting.csproj.CopyComplete
+D:\hadiProject\TrLifeInspire\App\UnitTesting\obj\Debug\netcoreapp3.1\UnitTesting.genruntimeconfig.cache

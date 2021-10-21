@@ -11,3 +11,5 @@ D:\hadiProject\TrLifeInspire\App\BLC\bin\Debug\netcoreapp3.1\CoreCrypto.dll
 D:\hadiProject\TrLifeInspire\App\BLC\bin\Debug\netcoreapp3.1\CoreHasher.dll
 D:\hadiProject\TrLifeInspire\App\BLC\bin\Debug\netcoreapp3.1\CoreTools.dll
 D:\hadiProject\TrLifeInspire\App\BLC\obj\Debug\netcoreapp3.1\BLC.csproj.CopyComplete
+D:\hadiProject\TrLifeInspire\App\BLC\bin\Debug\netcoreapp3.1\DALC.dll
+D:\hadiProject\TrLifeInspire\App\BLC\bin\Debug\netcoreapp3.1\DALC.pdb

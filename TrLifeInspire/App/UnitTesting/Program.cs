@@ -25,6 +25,18 @@ namespace UnitTesting
             string str_Main_Folder_Path = string.Empty;
             Tools.Tools oTools = new Tools.Tools();
             #endregion
+
+            #region TESTs
+
+            #region getTrip
+            Params_Get_Trip_By_OWNER_ID oParams_Get_Trip_By_OWNER_ID = new Params_Get_Trip_By_OWNER_ID();
+            oParams_Get_Trip_By_OWNER_ID.OWNER_ID = 1;
+            var result = oBLC.Get_Trip_By_OWNER_ID(oParams_Get_Trip_By_OWNER_ID);
+            Console.WriteLine(result);
+            Console.WriteLine(result);
+            #endregion
+
+            #endregion
         }
     }
 }

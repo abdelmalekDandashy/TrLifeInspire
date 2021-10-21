@@ -27,12 +27,20 @@ public partial class BLC
 #region Used For Delete Operations
 private Address _Address;
 private Contact _Contact;
+private Features _Features;
+private Includes _Includes;
 private Loc_l1 _Loc_l1;
 private Loc_l2 _Loc_l2;
 private Loc_l3 _Loc_l3;
 private Loc_l4 _Loc_l4;
 private Owner _Owner;
 private Person _Person;
+private Reservation_query _Reservation_query;
+private Review _Review;
+private Social_media_links _Social_media_links;
+private Staff _Staff;
+private Tags _Tags;
+private Trip _Trip;
 private User _User;
 #endregion
 #region Stop Executing Flags For Edit and Delete Operations
@@ -40,6 +48,10 @@ private bool _Stop_Edit_Address_Execution;
 private bool _Stop_Delete_Address_Execution;
 private bool _Stop_Edit_Contact_Execution;
 private bool _Stop_Delete_Contact_Execution;
+private bool _Stop_Edit_Features_Execution;
+private bool _Stop_Delete_Features_Execution;
+private bool _Stop_Edit_Includes_Execution;
+private bool _Stop_Delete_Includes_Execution;
 private bool _Stop_Edit_Loc_l1_Execution;
 private bool _Stop_Delete_Loc_l1_Execution;
 private bool _Stop_Edit_Loc_l2_Execution;
@@ -52,6 +64,18 @@ private bool _Stop_Edit_Owner_Execution;
 private bool _Stop_Delete_Owner_Execution;
 private bool _Stop_Edit_Person_Execution;
 private bool _Stop_Delete_Person_Execution;
+private bool _Stop_Edit_Reservation_query_Execution;
+private bool _Stop_Delete_Reservation_query_Execution;
+private bool _Stop_Edit_Review_Execution;
+private bool _Stop_Delete_Review_Execution;
+private bool _Stop_Edit_Social_media_links_Execution;
+private bool _Stop_Delete_Social_media_links_Execution;
+private bool _Stop_Edit_Staff_Execution;
+private bool _Stop_Delete_Staff_Execution;
+private bool _Stop_Edit_Tags_Execution;
+private bool _Stop_Delete_Tags_Execution;
+private bool _Stop_Edit_Trip_Execution;
+private bool _Stop_Delete_Trip_Execution;
 private bool _Stop_Edit_User_Execution;
 private bool _Stop_Delete_User_Execution;
 #endregion
@@ -79,6 +103,30 @@ oTools.CopyPropValues(oDBEntry, oContact);
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Contact_By_CONTACT_ID");}
 return oContact;
+}
+public Features Get_Features_By_FEATURES_ID(Params_Get_Features_By_FEATURES_ID i_Params_Get_Features_By_FEATURES_ID)
+{
+Features oFeatures = null;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Features_By_FEATURES_ID");}
+#region Body Section.
+DALC.Features oDBEntry = _AppContext.Get_Features_By_FEATURES_ID(i_Params_Get_Features_By_FEATURES_ID.FEATURES_ID);
+oFeatures = new Features();
+oTools.CopyPropValues(oDBEntry, oFeatures);
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Features_By_FEATURES_ID");}
+return oFeatures;
+}
+public Includes Get_Includes_By_INCLUDES_ID(Params_Get_Includes_By_INCLUDES_ID i_Params_Get_Includes_By_INCLUDES_ID)
+{
+Includes oIncludes = null;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Includes_By_INCLUDES_ID");}
+#region Body Section.
+DALC.Includes oDBEntry = _AppContext.Get_Includes_By_INCLUDES_ID(i_Params_Get_Includes_By_INCLUDES_ID.INCLUDES_ID);
+oIncludes = new Includes();
+oTools.CopyPropValues(oDBEntry, oIncludes);
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Includes_By_INCLUDES_ID");}
+return oIncludes;
 }
 public Loc_l1 Get_Loc_l1_By_LOC_L1_ID(Params_Get_Loc_l1_By_LOC_L1_ID i_Params_Get_Loc_l1_By_LOC_L1_ID)
 {
@@ -152,6 +200,78 @@ oTools.CopyPropValues(oDBEntry, oPerson);
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Person_By_PERSON_ID");}
 return oPerson;
 }
+public Reservation_query Get_Reservation_query_By_RESERVATION_QUERY_ID(Params_Get_Reservation_query_By_RESERVATION_QUERY_ID i_Params_Get_Reservation_query_By_RESERVATION_QUERY_ID)
+{
+Reservation_query oReservation_query = null;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Reservation_query_By_RESERVATION_QUERY_ID");}
+#region Body Section.
+DALC.Reservation_query oDBEntry = _AppContext.Get_Reservation_query_By_RESERVATION_QUERY_ID(i_Params_Get_Reservation_query_By_RESERVATION_QUERY_ID.RESERVATION_QUERY_ID);
+oReservation_query = new Reservation_query();
+oTools.CopyPropValues(oDBEntry, oReservation_query);
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Reservation_query_By_RESERVATION_QUERY_ID");}
+return oReservation_query;
+}
+public Review Get_Review_By_REVIEW_ID(Params_Get_Review_By_REVIEW_ID i_Params_Get_Review_By_REVIEW_ID)
+{
+Review oReview = null;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Review_By_REVIEW_ID");}
+#region Body Section.
+DALC.Review oDBEntry = _AppContext.Get_Review_By_REVIEW_ID(i_Params_Get_Review_By_REVIEW_ID.REVIEW_ID);
+oReview = new Review();
+oTools.CopyPropValues(oDBEntry, oReview);
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Review_By_REVIEW_ID");}
+return oReview;
+}
+public Social_media_links Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID(Params_Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID i_Params_Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID)
+{
+Social_media_links oSocial_media_links = null;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID");}
+#region Body Section.
+DALC.Social_media_links oDBEntry = _AppContext.Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID(i_Params_Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID.SOCIAL_MEDIA_LINKS_ID);
+oSocial_media_links = new Social_media_links();
+oTools.CopyPropValues(oDBEntry, oSocial_media_links);
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID");}
+return oSocial_media_links;
+}
+public Staff Get_Staff_By_STAFF_ID(Params_Get_Staff_By_STAFF_ID i_Params_Get_Staff_By_STAFF_ID)
+{
+Staff oStaff = null;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Staff_By_STAFF_ID");}
+#region Body Section.
+DALC.Staff oDBEntry = _AppContext.Get_Staff_By_STAFF_ID(i_Params_Get_Staff_By_STAFF_ID.STAFF_ID);
+oStaff = new Staff();
+oTools.CopyPropValues(oDBEntry, oStaff);
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Staff_By_STAFF_ID");}
+return oStaff;
+}
+public Tags Get_Tags_By_TAGS_ID(Params_Get_Tags_By_TAGS_ID i_Params_Get_Tags_By_TAGS_ID)
+{
+Tags oTags = null;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Tags_By_TAGS_ID");}
+#region Body Section.
+DALC.Tags oDBEntry = _AppContext.Get_Tags_By_TAGS_ID(i_Params_Get_Tags_By_TAGS_ID.TAGS_ID);
+oTags = new Tags();
+oTools.CopyPropValues(oDBEntry, oTags);
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Tags_By_TAGS_ID");}
+return oTags;
+}
+public Trip Get_Trip_By_TRIP_ID(Params_Get_Trip_By_TRIP_ID i_Params_Get_Trip_By_TRIP_ID)
+{
+Trip oTrip = null;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Trip_By_TRIP_ID");}
+#region Body Section.
+DALC.Trip oDBEntry = _AppContext.Get_Trip_By_TRIP_ID(i_Params_Get_Trip_By_TRIP_ID.TRIP_ID);
+oTrip = new Trip();
+oTools.CopyPropValues(oDBEntry, oTrip);
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Trip_By_TRIP_ID");}
+return oTrip;
+}
 public User Get_User_By_USER_ID(Params_Get_User_By_USER_ID i_Params_Get_User_By_USER_ID)
 {
 User oUser = null;
@@ -204,6 +324,48 @@ oList.Add(oContact);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Contact_By_CONTACT_ID_List");}
+return oList;
+}
+public List<Features> Get_Features_By_FEATURES_ID_List(Params_Get_Features_By_FEATURES_ID_List i_Params_Get_Features_By_FEATURES_ID_List)
+{
+Features oFeatures = null;
+List<Features> oList = new List<Features>();
+Params_Get_Features_By_FEATURES_ID_List_SP oParams_Get_Features_By_FEATURES_ID_List_SP = new Params_Get_Features_By_FEATURES_ID_List_SP();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Features_By_FEATURES_ID_List");}
+#region Body Section.
+List<DALC.Features> oList_DBEntries = _AppContext.Get_Features_By_FEATURES_ID_List(i_Params_Get_Features_By_FEATURES_ID_List.FEATURES_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oFeatures = new Features();
+oTools.CopyPropValues(oDBEntry, oFeatures);
+oList.Add(oFeatures);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Features_By_FEATURES_ID_List");}
+return oList;
+}
+public List<Includes> Get_Includes_By_INCLUDES_ID_List(Params_Get_Includes_By_INCLUDES_ID_List i_Params_Get_Includes_By_INCLUDES_ID_List)
+{
+Includes oIncludes = null;
+List<Includes> oList = new List<Includes>();
+Params_Get_Includes_By_INCLUDES_ID_List_SP oParams_Get_Includes_By_INCLUDES_ID_List_SP = new Params_Get_Includes_By_INCLUDES_ID_List_SP();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Includes_By_INCLUDES_ID_List");}
+#region Body Section.
+List<DALC.Includes> oList_DBEntries = _AppContext.Get_Includes_By_INCLUDES_ID_List(i_Params_Get_Includes_By_INCLUDES_ID_List.INCLUDES_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oIncludes = new Includes();
+oTools.CopyPropValues(oDBEntry, oIncludes);
+oList.Add(oIncludes);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Includes_By_INCLUDES_ID_List");}
 return oList;
 }
 public List<Loc_l1> Get_Loc_l1_By_LOC_L1_ID_List(Params_Get_Loc_l1_By_LOC_L1_ID_List i_Params_Get_Loc_l1_By_LOC_L1_ID_List)
@@ -330,6 +492,132 @@ oList.Add(oPerson);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Person_By_PERSON_ID_List");}
+return oList;
+}
+public List<Reservation_query> Get_Reservation_query_By_RESERVATION_QUERY_ID_List(Params_Get_Reservation_query_By_RESERVATION_QUERY_ID_List i_Params_Get_Reservation_query_By_RESERVATION_QUERY_ID_List)
+{
+Reservation_query oReservation_query = null;
+List<Reservation_query> oList = new List<Reservation_query>();
+Params_Get_Reservation_query_By_RESERVATION_QUERY_ID_List_SP oParams_Get_Reservation_query_By_RESERVATION_QUERY_ID_List_SP = new Params_Get_Reservation_query_By_RESERVATION_QUERY_ID_List_SP();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Reservation_query_By_RESERVATION_QUERY_ID_List");}
+#region Body Section.
+List<DALC.Reservation_query> oList_DBEntries = _AppContext.Get_Reservation_query_By_RESERVATION_QUERY_ID_List(i_Params_Get_Reservation_query_By_RESERVATION_QUERY_ID_List.RESERVATION_QUERY_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oReservation_query = new Reservation_query();
+oTools.CopyPropValues(oDBEntry, oReservation_query);
+oList.Add(oReservation_query);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Reservation_query_By_RESERVATION_QUERY_ID_List");}
+return oList;
+}
+public List<Review> Get_Review_By_REVIEW_ID_List(Params_Get_Review_By_REVIEW_ID_List i_Params_Get_Review_By_REVIEW_ID_List)
+{
+Review oReview = null;
+List<Review> oList = new List<Review>();
+Params_Get_Review_By_REVIEW_ID_List_SP oParams_Get_Review_By_REVIEW_ID_List_SP = new Params_Get_Review_By_REVIEW_ID_List_SP();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Review_By_REVIEW_ID_List");}
+#region Body Section.
+List<DALC.Review> oList_DBEntries = _AppContext.Get_Review_By_REVIEW_ID_List(i_Params_Get_Review_By_REVIEW_ID_List.REVIEW_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oReview = new Review();
+oTools.CopyPropValues(oDBEntry, oReview);
+oList.Add(oReview);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Review_By_REVIEW_ID_List");}
+return oList;
+}
+public List<Social_media_links> Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID_List(Params_Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID_List i_Params_Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID_List)
+{
+Social_media_links oSocial_media_links = null;
+List<Social_media_links> oList = new List<Social_media_links>();
+Params_Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID_List_SP oParams_Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID_List_SP = new Params_Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID_List_SP();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID_List");}
+#region Body Section.
+List<DALC.Social_media_links> oList_DBEntries = _AppContext.Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID_List(i_Params_Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID_List.SOCIAL_MEDIA_LINKS_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oSocial_media_links = new Social_media_links();
+oTools.CopyPropValues(oDBEntry, oSocial_media_links);
+oList.Add(oSocial_media_links);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID_List");}
+return oList;
+}
+public List<Staff> Get_Staff_By_STAFF_ID_List(Params_Get_Staff_By_STAFF_ID_List i_Params_Get_Staff_By_STAFF_ID_List)
+{
+Staff oStaff = null;
+List<Staff> oList = new List<Staff>();
+Params_Get_Staff_By_STAFF_ID_List_SP oParams_Get_Staff_By_STAFF_ID_List_SP = new Params_Get_Staff_By_STAFF_ID_List_SP();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Staff_By_STAFF_ID_List");}
+#region Body Section.
+List<DALC.Staff> oList_DBEntries = _AppContext.Get_Staff_By_STAFF_ID_List(i_Params_Get_Staff_By_STAFF_ID_List.STAFF_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oStaff = new Staff();
+oTools.CopyPropValues(oDBEntry, oStaff);
+oList.Add(oStaff);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Staff_By_STAFF_ID_List");}
+return oList;
+}
+public List<Tags> Get_Tags_By_TAGS_ID_List(Params_Get_Tags_By_TAGS_ID_List i_Params_Get_Tags_By_TAGS_ID_List)
+{
+Tags oTags = null;
+List<Tags> oList = new List<Tags>();
+Params_Get_Tags_By_TAGS_ID_List_SP oParams_Get_Tags_By_TAGS_ID_List_SP = new Params_Get_Tags_By_TAGS_ID_List_SP();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Tags_By_TAGS_ID_List");}
+#region Body Section.
+List<DALC.Tags> oList_DBEntries = _AppContext.Get_Tags_By_TAGS_ID_List(i_Params_Get_Tags_By_TAGS_ID_List.TAGS_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oTags = new Tags();
+oTools.CopyPropValues(oDBEntry, oTags);
+oList.Add(oTags);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Tags_By_TAGS_ID_List");}
+return oList;
+}
+public List<Trip> Get_Trip_By_TRIP_ID_List(Params_Get_Trip_By_TRIP_ID_List i_Params_Get_Trip_By_TRIP_ID_List)
+{
+Trip oTrip = null;
+List<Trip> oList = new List<Trip>();
+Params_Get_Trip_By_TRIP_ID_List_SP oParams_Get_Trip_By_TRIP_ID_List_SP = new Params_Get_Trip_By_TRIP_ID_List_SP();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Trip_By_TRIP_ID_List");}
+#region Body Section.
+List<DALC.Trip> oList_DBEntries = _AppContext.Get_Trip_By_TRIP_ID_List(i_Params_Get_Trip_By_TRIP_ID_List.TRIP_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oTrip = new Trip();
+oTools.CopyPropValues(oDBEntry, oTrip);
+oList.Add(oTrip);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Trip_By_TRIP_ID_List");}
 return oList;
 }
 public List<User> Get_User_By_USER_ID_List(Params_Get_User_By_USER_ID_List i_Params_Get_User_By_USER_ID_List)
@@ -551,6 +839,86 @@ oList.Add(oContact);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Contact_By_OWNER_ID");}
+return oList;
+}
+public List<Features> Get_Features_By_OWNER_ID(Params_Get_Features_By_OWNER_ID i_Params_Get_Features_By_OWNER_ID)
+{
+List<Features> oList = new List<Features>();
+Features oFeatures = new Features();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Features_By_OWNER_ID");}
+#region Body Section.
+List<DALC.Features> oList_DBEntries = _AppContext.Get_Features_By_OWNER_ID(i_Params_Get_Features_By_OWNER_ID.OWNER_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oFeatures = new Features();
+oTools.CopyPropValues(oDBEntry, oFeatures);
+oList.Add(oFeatures);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Features_By_OWNER_ID");}
+return oList;
+}
+public List<Features> Get_Features_By_TRIP_ID(Params_Get_Features_By_TRIP_ID i_Params_Get_Features_By_TRIP_ID)
+{
+List<Features> oList = new List<Features>();
+Features oFeatures = new Features();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Features_By_TRIP_ID");}
+#region Body Section.
+List<DALC.Features> oList_DBEntries = _AppContext.Get_Features_By_TRIP_ID(i_Params_Get_Features_By_TRIP_ID.TRIP_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oFeatures = new Features();
+oTools.CopyPropValues(oDBEntry, oFeatures);
+oList.Add(oFeatures);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Features_By_TRIP_ID");}
+return oList;
+}
+public List<Includes> Get_Includes_By_OWNER_ID(Params_Get_Includes_By_OWNER_ID i_Params_Get_Includes_By_OWNER_ID)
+{
+List<Includes> oList = new List<Includes>();
+Includes oIncludes = new Includes();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Includes_By_OWNER_ID");}
+#region Body Section.
+List<DALC.Includes> oList_DBEntries = _AppContext.Get_Includes_By_OWNER_ID(i_Params_Get_Includes_By_OWNER_ID.OWNER_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oIncludes = new Includes();
+oTools.CopyPropValues(oDBEntry, oIncludes);
+oList.Add(oIncludes);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Includes_By_OWNER_ID");}
+return oList;
+}
+public List<Includes> Get_Includes_By_TRIP_ID(Params_Get_Includes_By_TRIP_ID i_Params_Get_Includes_By_TRIP_ID)
+{
+List<Includes> oList = new List<Includes>();
+Includes oIncludes = new Includes();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Includes_By_TRIP_ID");}
+#region Body Section.
+List<DALC.Includes> oList_DBEntries = _AppContext.Get_Includes_By_TRIP_ID(i_Params_Get_Includes_By_TRIP_ID.TRIP_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oIncludes = new Includes();
+oTools.CopyPropValues(oDBEntry, oIncludes);
+oList.Add(oIncludes);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Includes_By_TRIP_ID");}
 return oList;
 }
 public List<Loc_l1> Get_Loc_l1_By_CODE(Params_Get_Loc_l1_By_CODE i_Params_Get_Loc_l1_By_CODE)
@@ -793,6 +1161,146 @@ oList.Add(oPerson);
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Person_By_OWNER_ID");}
 return oList;
 }
+public List<Reservation_query> Get_Reservation_query_By_OWNER_ID(Params_Get_Reservation_query_By_OWNER_ID i_Params_Get_Reservation_query_By_OWNER_ID)
+{
+List<Reservation_query> oList = new List<Reservation_query>();
+Reservation_query oReservation_query = new Reservation_query();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Reservation_query_By_OWNER_ID");}
+#region Body Section.
+List<DALC.Reservation_query> oList_DBEntries = _AppContext.Get_Reservation_query_By_OWNER_ID(i_Params_Get_Reservation_query_By_OWNER_ID.OWNER_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oReservation_query = new Reservation_query();
+oTools.CopyPropValues(oDBEntry, oReservation_query);
+oList.Add(oReservation_query);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Reservation_query_By_OWNER_ID");}
+return oList;
+}
+public List<Review> Get_Review_By_OWNER_ID(Params_Get_Review_By_OWNER_ID i_Params_Get_Review_By_OWNER_ID)
+{
+List<Review> oList = new List<Review>();
+Review oReview = new Review();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Review_By_OWNER_ID");}
+#region Body Section.
+List<DALC.Review> oList_DBEntries = _AppContext.Get_Review_By_OWNER_ID(i_Params_Get_Review_By_OWNER_ID.OWNER_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oReview = new Review();
+oTools.CopyPropValues(oDBEntry, oReview);
+oList.Add(oReview);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Review_By_OWNER_ID");}
+return oList;
+}
+public List<Social_media_links> Get_Social_media_links_By_OWNER_ID(Params_Get_Social_media_links_By_OWNER_ID i_Params_Get_Social_media_links_By_OWNER_ID)
+{
+List<Social_media_links> oList = new List<Social_media_links>();
+Social_media_links oSocial_media_links = new Social_media_links();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Social_media_links_By_OWNER_ID");}
+#region Body Section.
+List<DALC.Social_media_links> oList_DBEntries = _AppContext.Get_Social_media_links_By_OWNER_ID(i_Params_Get_Social_media_links_By_OWNER_ID.OWNER_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oSocial_media_links = new Social_media_links();
+oTools.CopyPropValues(oDBEntry, oSocial_media_links);
+oList.Add(oSocial_media_links);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Social_media_links_By_OWNER_ID");}
+return oList;
+}
+public List<Staff> Get_Staff_By_OWNER_ID(Params_Get_Staff_By_OWNER_ID i_Params_Get_Staff_By_OWNER_ID)
+{
+List<Staff> oList = new List<Staff>();
+Staff oStaff = new Staff();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Staff_By_OWNER_ID");}
+#region Body Section.
+List<DALC.Staff> oList_DBEntries = _AppContext.Get_Staff_By_OWNER_ID(i_Params_Get_Staff_By_OWNER_ID.OWNER_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oStaff = new Staff();
+oTools.CopyPropValues(oDBEntry, oStaff);
+oList.Add(oStaff);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Staff_By_OWNER_ID");}
+return oList;
+}
+public List<Tags> Get_Tags_By_OWNER_ID(Params_Get_Tags_By_OWNER_ID i_Params_Get_Tags_By_OWNER_ID)
+{
+List<Tags> oList = new List<Tags>();
+Tags oTags = new Tags();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Tags_By_OWNER_ID");}
+#region Body Section.
+List<DALC.Tags> oList_DBEntries = _AppContext.Get_Tags_By_OWNER_ID(i_Params_Get_Tags_By_OWNER_ID.OWNER_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oTags = new Tags();
+oTools.CopyPropValues(oDBEntry, oTags);
+oList.Add(oTags);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Tags_By_OWNER_ID");}
+return oList;
+}
+public List<Tags> Get_Tags_By_TRIP_ID(Params_Get_Tags_By_TRIP_ID i_Params_Get_Tags_By_TRIP_ID)
+{
+List<Tags> oList = new List<Tags>();
+Tags oTags = new Tags();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Tags_By_TRIP_ID");}
+#region Body Section.
+List<DALC.Tags> oList_DBEntries = _AppContext.Get_Tags_By_TRIP_ID(i_Params_Get_Tags_By_TRIP_ID.TRIP_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oTags = new Tags();
+oTools.CopyPropValues(oDBEntry, oTags);
+oList.Add(oTags);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Tags_By_TRIP_ID");}
+return oList;
+}
+public List<Trip> Get_Trip_By_OWNER_ID(Params_Get_Trip_By_OWNER_ID i_Params_Get_Trip_By_OWNER_ID)
+{
+List<Trip> oList = new List<Trip>();
+Trip oTrip = new Trip();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Trip_By_OWNER_ID");}
+#region Body Section.
+List<DALC.Trip> oList_DBEntries = _AppContext.Get_Trip_By_OWNER_ID(i_Params_Get_Trip_By_OWNER_ID.OWNER_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oTrip = new Trip();
+oTools.CopyPropValues(oDBEntry, oTrip);
+oList.Add(oTrip);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Trip_By_OWNER_ID");}
+return oList;
+}
 public List<User> Get_User_By_OWNER_ID(Params_Get_User_By_OWNER_ID i_Params_Get_User_By_OWNER_ID)
 {
 List<User> oList = new List<User>();
@@ -953,6 +1461,46 @@ oList.Add(oContact);
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Contact_By_PERSON_ID_List");}
 return oList;
 }
+public List<Features> Get_Features_By_TRIP_ID_List(Params_Get_Features_By_TRIP_ID_List i_Params_Get_Features_By_TRIP_ID_List)
+{
+List<Features> oList = new List<Features>();
+Features oFeatures = new Features();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Features_By_TRIP_ID_List");}
+#region Body Section.
+List<DALC.Features> oList_DBEntries = _AppContext.Get_Features_By_TRIP_ID_List(i_Params_Get_Features_By_TRIP_ID_List.TRIP_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oFeatures = new Features();
+oTools.CopyPropValues(oDBEntry, oFeatures);
+oList.Add(oFeatures);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Features_By_TRIP_ID_List");}
+return oList;
+}
+public List<Includes> Get_Includes_By_TRIP_ID_List(Params_Get_Includes_By_TRIP_ID_List i_Params_Get_Includes_By_TRIP_ID_List)
+{
+List<Includes> oList = new List<Includes>();
+Includes oIncludes = new Includes();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Includes_By_TRIP_ID_List");}
+#region Body Section.
+List<DALC.Includes> oList_DBEntries = _AppContext.Get_Includes_By_TRIP_ID_List(i_Params_Get_Includes_By_TRIP_ID_List.TRIP_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oIncludes = new Includes();
+oTools.CopyPropValues(oDBEntry, oIncludes);
+oList.Add(oIncludes);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Includes_By_TRIP_ID_List");}
+return oList;
+}
 public List<Loc_l2> Get_Loc_l2_By_LOC_L1_ID_List(Params_Get_Loc_l2_By_LOC_L1_ID_List i_Params_Get_Loc_l2_By_LOC_L1_ID_List)
 {
 List<Loc_l2> oList = new List<Loc_l2>();
@@ -1011,6 +1559,26 @@ oList.Add(oLoc_l4);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Loc_l4_By_LOC_L3_ID_List");}
+return oList;
+}
+public List<Tags> Get_Tags_By_TRIP_ID_List(Params_Get_Tags_By_TRIP_ID_List i_Params_Get_Tags_By_TRIP_ID_List)
+{
+List<Tags> oList = new List<Tags>();
+Tags oTags = new Tags();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Tags_By_TRIP_ID_List");}
+#region Body Section.
+List<DALC.Tags> oList_DBEntries = _AppContext.Get_Tags_By_TRIP_ID_List(i_Params_Get_Tags_By_TRIP_ID_List.TRIP_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oTags = new Tags();
+oTools.CopyPropValues(oDBEntry, oTags);
+oList.Add(oTags);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Tags_By_TRIP_ID_List");}
 return oList;
 }
 public List<Address> Get_Address_By_Criteria(Params_Get_Address_By_Criteria i_Params_Get_Address_By_Criteria)
@@ -1161,6 +1729,106 @@ oList.Add(oContact);
 i_Params_Get_Contact_By_Where.TOTAL_COUNT = tmp_TOTAL_COUNT;
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Contact_By_Where");}
+return oList;
+}
+public List<Features> Get_Features_By_Criteria(Params_Get_Features_By_Criteria i_Params_Get_Features_By_Criteria)
+{
+List<Features> oList = new List<Features>();
+Features oFeatures = new Features();
+long? tmp_TOTAL_COUNT = 0;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Features_By_Criteria");}
+#region Body Section.
+if ((i_Params_Get_Features_By_Criteria.OWNER_ID == null) || (i_Params_Get_Features_By_Criteria.OWNER_ID == 0)) { i_Params_Get_Features_By_Criteria.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Features_By_Criteria.START_ROW == null) { i_Params_Get_Features_By_Criteria.START_ROW = 0; }
+if ((i_Params_Get_Features_By_Criteria.END_ROW == null) || (i_Params_Get_Features_By_Criteria.END_ROW == 0)) { i_Params_Get_Features_By_Criteria.END_ROW = 1000000; }
+List<DALC.Features> oList_DBEntries = _AppContext.Get_Features_By_Criteria(i_Params_Get_Features_By_Criteria.TITLE,i_Params_Get_Features_By_Criteria.DESCRIPTION,i_Params_Get_Features_By_Criteria.OWNER_ID,i_Params_Get_Features_By_Criteria.START_ROW,i_Params_Get_Features_By_Criteria.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oFeatures = new Features();
+oTools.CopyPropValues(oDBEntry, oFeatures);
+oList.Add(oFeatures);
+}
+}
+i_Params_Get_Features_By_Criteria.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Features_By_Criteria");}
+return oList;
+}
+public List<Features> Get_Features_By_Where(Params_Get_Features_By_Where i_Params_Get_Features_By_Where)
+{
+List<Features> oList = new List<Features>();
+Features oFeatures = new Features();
+long? tmp_TOTAL_COUNT = 0;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Features_By_Where");}
+#region Body Section.
+if ((i_Params_Get_Features_By_Where.OWNER_ID == null) || (i_Params_Get_Features_By_Where.OWNER_ID == 0)) { i_Params_Get_Features_By_Where.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Features_By_Where.START_ROW == null) { i_Params_Get_Features_By_Where.START_ROW = 0; }
+if ((i_Params_Get_Features_By_Where.END_ROW == null) || (i_Params_Get_Features_By_Where.END_ROW == 0)) { i_Params_Get_Features_By_Where.END_ROW = 1000000; }
+List<DALC.Features> oList_DBEntries = _AppContext.Get_Features_By_Where(i_Params_Get_Features_By_Where.TITLE,i_Params_Get_Features_By_Where.DESCRIPTION,i_Params_Get_Features_By_Where.OWNER_ID,i_Params_Get_Features_By_Where.START_ROW,i_Params_Get_Features_By_Where.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oFeatures = new Features();
+oTools.CopyPropValues(oDBEntry, oFeatures);
+oList.Add(oFeatures);
+}
+}
+i_Params_Get_Features_By_Where.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Features_By_Where");}
+return oList;
+}
+public List<Includes> Get_Includes_By_Criteria(Params_Get_Includes_By_Criteria i_Params_Get_Includes_By_Criteria)
+{
+List<Includes> oList = new List<Includes>();
+Includes oIncludes = new Includes();
+long? tmp_TOTAL_COUNT = 0;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Includes_By_Criteria");}
+#region Body Section.
+if ((i_Params_Get_Includes_By_Criteria.OWNER_ID == null) || (i_Params_Get_Includes_By_Criteria.OWNER_ID == 0)) { i_Params_Get_Includes_By_Criteria.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Includes_By_Criteria.START_ROW == null) { i_Params_Get_Includes_By_Criteria.START_ROW = 0; }
+if ((i_Params_Get_Includes_By_Criteria.END_ROW == null) || (i_Params_Get_Includes_By_Criteria.END_ROW == 0)) { i_Params_Get_Includes_By_Criteria.END_ROW = 1000000; }
+List<DALC.Includes> oList_DBEntries = _AppContext.Get_Includes_By_Criteria(i_Params_Get_Includes_By_Criteria.TITLE,i_Params_Get_Includes_By_Criteria.DESCRIPTION,i_Params_Get_Includes_By_Criteria.OWNER_ID,i_Params_Get_Includes_By_Criteria.START_ROW,i_Params_Get_Includes_By_Criteria.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oIncludes = new Includes();
+oTools.CopyPropValues(oDBEntry, oIncludes);
+oList.Add(oIncludes);
+}
+}
+i_Params_Get_Includes_By_Criteria.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Includes_By_Criteria");}
+return oList;
+}
+public List<Includes> Get_Includes_By_Where(Params_Get_Includes_By_Where i_Params_Get_Includes_By_Where)
+{
+List<Includes> oList = new List<Includes>();
+Includes oIncludes = new Includes();
+long? tmp_TOTAL_COUNT = 0;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Includes_By_Where");}
+#region Body Section.
+if ((i_Params_Get_Includes_By_Where.OWNER_ID == null) || (i_Params_Get_Includes_By_Where.OWNER_ID == 0)) { i_Params_Get_Includes_By_Where.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Includes_By_Where.START_ROW == null) { i_Params_Get_Includes_By_Where.START_ROW = 0; }
+if ((i_Params_Get_Includes_By_Where.END_ROW == null) || (i_Params_Get_Includes_By_Where.END_ROW == 0)) { i_Params_Get_Includes_By_Where.END_ROW = 1000000; }
+List<DALC.Includes> oList_DBEntries = _AppContext.Get_Includes_By_Where(i_Params_Get_Includes_By_Where.TITLE,i_Params_Get_Includes_By_Where.DESCRIPTION,i_Params_Get_Includes_By_Where.OWNER_ID,i_Params_Get_Includes_By_Where.START_ROW,i_Params_Get_Includes_By_Where.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oIncludes = new Includes();
+oTools.CopyPropValues(oDBEntry, oIncludes);
+oList.Add(oIncludes);
+}
+}
+i_Params_Get_Includes_By_Where.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Includes_By_Where");}
 return oList;
 }
 public List<Loc_l1> Get_Loc_l1_By_Criteria(Params_Get_Loc_l1_By_Criteria i_Params_Get_Loc_l1_By_Criteria)
@@ -1563,6 +2231,306 @@ i_Params_Get_Person_By_Where_V2.TOTAL_COUNT = tmp_TOTAL_COUNT;
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Person_By_Where_V2");}
 return oList;
 }
+public List<Reservation_query> Get_Reservation_query_By_Criteria(Params_Get_Reservation_query_By_Criteria i_Params_Get_Reservation_query_By_Criteria)
+{
+List<Reservation_query> oList = new List<Reservation_query>();
+Reservation_query oReservation_query = new Reservation_query();
+long? tmp_TOTAL_COUNT = 0;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Reservation_query_By_Criteria");}
+#region Body Section.
+if ((i_Params_Get_Reservation_query_By_Criteria.OWNER_ID == null) || (i_Params_Get_Reservation_query_By_Criteria.OWNER_ID == 0)) { i_Params_Get_Reservation_query_By_Criteria.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Reservation_query_By_Criteria.START_ROW == null) { i_Params_Get_Reservation_query_By_Criteria.START_ROW = 0; }
+if ((i_Params_Get_Reservation_query_By_Criteria.END_ROW == null) || (i_Params_Get_Reservation_query_By_Criteria.END_ROW == 0)) { i_Params_Get_Reservation_query_By_Criteria.END_ROW = 1000000; }
+List<DALC.Reservation_query> oList_DBEntries = _AppContext.Get_Reservation_query_By_Criteria(i_Params_Get_Reservation_query_By_Criteria.PICK_UP_ADDRESS,i_Params_Get_Reservation_query_By_Criteria.TRIP_DATE,i_Params_Get_Reservation_query_By_Criteria.QUERY_DESCRIPTION,i_Params_Get_Reservation_query_By_Criteria.OWNER_ID,i_Params_Get_Reservation_query_By_Criteria.START_ROW,i_Params_Get_Reservation_query_By_Criteria.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oReservation_query = new Reservation_query();
+oTools.CopyPropValues(oDBEntry, oReservation_query);
+oList.Add(oReservation_query);
+}
+}
+i_Params_Get_Reservation_query_By_Criteria.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Reservation_query_By_Criteria");}
+return oList;
+}
+public List<Reservation_query> Get_Reservation_query_By_Where(Params_Get_Reservation_query_By_Where i_Params_Get_Reservation_query_By_Where)
+{
+List<Reservation_query> oList = new List<Reservation_query>();
+Reservation_query oReservation_query = new Reservation_query();
+long? tmp_TOTAL_COUNT = 0;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Reservation_query_By_Where");}
+#region Body Section.
+if ((i_Params_Get_Reservation_query_By_Where.OWNER_ID == null) || (i_Params_Get_Reservation_query_By_Where.OWNER_ID == 0)) { i_Params_Get_Reservation_query_By_Where.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Reservation_query_By_Where.START_ROW == null) { i_Params_Get_Reservation_query_By_Where.START_ROW = 0; }
+if ((i_Params_Get_Reservation_query_By_Where.END_ROW == null) || (i_Params_Get_Reservation_query_By_Where.END_ROW == 0)) { i_Params_Get_Reservation_query_By_Where.END_ROW = 1000000; }
+List<DALC.Reservation_query> oList_DBEntries = _AppContext.Get_Reservation_query_By_Where(i_Params_Get_Reservation_query_By_Where.PICK_UP_ADDRESS,i_Params_Get_Reservation_query_By_Where.TRIP_DATE,i_Params_Get_Reservation_query_By_Where.QUERY_DESCRIPTION,i_Params_Get_Reservation_query_By_Where.OWNER_ID,i_Params_Get_Reservation_query_By_Where.START_ROW,i_Params_Get_Reservation_query_By_Where.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oReservation_query = new Reservation_query();
+oTools.CopyPropValues(oDBEntry, oReservation_query);
+oList.Add(oReservation_query);
+}
+}
+i_Params_Get_Reservation_query_By_Where.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Reservation_query_By_Where");}
+return oList;
+}
+public List<Review> Get_Review_By_Criteria(Params_Get_Review_By_Criteria i_Params_Get_Review_By_Criteria)
+{
+List<Review> oList = new List<Review>();
+Review oReview = new Review();
+long? tmp_TOTAL_COUNT = 0;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Review_By_Criteria");}
+#region Body Section.
+if ((i_Params_Get_Review_By_Criteria.OWNER_ID == null) || (i_Params_Get_Review_By_Criteria.OWNER_ID == 0)) { i_Params_Get_Review_By_Criteria.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Review_By_Criteria.START_ROW == null) { i_Params_Get_Review_By_Criteria.START_ROW = 0; }
+if ((i_Params_Get_Review_By_Criteria.END_ROW == null) || (i_Params_Get_Review_By_Criteria.END_ROW == 0)) { i_Params_Get_Review_By_Criteria.END_ROW = 1000000; }
+List<DALC.Review> oList_DBEntries = _AppContext.Get_Review_By_Criteria(i_Params_Get_Review_By_Criteria.TITLE,i_Params_Get_Review_By_Criteria.REVIEW_TEXT,i_Params_Get_Review_By_Criteria.OWNER_ID,i_Params_Get_Review_By_Criteria.START_ROW,i_Params_Get_Review_By_Criteria.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oReview = new Review();
+oTools.CopyPropValues(oDBEntry, oReview);
+oList.Add(oReview);
+}
+}
+i_Params_Get_Review_By_Criteria.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Review_By_Criteria");}
+return oList;
+}
+public List<Review> Get_Review_By_Where(Params_Get_Review_By_Where i_Params_Get_Review_By_Where)
+{
+List<Review> oList = new List<Review>();
+Review oReview = new Review();
+long? tmp_TOTAL_COUNT = 0;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Review_By_Where");}
+#region Body Section.
+if ((i_Params_Get_Review_By_Where.OWNER_ID == null) || (i_Params_Get_Review_By_Where.OWNER_ID == 0)) { i_Params_Get_Review_By_Where.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Review_By_Where.START_ROW == null) { i_Params_Get_Review_By_Where.START_ROW = 0; }
+if ((i_Params_Get_Review_By_Where.END_ROW == null) || (i_Params_Get_Review_By_Where.END_ROW == 0)) { i_Params_Get_Review_By_Where.END_ROW = 1000000; }
+List<DALC.Review> oList_DBEntries = _AppContext.Get_Review_By_Where(i_Params_Get_Review_By_Where.TITLE,i_Params_Get_Review_By_Where.REVIEW_TEXT,i_Params_Get_Review_By_Where.OWNER_ID,i_Params_Get_Review_By_Where.START_ROW,i_Params_Get_Review_By_Where.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oReview = new Review();
+oTools.CopyPropValues(oDBEntry, oReview);
+oList.Add(oReview);
+}
+}
+i_Params_Get_Review_By_Where.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Review_By_Where");}
+return oList;
+}
+public List<Social_media_links> Get_Social_media_links_By_Criteria(Params_Get_Social_media_links_By_Criteria i_Params_Get_Social_media_links_By_Criteria)
+{
+List<Social_media_links> oList = new List<Social_media_links>();
+Social_media_links oSocial_media_links = new Social_media_links();
+long? tmp_TOTAL_COUNT = 0;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Social_media_links_By_Criteria");}
+#region Body Section.
+if ((i_Params_Get_Social_media_links_By_Criteria.OWNER_ID == null) || (i_Params_Get_Social_media_links_By_Criteria.OWNER_ID == 0)) { i_Params_Get_Social_media_links_By_Criteria.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Social_media_links_By_Criteria.START_ROW == null) { i_Params_Get_Social_media_links_By_Criteria.START_ROW = 0; }
+if ((i_Params_Get_Social_media_links_By_Criteria.END_ROW == null) || (i_Params_Get_Social_media_links_By_Criteria.END_ROW == 0)) { i_Params_Get_Social_media_links_By_Criteria.END_ROW = 1000000; }
+List<DALC.Social_media_links> oList_DBEntries = _AppContext.Get_Social_media_links_By_Criteria(i_Params_Get_Social_media_links_By_Criteria.TITLE,i_Params_Get_Social_media_links_By_Criteria.URL,i_Params_Get_Social_media_links_By_Criteria.OWNER_ID,i_Params_Get_Social_media_links_By_Criteria.START_ROW,i_Params_Get_Social_media_links_By_Criteria.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oSocial_media_links = new Social_media_links();
+oTools.CopyPropValues(oDBEntry, oSocial_media_links);
+oList.Add(oSocial_media_links);
+}
+}
+i_Params_Get_Social_media_links_By_Criteria.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Social_media_links_By_Criteria");}
+return oList;
+}
+public List<Social_media_links> Get_Social_media_links_By_Where(Params_Get_Social_media_links_By_Where i_Params_Get_Social_media_links_By_Where)
+{
+List<Social_media_links> oList = new List<Social_media_links>();
+Social_media_links oSocial_media_links = new Social_media_links();
+long? tmp_TOTAL_COUNT = 0;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Social_media_links_By_Where");}
+#region Body Section.
+if ((i_Params_Get_Social_media_links_By_Where.OWNER_ID == null) || (i_Params_Get_Social_media_links_By_Where.OWNER_ID == 0)) { i_Params_Get_Social_media_links_By_Where.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Social_media_links_By_Where.START_ROW == null) { i_Params_Get_Social_media_links_By_Where.START_ROW = 0; }
+if ((i_Params_Get_Social_media_links_By_Where.END_ROW == null) || (i_Params_Get_Social_media_links_By_Where.END_ROW == 0)) { i_Params_Get_Social_media_links_By_Where.END_ROW = 1000000; }
+List<DALC.Social_media_links> oList_DBEntries = _AppContext.Get_Social_media_links_By_Where(i_Params_Get_Social_media_links_By_Where.TITLE,i_Params_Get_Social_media_links_By_Where.URL,i_Params_Get_Social_media_links_By_Where.OWNER_ID,i_Params_Get_Social_media_links_By_Where.START_ROW,i_Params_Get_Social_media_links_By_Where.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oSocial_media_links = new Social_media_links();
+oTools.CopyPropValues(oDBEntry, oSocial_media_links);
+oList.Add(oSocial_media_links);
+}
+}
+i_Params_Get_Social_media_links_By_Where.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Social_media_links_By_Where");}
+return oList;
+}
+public List<Staff> Get_Staff_By_Criteria(Params_Get_Staff_By_Criteria i_Params_Get_Staff_By_Criteria)
+{
+List<Staff> oList = new List<Staff>();
+Staff oStaff = new Staff();
+long? tmp_TOTAL_COUNT = 0;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Staff_By_Criteria");}
+#region Body Section.
+if ((i_Params_Get_Staff_By_Criteria.OWNER_ID == null) || (i_Params_Get_Staff_By_Criteria.OWNER_ID == 0)) { i_Params_Get_Staff_By_Criteria.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Staff_By_Criteria.START_ROW == null) { i_Params_Get_Staff_By_Criteria.START_ROW = 0; }
+if ((i_Params_Get_Staff_By_Criteria.END_ROW == null) || (i_Params_Get_Staff_By_Criteria.END_ROW == 0)) { i_Params_Get_Staff_By_Criteria.END_ROW = 1000000; }
+List<DALC.Staff> oList_DBEntries = _AppContext.Get_Staff_By_Criteria(i_Params_Get_Staff_By_Criteria.TITLE,i_Params_Get_Staff_By_Criteria.DESCRIPTION,i_Params_Get_Staff_By_Criteria.EMAIL,i_Params_Get_Staff_By_Criteria.PHONE,i_Params_Get_Staff_By_Criteria.OWNER_ID,i_Params_Get_Staff_By_Criteria.START_ROW,i_Params_Get_Staff_By_Criteria.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oStaff = new Staff();
+oTools.CopyPropValues(oDBEntry, oStaff);
+oList.Add(oStaff);
+}
+}
+i_Params_Get_Staff_By_Criteria.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Staff_By_Criteria");}
+return oList;
+}
+public List<Staff> Get_Staff_By_Where(Params_Get_Staff_By_Where i_Params_Get_Staff_By_Where)
+{
+List<Staff> oList = new List<Staff>();
+Staff oStaff = new Staff();
+long? tmp_TOTAL_COUNT = 0;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Staff_By_Where");}
+#region Body Section.
+if ((i_Params_Get_Staff_By_Where.OWNER_ID == null) || (i_Params_Get_Staff_By_Where.OWNER_ID == 0)) { i_Params_Get_Staff_By_Where.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Staff_By_Where.START_ROW == null) { i_Params_Get_Staff_By_Where.START_ROW = 0; }
+if ((i_Params_Get_Staff_By_Where.END_ROW == null) || (i_Params_Get_Staff_By_Where.END_ROW == 0)) { i_Params_Get_Staff_By_Where.END_ROW = 1000000; }
+List<DALC.Staff> oList_DBEntries = _AppContext.Get_Staff_By_Where(i_Params_Get_Staff_By_Where.TITLE,i_Params_Get_Staff_By_Where.DESCRIPTION,i_Params_Get_Staff_By_Where.EMAIL,i_Params_Get_Staff_By_Where.PHONE,i_Params_Get_Staff_By_Where.OWNER_ID,i_Params_Get_Staff_By_Where.START_ROW,i_Params_Get_Staff_By_Where.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oStaff = new Staff();
+oTools.CopyPropValues(oDBEntry, oStaff);
+oList.Add(oStaff);
+}
+}
+i_Params_Get_Staff_By_Where.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Staff_By_Where");}
+return oList;
+}
+public List<Tags> Get_Tags_By_Criteria(Params_Get_Tags_By_Criteria i_Params_Get_Tags_By_Criteria)
+{
+List<Tags> oList = new List<Tags>();
+Tags oTags = new Tags();
+long? tmp_TOTAL_COUNT = 0;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Tags_By_Criteria");}
+#region Body Section.
+if ((i_Params_Get_Tags_By_Criteria.OWNER_ID == null) || (i_Params_Get_Tags_By_Criteria.OWNER_ID == 0)) { i_Params_Get_Tags_By_Criteria.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Tags_By_Criteria.START_ROW == null) { i_Params_Get_Tags_By_Criteria.START_ROW = 0; }
+if ((i_Params_Get_Tags_By_Criteria.END_ROW == null) || (i_Params_Get_Tags_By_Criteria.END_ROW == 0)) { i_Params_Get_Tags_By_Criteria.END_ROW = 1000000; }
+List<DALC.Tags> oList_DBEntries = _AppContext.Get_Tags_By_Criteria(i_Params_Get_Tags_By_Criteria.TAG,i_Params_Get_Tags_By_Criteria.OWNER_ID,i_Params_Get_Tags_By_Criteria.START_ROW,i_Params_Get_Tags_By_Criteria.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oTags = new Tags();
+oTools.CopyPropValues(oDBEntry, oTags);
+oList.Add(oTags);
+}
+}
+i_Params_Get_Tags_By_Criteria.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Tags_By_Criteria");}
+return oList;
+}
+public List<Tags> Get_Tags_By_Where(Params_Get_Tags_By_Where i_Params_Get_Tags_By_Where)
+{
+List<Tags> oList = new List<Tags>();
+Tags oTags = new Tags();
+long? tmp_TOTAL_COUNT = 0;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Tags_By_Where");}
+#region Body Section.
+if ((i_Params_Get_Tags_By_Where.OWNER_ID == null) || (i_Params_Get_Tags_By_Where.OWNER_ID == 0)) { i_Params_Get_Tags_By_Where.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Tags_By_Where.START_ROW == null) { i_Params_Get_Tags_By_Where.START_ROW = 0; }
+if ((i_Params_Get_Tags_By_Where.END_ROW == null) || (i_Params_Get_Tags_By_Where.END_ROW == 0)) { i_Params_Get_Tags_By_Where.END_ROW = 1000000; }
+List<DALC.Tags> oList_DBEntries = _AppContext.Get_Tags_By_Where(i_Params_Get_Tags_By_Where.TAG,i_Params_Get_Tags_By_Where.OWNER_ID,i_Params_Get_Tags_By_Where.START_ROW,i_Params_Get_Tags_By_Where.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oTags = new Tags();
+oTools.CopyPropValues(oDBEntry, oTags);
+oList.Add(oTags);
+}
+}
+i_Params_Get_Tags_By_Where.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Tags_By_Where");}
+return oList;
+}
+public List<Trip> Get_Trip_By_Criteria(Params_Get_Trip_By_Criteria i_Params_Get_Trip_By_Criteria)
+{
+List<Trip> oList = new List<Trip>();
+Trip oTrip = new Trip();
+long? tmp_TOTAL_COUNT = 0;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Trip_By_Criteria");}
+#region Body Section.
+if ((i_Params_Get_Trip_By_Criteria.OWNER_ID == null) || (i_Params_Get_Trip_By_Criteria.OWNER_ID == 0)) { i_Params_Get_Trip_By_Criteria.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Trip_By_Criteria.START_ROW == null) { i_Params_Get_Trip_By_Criteria.START_ROW = 0; }
+if ((i_Params_Get_Trip_By_Criteria.END_ROW == null) || (i_Params_Get_Trip_By_Criteria.END_ROW == 0)) { i_Params_Get_Trip_By_Criteria.END_ROW = 1000000; }
+List<DALC.Trip> oList_DBEntries = _AppContext.Get_Trip_By_Criteria(i_Params_Get_Trip_By_Criteria.TITLE,i_Params_Get_Trip_By_Criteria.SUB_TITLE,i_Params_Get_Trip_By_Criteria.DETAILS,i_Params_Get_Trip_By_Criteria.CITY,i_Params_Get_Trip_By_Criteria.PRICE,i_Params_Get_Trip_By_Criteria.DISCOUNT_PRICE,i_Params_Get_Trip_By_Criteria.VIDEO_URL,i_Params_Get_Trip_By_Criteria.OFFER_HIGHLIGHT_TEXT,i_Params_Get_Trip_By_Criteria.OWNER_ID,i_Params_Get_Trip_By_Criteria.START_ROW,i_Params_Get_Trip_By_Criteria.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oTrip = new Trip();
+oTools.CopyPropValues(oDBEntry, oTrip);
+oList.Add(oTrip);
+}
+}
+i_Params_Get_Trip_By_Criteria.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Trip_By_Criteria");}
+return oList;
+}
+public List<Trip> Get_Trip_By_Where(Params_Get_Trip_By_Where i_Params_Get_Trip_By_Where)
+{
+List<Trip> oList = new List<Trip>();
+Trip oTrip = new Trip();
+long? tmp_TOTAL_COUNT = 0;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Trip_By_Where");}
+#region Body Section.
+if ((i_Params_Get_Trip_By_Where.OWNER_ID == null) || (i_Params_Get_Trip_By_Where.OWNER_ID == 0)) { i_Params_Get_Trip_By_Where.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Trip_By_Where.START_ROW == null) { i_Params_Get_Trip_By_Where.START_ROW = 0; }
+if ((i_Params_Get_Trip_By_Where.END_ROW == null) || (i_Params_Get_Trip_By_Where.END_ROW == 0)) { i_Params_Get_Trip_By_Where.END_ROW = 1000000; }
+List<DALC.Trip> oList_DBEntries = _AppContext.Get_Trip_By_Where(i_Params_Get_Trip_By_Where.TITLE,i_Params_Get_Trip_By_Where.SUB_TITLE,i_Params_Get_Trip_By_Where.DETAILS,i_Params_Get_Trip_By_Where.CITY,i_Params_Get_Trip_By_Where.PRICE,i_Params_Get_Trip_By_Where.DISCOUNT_PRICE,i_Params_Get_Trip_By_Where.VIDEO_URL,i_Params_Get_Trip_By_Where.OFFER_HIGHLIGHT_TEXT,i_Params_Get_Trip_By_Where.OWNER_ID,i_Params_Get_Trip_By_Where.START_ROW,i_Params_Get_Trip_By_Where.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oTrip = new Trip();
+oTools.CopyPropValues(oDBEntry, oTrip);
+oList.Add(oTrip);
+}
+}
+i_Params_Get_Trip_By_Where.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Trip_By_Where");}
+return oList;
+}
 public List<User> Get_User_By_Criteria(Params_Get_User_By_Criteria i_Params_Get_User_By_Criteria)
 {
 List<User> oList = new List<User>();
@@ -1939,6 +2907,158 @@ i_Params_Get_Contact_By_Where_InList.TOTAL_COUNT = tmp_TOTAL_COUNT;
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Contact_By_Where_InList");}
 return oList;
 }
+public List<Features> Get_Features_By_Criteria_InList(Params_Get_Features_By_Criteria_InList i_Params_Get_Features_By_Criteria_InList)
+{
+List<Features> oList = new List<Features>();
+Features oFeatures = new Features();
+long? tmp_TOTAL_COUNT = 0;
+Params_Get_Features_By_Criteria_InList_SP oParams_Get_Features_By_Criteria_InList_SP = new Params_Get_Features_By_Criteria_InList_SP();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Features_By_Criteria_InList");}
+#region Body Section.
+if ((i_Params_Get_Features_By_Criteria_InList.OWNER_ID == null) || (i_Params_Get_Features_By_Criteria_InList.OWNER_ID == 0)) { i_Params_Get_Features_By_Criteria_InList.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Features_By_Criteria_InList.START_ROW == null) { i_Params_Get_Features_By_Criteria_InList.START_ROW = 0; }
+if ((i_Params_Get_Features_By_Criteria_InList.END_ROW == null) || (i_Params_Get_Features_By_Criteria_InList.END_ROW == 0)) { i_Params_Get_Features_By_Criteria_InList.END_ROW = 1000000; }
+oParams_Get_Features_By_Criteria_InList_SP.OWNER_ID = i_Params_Get_Features_By_Criteria_InList.OWNER_ID;
+oParams_Get_Features_By_Criteria_InList_SP.TITLE = i_Params_Get_Features_By_Criteria_InList.TITLE;
+oParams_Get_Features_By_Criteria_InList_SP.DESCRIPTION = i_Params_Get_Features_By_Criteria_InList.DESCRIPTION;
+if ( i_Params_Get_Features_By_Criteria_InList.TRIP_ID_LIST == null)
+{
+i_Params_Get_Features_By_Criteria_InList.TRIP_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Features_By_Criteria_InList_SP.TRIP_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Features_By_Criteria_InList.TRIP_ID_LIST);
+oParams_Get_Features_By_Criteria_InList_SP.START_ROW = i_Params_Get_Features_By_Criteria_InList.START_ROW;
+oParams_Get_Features_By_Criteria_InList_SP.END_ROW = i_Params_Get_Features_By_Criteria_InList.END_ROW;
+oParams_Get_Features_By_Criteria_InList_SP.TOTAL_COUNT = i_Params_Get_Features_By_Criteria_InList.TOTAL_COUNT;
+List<DALC.Features> oList_DBEntries = _AppContext.Get_Features_By_Criteria_InList(i_Params_Get_Features_By_Criteria_InList.TITLE,i_Params_Get_Features_By_Criteria_InList.DESCRIPTION,i_Params_Get_Features_By_Criteria_InList.TRIP_ID_LIST,i_Params_Get_Features_By_Criteria_InList.OWNER_ID,i_Params_Get_Features_By_Criteria_InList.START_ROW,i_Params_Get_Features_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oFeatures = new Features();
+oTools.CopyPropValues(oDBEntry, oFeatures);
+oList.Add(oFeatures);
+}
+}
+i_Params_Get_Features_By_Criteria_InList.TOTAL_COUNT = oParams_Get_Features_By_Criteria_InList_SP.TOTAL_COUNT;
+i_Params_Get_Features_By_Criteria_InList.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Features_By_Criteria_InList");}
+return oList;
+}
+public List<Features> Get_Features_By_Where_InList(Params_Get_Features_By_Where_InList i_Params_Get_Features_By_Where_InList)
+{
+List<Features> oList = new List<Features>();
+Features oFeatures = new Features();
+long? tmp_TOTAL_COUNT = 0;
+Params_Get_Features_By_Where_InList_SP oParams_Get_Features_By_Where_InList_SP = new Params_Get_Features_By_Where_InList_SP();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Features_By_Where_InList");}
+#region Body Section.
+if ((i_Params_Get_Features_By_Where_InList.OWNER_ID == null) || (i_Params_Get_Features_By_Where_InList.OWNER_ID == 0)) { i_Params_Get_Features_By_Where_InList.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Features_By_Where_InList.START_ROW == null) { i_Params_Get_Features_By_Where_InList.START_ROW = 0; }
+if ((i_Params_Get_Features_By_Where_InList.END_ROW == null) || (i_Params_Get_Features_By_Where_InList.END_ROW == 0)) { i_Params_Get_Features_By_Where_InList.END_ROW = 1000000; }
+oParams_Get_Features_By_Where_InList_SP.OWNER_ID = i_Params_Get_Features_By_Where_InList.OWNER_ID;
+oParams_Get_Features_By_Where_InList_SP.TITLE = i_Params_Get_Features_By_Where_InList.TITLE;
+oParams_Get_Features_By_Where_InList_SP.DESCRIPTION = i_Params_Get_Features_By_Where_InList.DESCRIPTION;
+if ( i_Params_Get_Features_By_Where_InList.TRIP_ID_LIST == null)
+{
+i_Params_Get_Features_By_Where_InList.TRIP_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Features_By_Where_InList_SP.TRIP_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Features_By_Where_InList.TRIP_ID_LIST);
+oParams_Get_Features_By_Where_InList_SP.START_ROW = i_Params_Get_Features_By_Where_InList.START_ROW;
+oParams_Get_Features_By_Where_InList_SP.END_ROW = i_Params_Get_Features_By_Where_InList.END_ROW;
+oParams_Get_Features_By_Where_InList_SP.TOTAL_COUNT = i_Params_Get_Features_By_Where_InList.TOTAL_COUNT;
+List<DALC.Features> oList_DBEntries = _AppContext.Get_Features_By_Where_InList(i_Params_Get_Features_By_Where_InList.TITLE,i_Params_Get_Features_By_Where_InList.DESCRIPTION,i_Params_Get_Features_By_Where_InList.TRIP_ID_LIST,i_Params_Get_Features_By_Where_InList.OWNER_ID,i_Params_Get_Features_By_Where_InList.START_ROW,i_Params_Get_Features_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oFeatures = new Features();
+oTools.CopyPropValues(oDBEntry, oFeatures);
+oList.Add(oFeatures);
+}
+}
+i_Params_Get_Features_By_Where_InList.TOTAL_COUNT = oParams_Get_Features_By_Where_InList_SP.TOTAL_COUNT;
+i_Params_Get_Features_By_Where_InList.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Features_By_Where_InList");}
+return oList;
+}
+public List<Includes> Get_Includes_By_Criteria_InList(Params_Get_Includes_By_Criteria_InList i_Params_Get_Includes_By_Criteria_InList)
+{
+List<Includes> oList = new List<Includes>();
+Includes oIncludes = new Includes();
+long? tmp_TOTAL_COUNT = 0;
+Params_Get_Includes_By_Criteria_InList_SP oParams_Get_Includes_By_Criteria_InList_SP = new Params_Get_Includes_By_Criteria_InList_SP();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Includes_By_Criteria_InList");}
+#region Body Section.
+if ((i_Params_Get_Includes_By_Criteria_InList.OWNER_ID == null) || (i_Params_Get_Includes_By_Criteria_InList.OWNER_ID == 0)) { i_Params_Get_Includes_By_Criteria_InList.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Includes_By_Criteria_InList.START_ROW == null) { i_Params_Get_Includes_By_Criteria_InList.START_ROW = 0; }
+if ((i_Params_Get_Includes_By_Criteria_InList.END_ROW == null) || (i_Params_Get_Includes_By_Criteria_InList.END_ROW == 0)) { i_Params_Get_Includes_By_Criteria_InList.END_ROW = 1000000; }
+oParams_Get_Includes_By_Criteria_InList_SP.OWNER_ID = i_Params_Get_Includes_By_Criteria_InList.OWNER_ID;
+oParams_Get_Includes_By_Criteria_InList_SP.TITLE = i_Params_Get_Includes_By_Criteria_InList.TITLE;
+oParams_Get_Includes_By_Criteria_InList_SP.DESCRIPTION = i_Params_Get_Includes_By_Criteria_InList.DESCRIPTION;
+if ( i_Params_Get_Includes_By_Criteria_InList.TRIP_ID_LIST == null)
+{
+i_Params_Get_Includes_By_Criteria_InList.TRIP_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Includes_By_Criteria_InList_SP.TRIP_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Includes_By_Criteria_InList.TRIP_ID_LIST);
+oParams_Get_Includes_By_Criteria_InList_SP.START_ROW = i_Params_Get_Includes_By_Criteria_InList.START_ROW;
+oParams_Get_Includes_By_Criteria_InList_SP.END_ROW = i_Params_Get_Includes_By_Criteria_InList.END_ROW;
+oParams_Get_Includes_By_Criteria_InList_SP.TOTAL_COUNT = i_Params_Get_Includes_By_Criteria_InList.TOTAL_COUNT;
+List<DALC.Includes> oList_DBEntries = _AppContext.Get_Includes_By_Criteria_InList(i_Params_Get_Includes_By_Criteria_InList.TITLE,i_Params_Get_Includes_By_Criteria_InList.DESCRIPTION,i_Params_Get_Includes_By_Criteria_InList.TRIP_ID_LIST,i_Params_Get_Includes_By_Criteria_InList.OWNER_ID,i_Params_Get_Includes_By_Criteria_InList.START_ROW,i_Params_Get_Includes_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oIncludes = new Includes();
+oTools.CopyPropValues(oDBEntry, oIncludes);
+oList.Add(oIncludes);
+}
+}
+i_Params_Get_Includes_By_Criteria_InList.TOTAL_COUNT = oParams_Get_Includes_By_Criteria_InList_SP.TOTAL_COUNT;
+i_Params_Get_Includes_By_Criteria_InList.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Includes_By_Criteria_InList");}
+return oList;
+}
+public List<Includes> Get_Includes_By_Where_InList(Params_Get_Includes_By_Where_InList i_Params_Get_Includes_By_Where_InList)
+{
+List<Includes> oList = new List<Includes>();
+Includes oIncludes = new Includes();
+long? tmp_TOTAL_COUNT = 0;
+Params_Get_Includes_By_Where_InList_SP oParams_Get_Includes_By_Where_InList_SP = new Params_Get_Includes_By_Where_InList_SP();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Includes_By_Where_InList");}
+#region Body Section.
+if ((i_Params_Get_Includes_By_Where_InList.OWNER_ID == null) || (i_Params_Get_Includes_By_Where_InList.OWNER_ID == 0)) { i_Params_Get_Includes_By_Where_InList.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Includes_By_Where_InList.START_ROW == null) { i_Params_Get_Includes_By_Where_InList.START_ROW = 0; }
+if ((i_Params_Get_Includes_By_Where_InList.END_ROW == null) || (i_Params_Get_Includes_By_Where_InList.END_ROW == 0)) { i_Params_Get_Includes_By_Where_InList.END_ROW = 1000000; }
+oParams_Get_Includes_By_Where_InList_SP.OWNER_ID = i_Params_Get_Includes_By_Where_InList.OWNER_ID;
+oParams_Get_Includes_By_Where_InList_SP.TITLE = i_Params_Get_Includes_By_Where_InList.TITLE;
+oParams_Get_Includes_By_Where_InList_SP.DESCRIPTION = i_Params_Get_Includes_By_Where_InList.DESCRIPTION;
+if ( i_Params_Get_Includes_By_Where_InList.TRIP_ID_LIST == null)
+{
+i_Params_Get_Includes_By_Where_InList.TRIP_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Includes_By_Where_InList_SP.TRIP_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Includes_By_Where_InList.TRIP_ID_LIST);
+oParams_Get_Includes_By_Where_InList_SP.START_ROW = i_Params_Get_Includes_By_Where_InList.START_ROW;
+oParams_Get_Includes_By_Where_InList_SP.END_ROW = i_Params_Get_Includes_By_Where_InList.END_ROW;
+oParams_Get_Includes_By_Where_InList_SP.TOTAL_COUNT = i_Params_Get_Includes_By_Where_InList.TOTAL_COUNT;
+List<DALC.Includes> oList_DBEntries = _AppContext.Get_Includes_By_Where_InList(i_Params_Get_Includes_By_Where_InList.TITLE,i_Params_Get_Includes_By_Where_InList.DESCRIPTION,i_Params_Get_Includes_By_Where_InList.TRIP_ID_LIST,i_Params_Get_Includes_By_Where_InList.OWNER_ID,i_Params_Get_Includes_By_Where_InList.START_ROW,i_Params_Get_Includes_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oIncludes = new Includes();
+oTools.CopyPropValues(oDBEntry, oIncludes);
+oList.Add(oIncludes);
+}
+}
+i_Params_Get_Includes_By_Where_InList.TOTAL_COUNT = oParams_Get_Includes_By_Where_InList_SP.TOTAL_COUNT;
+i_Params_Get_Includes_By_Where_InList.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Includes_By_Where_InList");}
+return oList;
+}
 public List<Loc_l2> Get_Loc_l2_By_Criteria_InList(Params_Get_Loc_l2_By_Criteria_InList i_Params_Get_Loc_l2_By_Criteria_InList)
 {
 List<Loc_l2> oList = new List<Loc_l2>();
@@ -2167,6 +3287,80 @@ i_Params_Get_Loc_l4_By_Where_InList.TOTAL_COUNT = tmp_TOTAL_COUNT;
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Loc_l4_By_Where_InList");}
 return oList;
 }
+public List<Tags> Get_Tags_By_Criteria_InList(Params_Get_Tags_By_Criteria_InList i_Params_Get_Tags_By_Criteria_InList)
+{
+List<Tags> oList = new List<Tags>();
+Tags oTags = new Tags();
+long? tmp_TOTAL_COUNT = 0;
+Params_Get_Tags_By_Criteria_InList_SP oParams_Get_Tags_By_Criteria_InList_SP = new Params_Get_Tags_By_Criteria_InList_SP();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Tags_By_Criteria_InList");}
+#region Body Section.
+if ((i_Params_Get_Tags_By_Criteria_InList.OWNER_ID == null) || (i_Params_Get_Tags_By_Criteria_InList.OWNER_ID == 0)) { i_Params_Get_Tags_By_Criteria_InList.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Tags_By_Criteria_InList.START_ROW == null) { i_Params_Get_Tags_By_Criteria_InList.START_ROW = 0; }
+if ((i_Params_Get_Tags_By_Criteria_InList.END_ROW == null) || (i_Params_Get_Tags_By_Criteria_InList.END_ROW == 0)) { i_Params_Get_Tags_By_Criteria_InList.END_ROW = 1000000; }
+oParams_Get_Tags_By_Criteria_InList_SP.OWNER_ID = i_Params_Get_Tags_By_Criteria_InList.OWNER_ID;
+oParams_Get_Tags_By_Criteria_InList_SP.TAG = i_Params_Get_Tags_By_Criteria_InList.TAG;
+if ( i_Params_Get_Tags_By_Criteria_InList.TRIP_ID_LIST == null)
+{
+i_Params_Get_Tags_By_Criteria_InList.TRIP_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Tags_By_Criteria_InList_SP.TRIP_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Tags_By_Criteria_InList.TRIP_ID_LIST);
+oParams_Get_Tags_By_Criteria_InList_SP.START_ROW = i_Params_Get_Tags_By_Criteria_InList.START_ROW;
+oParams_Get_Tags_By_Criteria_InList_SP.END_ROW = i_Params_Get_Tags_By_Criteria_InList.END_ROW;
+oParams_Get_Tags_By_Criteria_InList_SP.TOTAL_COUNT = i_Params_Get_Tags_By_Criteria_InList.TOTAL_COUNT;
+List<DALC.Tags> oList_DBEntries = _AppContext.Get_Tags_By_Criteria_InList(i_Params_Get_Tags_By_Criteria_InList.TAG,i_Params_Get_Tags_By_Criteria_InList.TRIP_ID_LIST,i_Params_Get_Tags_By_Criteria_InList.OWNER_ID,i_Params_Get_Tags_By_Criteria_InList.START_ROW,i_Params_Get_Tags_By_Criteria_InList.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oTags = new Tags();
+oTools.CopyPropValues(oDBEntry, oTags);
+oList.Add(oTags);
+}
+}
+i_Params_Get_Tags_By_Criteria_InList.TOTAL_COUNT = oParams_Get_Tags_By_Criteria_InList_SP.TOTAL_COUNT;
+i_Params_Get_Tags_By_Criteria_InList.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Tags_By_Criteria_InList");}
+return oList;
+}
+public List<Tags> Get_Tags_By_Where_InList(Params_Get_Tags_By_Where_InList i_Params_Get_Tags_By_Where_InList)
+{
+List<Tags> oList = new List<Tags>();
+Tags oTags = new Tags();
+long? tmp_TOTAL_COUNT = 0;
+Params_Get_Tags_By_Where_InList_SP oParams_Get_Tags_By_Where_InList_SP = new Params_Get_Tags_By_Where_InList_SP();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Tags_By_Where_InList");}
+#region Body Section.
+if ((i_Params_Get_Tags_By_Where_InList.OWNER_ID == null) || (i_Params_Get_Tags_By_Where_InList.OWNER_ID == 0)) { i_Params_Get_Tags_By_Where_InList.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Tags_By_Where_InList.START_ROW == null) { i_Params_Get_Tags_By_Where_InList.START_ROW = 0; }
+if ((i_Params_Get_Tags_By_Where_InList.END_ROW == null) || (i_Params_Get_Tags_By_Where_InList.END_ROW == 0)) { i_Params_Get_Tags_By_Where_InList.END_ROW = 1000000; }
+oParams_Get_Tags_By_Where_InList_SP.OWNER_ID = i_Params_Get_Tags_By_Where_InList.OWNER_ID;
+oParams_Get_Tags_By_Where_InList_SP.TAG = i_Params_Get_Tags_By_Where_InList.TAG;
+if ( i_Params_Get_Tags_By_Where_InList.TRIP_ID_LIST == null)
+{
+i_Params_Get_Tags_By_Where_InList.TRIP_ID_LIST = new List<Int32?>();
+}
+oParams_Get_Tags_By_Where_InList_SP.TRIP_ID_LIST = oTools.Convert_List_To_Comma_Separated<Int32?>(i_Params_Get_Tags_By_Where_InList.TRIP_ID_LIST);
+oParams_Get_Tags_By_Where_InList_SP.START_ROW = i_Params_Get_Tags_By_Where_InList.START_ROW;
+oParams_Get_Tags_By_Where_InList_SP.END_ROW = i_Params_Get_Tags_By_Where_InList.END_ROW;
+oParams_Get_Tags_By_Where_InList_SP.TOTAL_COUNT = i_Params_Get_Tags_By_Where_InList.TOTAL_COUNT;
+List<DALC.Tags> oList_DBEntries = _AppContext.Get_Tags_By_Where_InList(i_Params_Get_Tags_By_Where_InList.TAG,i_Params_Get_Tags_By_Where_InList.TRIP_ID_LIST,i_Params_Get_Tags_By_Where_InList.OWNER_ID,i_Params_Get_Tags_By_Where_InList.START_ROW,i_Params_Get_Tags_By_Where_InList.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oTags = new Tags();
+oTools.CopyPropValues(oDBEntry, oTags);
+oList.Add(oTags);
+}
+}
+i_Params_Get_Tags_By_Where_InList.TOTAL_COUNT = oParams_Get_Tags_By_Where_InList_SP.TOTAL_COUNT;
+i_Params_Get_Tags_By_Where_InList.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Tags_By_Where_InList");}
+return oList;
+}
 public void Delete_Address(Params_Delete_Address i_Params_Delete_Address)
 {
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Address");}
@@ -2236,6 +3430,76 @@ throw new Exception(ex.Message);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Delete_Contact");}
+}
+public void Delete_Features(Params_Delete_Features i_Params_Delete_Features)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Features");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Features_Execution)
+{
+_Stop_Delete_Features_Execution = false;
+return;
+}
+_AppContext.Delete_Features(i_Params_Delete_Features.FEATURES_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Features");}
+}
+public void Delete_Includes(Params_Delete_Includes i_Params_Delete_Includes)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Includes");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Includes_Execution)
+{
+_Stop_Delete_Includes_Execution = false;
+return;
+}
+_AppContext.Delete_Includes(i_Params_Delete_Includes.INCLUDES_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Includes");}
 }
 public void Delete_Loc_l1(Params_Delete_Loc_l1 i_Params_Delete_Loc_l1)
 {
@@ -2446,6 +3710,216 @@ throw new Exception(ex.Message);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Delete_Person");}
+}
+public void Delete_Reservation_query(Params_Delete_Reservation_query i_Params_Delete_Reservation_query)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Reservation_query");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Reservation_query_Execution)
+{
+_Stop_Delete_Reservation_query_Execution = false;
+return;
+}
+_AppContext.Delete_Reservation_query(i_Params_Delete_Reservation_query.RESERVATION_QUERY_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Reservation_query");}
+}
+public void Delete_Review(Params_Delete_Review i_Params_Delete_Review)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Review");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Review_Execution)
+{
+_Stop_Delete_Review_Execution = false;
+return;
+}
+_AppContext.Delete_Review(i_Params_Delete_Review.REVIEW_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Review");}
+}
+public void Delete_Social_media_links(Params_Delete_Social_media_links i_Params_Delete_Social_media_links)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Social_media_links");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Social_media_links_Execution)
+{
+_Stop_Delete_Social_media_links_Execution = false;
+return;
+}
+_AppContext.Delete_Social_media_links(i_Params_Delete_Social_media_links.SOCIAL_MEDIA_LINKS_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Social_media_links");}
+}
+public void Delete_Staff(Params_Delete_Staff i_Params_Delete_Staff)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Staff");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Staff_Execution)
+{
+_Stop_Delete_Staff_Execution = false;
+return;
+}
+_AppContext.Delete_Staff(i_Params_Delete_Staff.STAFF_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Staff");}
+}
+public void Delete_Tags(Params_Delete_Tags i_Params_Delete_Tags)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Tags");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Tags_Execution)
+{
+_Stop_Delete_Tags_Execution = false;
+return;
+}
+_AppContext.Delete_Tags(i_Params_Delete_Tags.TAGS_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Tags");}
+}
+public void Delete_Trip(Params_Delete_Trip i_Params_Delete_Trip)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Trip");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Trip_Execution)
+{
+_Stop_Delete_Trip_Execution = false;
+return;
+}
+_AppContext.Delete_Trip(i_Params_Delete_Trip.TRIP_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Trip");}
 }
 public void Delete_User(Params_Delete_User i_Params_Delete_User)
 {
@@ -2831,6 +4305,146 @@ throw new Exception(ex.Message);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Delete_Contact_By_OWNER_ID");}
+}
+public void Delete_Features_By_OWNER_ID(Params_Delete_Features_By_OWNER_ID i_Params_Delete_Features_By_OWNER_ID)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Features_By_OWNER_ID");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Features_Execution)
+{
+_Stop_Delete_Features_Execution = false;
+return;
+}
+_AppContext.Delete_Features_By_OWNER_ID(i_Params_Delete_Features_By_OWNER_ID.OWNER_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Features_By_OWNER_ID");}
+}
+public void Delete_Features_By_TRIP_ID(Params_Delete_Features_By_TRIP_ID i_Params_Delete_Features_By_TRIP_ID)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Features_By_TRIP_ID");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Features_Execution)
+{
+_Stop_Delete_Features_Execution = false;
+return;
+}
+_AppContext.Delete_Features_By_TRIP_ID(i_Params_Delete_Features_By_TRIP_ID.TRIP_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Features_By_TRIP_ID");}
+}
+public void Delete_Includes_By_OWNER_ID(Params_Delete_Includes_By_OWNER_ID i_Params_Delete_Includes_By_OWNER_ID)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Includes_By_OWNER_ID");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Includes_Execution)
+{
+_Stop_Delete_Includes_Execution = false;
+return;
+}
+_AppContext.Delete_Includes_By_OWNER_ID(i_Params_Delete_Includes_By_OWNER_ID.OWNER_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Includes_By_OWNER_ID");}
+}
+public void Delete_Includes_By_TRIP_ID(Params_Delete_Includes_By_TRIP_ID i_Params_Delete_Includes_By_TRIP_ID)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Includes_By_TRIP_ID");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Includes_Execution)
+{
+_Stop_Delete_Includes_Execution = false;
+return;
+}
+_AppContext.Delete_Includes_By_TRIP_ID(i_Params_Delete_Includes_By_TRIP_ID.TRIP_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Includes_By_TRIP_ID");}
 }
 public void Delete_Loc_l1_By_CODE(Params_Delete_Loc_l1_By_CODE i_Params_Delete_Loc_l1_By_CODE)
 {
@@ -3252,6 +4866,251 @@ throw new Exception(ex.Message);
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Delete_Person_By_OWNER_ID");}
 }
+public void Delete_Reservation_query_By_OWNER_ID(Params_Delete_Reservation_query_By_OWNER_ID i_Params_Delete_Reservation_query_By_OWNER_ID)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Reservation_query_By_OWNER_ID");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Reservation_query_Execution)
+{
+_Stop_Delete_Reservation_query_Execution = false;
+return;
+}
+_AppContext.Delete_Reservation_query_By_OWNER_ID(i_Params_Delete_Reservation_query_By_OWNER_ID.OWNER_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Reservation_query_By_OWNER_ID");}
+}
+public void Delete_Review_By_OWNER_ID(Params_Delete_Review_By_OWNER_ID i_Params_Delete_Review_By_OWNER_ID)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Review_By_OWNER_ID");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Review_Execution)
+{
+_Stop_Delete_Review_Execution = false;
+return;
+}
+_AppContext.Delete_Review_By_OWNER_ID(i_Params_Delete_Review_By_OWNER_ID.OWNER_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Review_By_OWNER_ID");}
+}
+public void Delete_Social_media_links_By_OWNER_ID(Params_Delete_Social_media_links_By_OWNER_ID i_Params_Delete_Social_media_links_By_OWNER_ID)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Social_media_links_By_OWNER_ID");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Social_media_links_Execution)
+{
+_Stop_Delete_Social_media_links_Execution = false;
+return;
+}
+_AppContext.Delete_Social_media_links_By_OWNER_ID(i_Params_Delete_Social_media_links_By_OWNER_ID.OWNER_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Social_media_links_By_OWNER_ID");}
+}
+public void Delete_Staff_By_OWNER_ID(Params_Delete_Staff_By_OWNER_ID i_Params_Delete_Staff_By_OWNER_ID)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Staff_By_OWNER_ID");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Staff_Execution)
+{
+_Stop_Delete_Staff_Execution = false;
+return;
+}
+_AppContext.Delete_Staff_By_OWNER_ID(i_Params_Delete_Staff_By_OWNER_ID.OWNER_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Staff_By_OWNER_ID");}
+}
+public void Delete_Tags_By_OWNER_ID(Params_Delete_Tags_By_OWNER_ID i_Params_Delete_Tags_By_OWNER_ID)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Tags_By_OWNER_ID");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Tags_Execution)
+{
+_Stop_Delete_Tags_Execution = false;
+return;
+}
+_AppContext.Delete_Tags_By_OWNER_ID(i_Params_Delete_Tags_By_OWNER_ID.OWNER_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Tags_By_OWNER_ID");}
+}
+public void Delete_Tags_By_TRIP_ID(Params_Delete_Tags_By_TRIP_ID i_Params_Delete_Tags_By_TRIP_ID)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Tags_By_TRIP_ID");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Tags_Execution)
+{
+_Stop_Delete_Tags_Execution = false;
+return;
+}
+_AppContext.Delete_Tags_By_TRIP_ID(i_Params_Delete_Tags_By_TRIP_ID.TRIP_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Tags_By_TRIP_ID");}
+}
+public void Delete_Trip_By_OWNER_ID(Params_Delete_Trip_By_OWNER_ID i_Params_Delete_Trip_By_OWNER_ID)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Trip_By_OWNER_ID");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Trip_Execution)
+{
+_Stop_Delete_Trip_Execution = false;
+return;
+}
+_AppContext.Delete_Trip_By_OWNER_ID(i_Params_Delete_Trip_By_OWNER_ID.OWNER_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Trip_By_OWNER_ID");}
+}
 public void Delete_User_By_OWNER_ID(Params_Delete_User_By_OWNER_ID i_Params_Delete_User_By_OWNER_ID)
 {
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_User_By_OWNER_ID");}
@@ -3402,6 +5261,76 @@ oScope.Complete();
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Edit_Contact");}
+}
+public void Edit_Features(Features i_Features) 
+{
+Enum_EditMode oEditMode_Flag = Enum_EditMode.Update;
+if (i_Features.FEATURES_ID == -1)
+{
+oEditMode_Flag = Enum_EditMode.Add;
+}
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Features");}
+#region Body Section.
+if ((i_Features.FEATURES_ID == null) || (i_Features.FEATURES_ID == 0)) { throw new BLCException("Missing primary key while calling Edit_Features"); }
+i_Features.ENTRY_USER_ID = this.UserID;
+i_Features.ENTRY_DATE    = oTools.GetDateString(DateTime.Today);
+i_Features.OWNER_ID      = this.OwnerID;
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Edit_Features_Execution)
+{
+_Stop_Edit_Features_Execution = false;
+return;
+}
+i_Features.FEATURES_ID = _AppContext.Edit_Features
+(
+i_Features.FEATURES_ID
+,i_Features.TRIP_ID
+,i_Features.TITLE
+,i_Features.DESCRIPTION
+,i_Features.ENTRY_USER_ID
+,i_Features.ENTRY_DATE
+,i_Features.OWNER_ID
+);
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Features");}
+}
+public void Edit_Includes(Includes i_Includes) 
+{
+Enum_EditMode oEditMode_Flag = Enum_EditMode.Update;
+if (i_Includes.INCLUDES_ID == -1)
+{
+oEditMode_Flag = Enum_EditMode.Add;
+}
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Includes");}
+#region Body Section.
+if ((i_Includes.INCLUDES_ID == null) || (i_Includes.INCLUDES_ID == 0)) { throw new BLCException("Missing primary key while calling Edit_Includes"); }
+i_Includes.ENTRY_USER_ID = this.UserID;
+i_Includes.ENTRY_DATE    = oTools.GetDateString(DateTime.Today);
+i_Includes.OWNER_ID      = this.OwnerID;
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Edit_Includes_Execution)
+{
+_Stop_Edit_Includes_Execution = false;
+return;
+}
+i_Includes.INCLUDES_ID = _AppContext.Edit_Includes
+(
+i_Includes.INCLUDES_ID
+,i_Includes.TRIP_ID
+,i_Includes.TITLE
+,i_Includes.DESCRIPTION
+,i_Includes.ENTRY_USER_ID
+,i_Includes.ENTRY_DATE
+,i_Includes.OWNER_ID
+);
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Includes");}
 }
 public void Edit_Loc_l1(Loc_l1 i_Loc_l1) 
 {
@@ -3620,6 +5549,222 @@ oScope.Complete();
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Edit_Person");}
 }
+public void Edit_Reservation_query(Reservation_query i_Reservation_query) 
+{
+Enum_EditMode oEditMode_Flag = Enum_EditMode.Update;
+if (i_Reservation_query.RESERVATION_QUERY_ID == -1)
+{
+oEditMode_Flag = Enum_EditMode.Add;
+}
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Reservation_query");}
+#region Body Section.
+if ((i_Reservation_query.RESERVATION_QUERY_ID == null) || (i_Reservation_query.RESERVATION_QUERY_ID == 0)) { throw new BLCException("Missing primary key while calling Edit_Reservation_query"); }
+i_Reservation_query.ENTRY_USER_ID = this.UserID;
+i_Reservation_query.ENTRY_DATE    = oTools.GetDateString(DateTime.Today);
+i_Reservation_query.OWNER_ID      = this.OwnerID;
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Edit_Reservation_query_Execution)
+{
+_Stop_Edit_Reservation_query_Execution = false;
+return;
+}
+i_Reservation_query.RESERVATION_QUERY_ID = _AppContext.Edit_Reservation_query
+(
+i_Reservation_query.RESERVATION_QUERY_ID
+,i_Reservation_query.NB_OF_ADULTS
+,i_Reservation_query.NB_OF_CHILDREN
+,i_Reservation_query.PICK_UP_ADDRESS
+,i_Reservation_query.TRIP_DATE
+,i_Reservation_query.QUERY_DESCRIPTION
+,i_Reservation_query.ENTRY_USER_ID
+,i_Reservation_query.ENTRY_DATE
+,i_Reservation_query.OWNER_ID
+);
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Reservation_query");}
+}
+public void Edit_Review(Review i_Review) 
+{
+Enum_EditMode oEditMode_Flag = Enum_EditMode.Update;
+if (i_Review.REVIEW_ID == -1)
+{
+oEditMode_Flag = Enum_EditMode.Add;
+}
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Review");}
+#region Body Section.
+if ((i_Review.REVIEW_ID == null) || (i_Review.REVIEW_ID == 0)) { throw new BLCException("Missing primary key while calling Edit_Review"); }
+i_Review.ENTRY_USER_ID = this.UserID;
+i_Review.ENTRY_DATE    = oTools.GetDateString(DateTime.Today);
+i_Review.OWNER_ID      = this.OwnerID;
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Edit_Review_Execution)
+{
+_Stop_Edit_Review_Execution = false;
+return;
+}
+i_Review.REVIEW_ID = _AppContext.Edit_Review
+(
+i_Review.REVIEW_ID
+,i_Review.TITLE
+,i_Review.REVIEW_TEXT
+,i_Review.ENTRY_USER_ID
+,i_Review.ENTRY_DATE
+,i_Review.OWNER_ID
+);
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Review");}
+}
+public void Edit_Social_media_links(Social_media_links i_Social_media_links) 
+{
+Enum_EditMode oEditMode_Flag = Enum_EditMode.Update;
+if (i_Social_media_links.SOCIAL_MEDIA_LINKS_ID == -1)
+{
+oEditMode_Flag = Enum_EditMode.Add;
+}
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Social_media_links");}
+#region Body Section.
+if ((i_Social_media_links.SOCIAL_MEDIA_LINKS_ID == null) || (i_Social_media_links.SOCIAL_MEDIA_LINKS_ID == 0)) { throw new BLCException("Missing primary key while calling Edit_Social_media_links"); }
+i_Social_media_links.ENTRY_USER_ID = this.UserID;
+i_Social_media_links.ENTRY_DATE    = oTools.GetDateString(DateTime.Today);
+i_Social_media_links.OWNER_ID      = this.OwnerID;
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Edit_Social_media_links_Execution)
+{
+_Stop_Edit_Social_media_links_Execution = false;
+return;
+}
+i_Social_media_links.SOCIAL_MEDIA_LINKS_ID = _AppContext.Edit_Social_media_links
+(
+i_Social_media_links.SOCIAL_MEDIA_LINKS_ID
+,i_Social_media_links.TITLE
+,i_Social_media_links.URL
+,i_Social_media_links.ENTRY_USER_ID
+,i_Social_media_links.ENTRY_DATE
+,i_Social_media_links.OWNER_ID
+);
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Social_media_links");}
+}
+public void Edit_Staff(Staff i_Staff) 
+{
+Enum_EditMode oEditMode_Flag = Enum_EditMode.Update;
+if (i_Staff.STAFF_ID == -1)
+{
+oEditMode_Flag = Enum_EditMode.Add;
+}
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Staff");}
+#region Body Section.
+if ((i_Staff.STAFF_ID == null) || (i_Staff.STAFF_ID == 0)) { throw new BLCException("Missing primary key while calling Edit_Staff"); }
+i_Staff.ENTRY_USER_ID = this.UserID;
+i_Staff.ENTRY_DATE    = oTools.GetDateString(DateTime.Today);
+i_Staff.OWNER_ID      = this.OwnerID;
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Edit_Staff_Execution)
+{
+_Stop_Edit_Staff_Execution = false;
+return;
+}
+i_Staff.STAFF_ID = _AppContext.Edit_Staff
+(
+i_Staff.STAFF_ID
+,i_Staff.TITLE
+,i_Staff.DESCRIPTION
+,i_Staff.EMAIL
+,i_Staff.PHONE
+,i_Staff.ENTRY_USER_ID
+,i_Staff.ENTRY_DATE
+,i_Staff.OWNER_ID
+);
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Staff");}
+}
+public void Edit_Tags(Tags i_Tags) 
+{
+Enum_EditMode oEditMode_Flag = Enum_EditMode.Update;
+if (i_Tags.TAGS_ID == -1)
+{
+oEditMode_Flag = Enum_EditMode.Add;
+}
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Tags");}
+#region Body Section.
+if ((i_Tags.TAGS_ID == null) || (i_Tags.TAGS_ID == 0)) { throw new BLCException("Missing primary key while calling Edit_Tags"); }
+i_Tags.ENTRY_USER_ID = this.UserID;
+i_Tags.ENTRY_DATE    = oTools.GetDateString(DateTime.Today);
+i_Tags.OWNER_ID      = this.OwnerID;
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Edit_Tags_Execution)
+{
+_Stop_Edit_Tags_Execution = false;
+return;
+}
+i_Tags.TAGS_ID = _AppContext.Edit_Tags
+(
+i_Tags.TAGS_ID
+,i_Tags.TRIP_ID
+,i_Tags.TAG
+,i_Tags.ENTRY_USER_ID
+,i_Tags.ENTRY_DATE
+,i_Tags.OWNER_ID
+);
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Tags");}
+}
+public void Edit_Trip(Trip i_Trip) 
+{
+Enum_EditMode oEditMode_Flag = Enum_EditMode.Update;
+if (i_Trip.TRIP_ID == -1)
+{
+oEditMode_Flag = Enum_EditMode.Add;
+}
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Trip");}
+#region Body Section.
+if ((i_Trip.TRIP_ID == null) || (i_Trip.TRIP_ID == 0)) { throw new BLCException("Missing primary key while calling Edit_Trip"); }
+i_Trip.ENTRY_USER_ID = this.UserID;
+i_Trip.ENTRY_DATE    = oTools.GetDateString(DateTime.Today);
+i_Trip.OWNER_ID      = this.OwnerID;
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Edit_Trip_Execution)
+{
+_Stop_Edit_Trip_Execution = false;
+return;
+}
+i_Trip.TRIP_ID = _AppContext.Edit_Trip
+(
+i_Trip.TRIP_ID
+,i_Trip.TITLE
+,i_Trip.SUB_TITLE
+,i_Trip.DETAILS
+,i_Trip.CITY
+,i_Trip.PRICE
+,i_Trip.DISCOUNT_PRICE
+,i_Trip.VIDEO_URL
+,i_Trip.IS_AVAILABLE_OR_COMING_SOON
+,i_Trip.OFFER_HIGHLIGHT_TEXT
+,i_Trip.ENTRY_USER_ID
+,i_Trip.ENTRY_DATE
+,i_Trip.OWNER_ID
+);
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Trip");}
+}
 public void Edit_User(User i_User) 
 {
 Enum_EditMode oEditMode_Flag = Enum_EditMode.Update;
@@ -3739,6 +5884,92 @@ oScope.Complete();
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Edit_Contact_List");}
+}
+public void Edit_Features_List(List<Features> i_List_Features)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Features_List");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+if (i_List_Features != null)
+{
+foreach (var oRow in i_List_Features)
+{
+Edit_Features(oRow);
+}
+}
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Features_List");}
+}
+public void Edit_Features_List(Params_Edit_Features_List i_Params_Edit_Features_List)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Features_List");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+if (i_Params_Edit_Features_List.My_List_To_Delete != null)
+{
+foreach (var oRow in i_Params_Edit_Features_List.My_List_To_Delete)
+{
+Delete_Features(new Params_Delete_Features() { FEATURES_ID = oRow.FEATURES_ID });
+}
+}
+if (i_Params_Edit_Features_List.My_List_To_Edit != null)
+{
+foreach (var oRow in i_Params_Edit_Features_List.My_List_To_Edit)
+{
+Edit_Features(oRow);
+}
+}
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Features_List");}
+}
+public void Edit_Includes_List(List<Includes> i_List_Includes)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Includes_List");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+if (i_List_Includes != null)
+{
+foreach (var oRow in i_List_Includes)
+{
+Edit_Includes(oRow);
+}
+}
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Includes_List");}
+}
+public void Edit_Includes_List(Params_Edit_Includes_List i_Params_Edit_Includes_List)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Includes_List");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+if (i_Params_Edit_Includes_List.My_List_To_Delete != null)
+{
+foreach (var oRow in i_Params_Edit_Includes_List.My_List_To_Delete)
+{
+Delete_Includes(new Params_Delete_Includes() { INCLUDES_ID = oRow.INCLUDES_ID });
+}
+}
+if (i_Params_Edit_Includes_List.My_List_To_Edit != null)
+{
+foreach (var oRow in i_Params_Edit_Includes_List.My_List_To_Edit)
+{
+Edit_Includes(oRow);
+}
+}
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Includes_List");}
 }
 public void Edit_Loc_l1_List(List<Loc_l1> i_List_Loc_l1)
 {
@@ -3997,6 +6228,264 @@ oScope.Complete();
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Edit_Person_List");}
+}
+public void Edit_Reservation_query_List(List<Reservation_query> i_List_Reservation_query)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Reservation_query_List");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+if (i_List_Reservation_query != null)
+{
+foreach (var oRow in i_List_Reservation_query)
+{
+Edit_Reservation_query(oRow);
+}
+}
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Reservation_query_List");}
+}
+public void Edit_Reservation_query_List(Params_Edit_Reservation_query_List i_Params_Edit_Reservation_query_List)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Reservation_query_List");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+if (i_Params_Edit_Reservation_query_List.My_List_To_Delete != null)
+{
+foreach (var oRow in i_Params_Edit_Reservation_query_List.My_List_To_Delete)
+{
+Delete_Reservation_query(new Params_Delete_Reservation_query() { RESERVATION_QUERY_ID = oRow.RESERVATION_QUERY_ID });
+}
+}
+if (i_Params_Edit_Reservation_query_List.My_List_To_Edit != null)
+{
+foreach (var oRow in i_Params_Edit_Reservation_query_List.My_List_To_Edit)
+{
+Edit_Reservation_query(oRow);
+}
+}
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Reservation_query_List");}
+}
+public void Edit_Review_List(List<Review> i_List_Review)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Review_List");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+if (i_List_Review != null)
+{
+foreach (var oRow in i_List_Review)
+{
+Edit_Review(oRow);
+}
+}
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Review_List");}
+}
+public void Edit_Review_List(Params_Edit_Review_List i_Params_Edit_Review_List)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Review_List");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+if (i_Params_Edit_Review_List.My_List_To_Delete != null)
+{
+foreach (var oRow in i_Params_Edit_Review_List.My_List_To_Delete)
+{
+Delete_Review(new Params_Delete_Review() { REVIEW_ID = oRow.REVIEW_ID });
+}
+}
+if (i_Params_Edit_Review_List.My_List_To_Edit != null)
+{
+foreach (var oRow in i_Params_Edit_Review_List.My_List_To_Edit)
+{
+Edit_Review(oRow);
+}
+}
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Review_List");}
+}
+public void Edit_Social_media_links_List(List<Social_media_links> i_List_Social_media_links)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Social_media_links_List");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+if (i_List_Social_media_links != null)
+{
+foreach (var oRow in i_List_Social_media_links)
+{
+Edit_Social_media_links(oRow);
+}
+}
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Social_media_links_List");}
+}
+public void Edit_Social_media_links_List(Params_Edit_Social_media_links_List i_Params_Edit_Social_media_links_List)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Social_media_links_List");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+if (i_Params_Edit_Social_media_links_List.My_List_To_Delete != null)
+{
+foreach (var oRow in i_Params_Edit_Social_media_links_List.My_List_To_Delete)
+{
+Delete_Social_media_links(new Params_Delete_Social_media_links() { SOCIAL_MEDIA_LINKS_ID = oRow.SOCIAL_MEDIA_LINKS_ID });
+}
+}
+if (i_Params_Edit_Social_media_links_List.My_List_To_Edit != null)
+{
+foreach (var oRow in i_Params_Edit_Social_media_links_List.My_List_To_Edit)
+{
+Edit_Social_media_links(oRow);
+}
+}
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Social_media_links_List");}
+}
+public void Edit_Staff_List(List<Staff> i_List_Staff)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Staff_List");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+if (i_List_Staff != null)
+{
+foreach (var oRow in i_List_Staff)
+{
+Edit_Staff(oRow);
+}
+}
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Staff_List");}
+}
+public void Edit_Staff_List(Params_Edit_Staff_List i_Params_Edit_Staff_List)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Staff_List");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+if (i_Params_Edit_Staff_List.My_List_To_Delete != null)
+{
+foreach (var oRow in i_Params_Edit_Staff_List.My_List_To_Delete)
+{
+Delete_Staff(new Params_Delete_Staff() { STAFF_ID = oRow.STAFF_ID });
+}
+}
+if (i_Params_Edit_Staff_List.My_List_To_Edit != null)
+{
+foreach (var oRow in i_Params_Edit_Staff_List.My_List_To_Edit)
+{
+Edit_Staff(oRow);
+}
+}
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Staff_List");}
+}
+public void Edit_Tags_List(List<Tags> i_List_Tags)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Tags_List");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+if (i_List_Tags != null)
+{
+foreach (var oRow in i_List_Tags)
+{
+Edit_Tags(oRow);
+}
+}
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Tags_List");}
+}
+public void Edit_Tags_List(Params_Edit_Tags_List i_Params_Edit_Tags_List)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Tags_List");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+if (i_Params_Edit_Tags_List.My_List_To_Delete != null)
+{
+foreach (var oRow in i_Params_Edit_Tags_List.My_List_To_Delete)
+{
+Delete_Tags(new Params_Delete_Tags() { TAGS_ID = oRow.TAGS_ID });
+}
+}
+if (i_Params_Edit_Tags_List.My_List_To_Edit != null)
+{
+foreach (var oRow in i_Params_Edit_Tags_List.My_List_To_Edit)
+{
+Edit_Tags(oRow);
+}
+}
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Tags_List");}
+}
+public void Edit_Trip_List(List<Trip> i_List_Trip)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Trip_List");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+if (i_List_Trip != null)
+{
+foreach (var oRow in i_List_Trip)
+{
+Edit_Trip(oRow);
+}
+}
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Trip_List");}
+}
+public void Edit_Trip_List(Params_Edit_Trip_List i_Params_Edit_Trip_List)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Trip_List");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+if (i_Params_Edit_Trip_List.My_List_To_Delete != null)
+{
+foreach (var oRow in i_Params_Edit_Trip_List.My_List_To_Delete)
+{
+Delete_Trip(new Params_Delete_Trip() { TRIP_ID = oRow.TRIP_ID });
+}
+}
+if (i_Params_Edit_Trip_List.My_List_To_Edit != null)
+{
+foreach (var oRow in i_Params_Edit_Trip_List.My_List_To_Edit)
+{
+Edit_Trip(oRow);
+}
+}
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Trip_List");}
 }
 public void Edit_User_List(List<User> i_List_User)
 {

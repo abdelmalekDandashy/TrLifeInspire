@@ -1,0 +1,11 @@
+D:\hadiProject\TrLifeInspire\App\DALC\bin\Debug\netcoreapp3.1\DALC.deps.json
+D:\hadiProject\TrLifeInspire\App\DALC\bin\Debug\netcoreapp3.1\DALC.dll
+D:\hadiProject\TrLifeInspire\App\DALC\bin\Debug\netcoreapp3.1\DALC.pdb
+D:\hadiProject\TrLifeInspire\App\DALC\bin\Debug\netcoreapp3.1\CoreTools.dll
+D:\hadiProject\TrLifeInspire\App\DALC\obj\Debug\netcoreapp3.1\DALC.csprojAssemblyReference.cache
+D:\hadiProject\TrLifeInspire\App\DALC\obj\Debug\netcoreapp3.1\DALC.AssemblyInfoInputs.cache
+D:\hadiProject\TrLifeInspire\App\DALC\obj\Debug\netcoreapp3.1\DALC.AssemblyInfo.cs
+D:\hadiProject\TrLifeInspire\App\DALC\obj\Debug\netcoreapp3.1\DALC.csproj.CoreCompileInputs.cache
+D:\hadiProject\TrLifeInspire\App\DALC\obj\Debug\netcoreapp3.1\DALC.csproj.CopyComplete
+D:\hadiProject\TrLifeInspire\App\DALC\obj\Debug\netcoreapp3.1\DALC.dll
+D:\hadiProject\TrLifeInspire\App\DALC\obj\Debug\netcoreapp3.1\DALC.pdb

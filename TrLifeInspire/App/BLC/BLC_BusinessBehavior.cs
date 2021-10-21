@@ -1079,5 +1079,329 @@ oScope.Complete();
 if (OnPostEvent_General != null){OnPostEvent_General("Delete_Person_With_Children");}
 }
 #endregion
+#region Reset_Features_By_Trip
+public void Reset_Features_By_Trip(Trip i_Trip, List<Features> i_Features_List)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Features_By_TRIP_ID oParams_Delete_Features_By_TRIP_ID = new Params_Delete_Features_By_TRIP_ID();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Features_By_Trip");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Existing Features
+//---------------------------------
+oParams_Delete_Features_By_TRIP_ID.TRIP_ID = i_Trip.TRIP_ID;
+Delete_Features_By_TRIP_ID(oParams_Delete_Features_By_TRIP_ID);
+//---------------------------------
+// Edit Features
+//---------------------------------
+Edit_Trip_WithFeatures(i_Trip, i_Features_List);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Features_By_Trip");}
+}
+#endregion
+#region Reset_Features_By_Trip
+public void Reset_Features_By_Trip(Trip i_Trip, List<Features> i_Features_List_To_Delete,List<Features> i_Features_List_To_Create)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Features oParams_Delete_Features = new Params_Delete_Features();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Features_By_Trip");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Specified Items 
+//---------------------------------
+ if (i_Features_List_To_Delete != null)
+{
+foreach (var oRow in i_Features_List_To_Delete)
+{
+oParams_Delete_Features.FEATURES_ID = oRow.FEATURES_ID;
+Delete_Features(oParams_Delete_Features);
+}
+}
+//---------------------------------
+// Edit Features
+//---------------------------------
+Edit_Trip_WithFeatures(i_Trip, i_Features_List_To_Create);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Features_By_Trip");}
+}
+#endregion
+#region Edit_Trip_With_Features(Trip i_Trip,List<Features> i_FeaturesList)
+public void Edit_Trip_WithFeatures(Trip i_Trip,List<Features> i_List_Features)
+{
+#region Declaration And Initialization Section.
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Trip_WithFeatures");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Business Operation.
+//-------------------------------
+Edit_Trip(i_Trip);
+if (i_List_Features != null)
+{
+foreach(Features oFeatures in i_List_Features)
+{
+oFeatures.TRIP_ID = i_Trip.TRIP_ID;
+Edit_Features(oFeatures);
+}
+}
+//-------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Trip_WithFeatures");}
+}
+#endregion
+#region Reset_Includes_By_Trip
+public void Reset_Includes_By_Trip(Trip i_Trip, List<Includes> i_Includes_List)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Includes_By_TRIP_ID oParams_Delete_Includes_By_TRIP_ID = new Params_Delete_Includes_By_TRIP_ID();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Includes_By_Trip");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Existing Includes
+//---------------------------------
+oParams_Delete_Includes_By_TRIP_ID.TRIP_ID = i_Trip.TRIP_ID;
+Delete_Includes_By_TRIP_ID(oParams_Delete_Includes_By_TRIP_ID);
+//---------------------------------
+// Edit Includes
+//---------------------------------
+Edit_Trip_WithIncludes(i_Trip, i_Includes_List);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Includes_By_Trip");}
+}
+#endregion
+#region Reset_Includes_By_Trip
+public void Reset_Includes_By_Trip(Trip i_Trip, List<Includes> i_Includes_List_To_Delete,List<Includes> i_Includes_List_To_Create)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Includes oParams_Delete_Includes = new Params_Delete_Includes();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Includes_By_Trip");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Specified Items 
+//---------------------------------
+ if (i_Includes_List_To_Delete != null)
+{
+foreach (var oRow in i_Includes_List_To_Delete)
+{
+oParams_Delete_Includes.INCLUDES_ID = oRow.INCLUDES_ID;
+Delete_Includes(oParams_Delete_Includes);
+}
+}
+//---------------------------------
+// Edit Includes
+//---------------------------------
+Edit_Trip_WithIncludes(i_Trip, i_Includes_List_To_Create);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Includes_By_Trip");}
+}
+#endregion
+#region Edit_Trip_With_Includes(Trip i_Trip,List<Includes> i_IncludesList)
+public void Edit_Trip_WithIncludes(Trip i_Trip,List<Includes> i_List_Includes)
+{
+#region Declaration And Initialization Section.
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Trip_WithIncludes");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Business Operation.
+//-------------------------------
+Edit_Trip(i_Trip);
+if (i_List_Includes != null)
+{
+foreach(Includes oIncludes in i_List_Includes)
+{
+oIncludes.TRIP_ID = i_Trip.TRIP_ID;
+Edit_Includes(oIncludes);
+}
+}
+//-------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Trip_WithIncludes");}
+}
+#endregion
+#region Reset_Tags_By_Trip
+public void Reset_Tags_By_Trip(Trip i_Trip, List<Tags> i_Tags_List)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Tags_By_TRIP_ID oParams_Delete_Tags_By_TRIP_ID = new Params_Delete_Tags_By_TRIP_ID();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Tags_By_Trip");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Existing Tags
+//---------------------------------
+oParams_Delete_Tags_By_TRIP_ID.TRIP_ID = i_Trip.TRIP_ID;
+Delete_Tags_By_TRIP_ID(oParams_Delete_Tags_By_TRIP_ID);
+//---------------------------------
+// Edit Tags
+//---------------------------------
+Edit_Trip_WithTags(i_Trip, i_Tags_List);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Tags_By_Trip");}
+}
+#endregion
+#region Reset_Tags_By_Trip
+public void Reset_Tags_By_Trip(Trip i_Trip, List<Tags> i_Tags_List_To_Delete,List<Tags> i_Tags_List_To_Create)
+{
+#region Declaration And Initialization Section.
+Params_Delete_Tags oParams_Delete_Tags = new Params_Delete_Tags();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Reset_Tags_By_Trip");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Delete Specified Items 
+//---------------------------------
+ if (i_Tags_List_To_Delete != null)
+{
+foreach (var oRow in i_Tags_List_To_Delete)
+{
+oParams_Delete_Tags.TAGS_ID = oRow.TAGS_ID;
+Delete_Tags(oParams_Delete_Tags);
+}
+}
+//---------------------------------
+// Edit Tags
+//---------------------------------
+Edit_Trip_WithTags(i_Trip, i_Tags_List_To_Create);
+//---------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Reset_Tags_By_Trip");}
+}
+#endregion
+#region Edit_Trip_With_Tags(Trip i_Trip,List<Tags> i_TagsList)
+public void Edit_Trip_WithTags(Trip i_Trip,List<Tags> i_List_Tags)
+{
+#region Declaration And Initialization Section.
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Trip_WithTags");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Business Operation.
+//-------------------------------
+Edit_Trip(i_Trip);
+if (i_List_Tags != null)
+{
+foreach(Tags oTags in i_List_Tags)
+{
+oTags.TRIP_ID = i_Trip.TRIP_ID;
+Edit_Tags(oTags);
+}
+}
+//-------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Trip_WithTags");}
+}
+#endregion
+#region Edit_Trip_WithRelatedData(Trip i_Trip,List<Features> i_List_Features,List<Includes> i_List_Includes,List<Tags> i_List_Tags)
+public void Edit_Trip_WithRelatedData(Trip i_Trip,List<Features> i_List_Features,List<Includes> i_List_Includes,List<Tags> i_List_Tags)
+{
+#region Declaration And Initialization Section.
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Trip_WithRelatedData");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+// Business Operation.
+//-------------------------------
+Edit_Trip(i_Trip);
+if (i_List_Features != null)
+{
+foreach(Features oFeatures in i_List_Features)
+{
+oFeatures.TRIP_ID = i_Trip.TRIP_ID;
+Edit_Features(oFeatures);
+}
+}
+if (i_List_Includes != null)
+{
+foreach(Includes oIncludes in i_List_Includes)
+{
+oIncludes.TRIP_ID = i_Trip.TRIP_ID;
+Edit_Includes(oIncludes);
+}
+}
+if (i_List_Tags != null)
+{
+foreach(Tags oTags in i_List_Tags)
+{
+oTags.TRIP_ID = i_Trip.TRIP_ID;
+Edit_Tags(oTags);
+}
+}
+//-------------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Trip_WithRelatedData");}
+}
+#endregion
+#region Delete_Trip_With_Children(Trip i_Trip)
+public void Delete_Trip_With_Children(Trip i_Trip)
+{
+ #region Declaration And Initialization Section.
+Params_Delete_Trip oParams_Delete_Trip = new Params_Delete_Trip();
+Params_Delete_Features_By_TRIP_ID oParams_Delete_Features_By_TRIP_ID = new Params_Delete_Features_By_TRIP_ID();
+Params_Delete_Includes_By_TRIP_ID oParams_Delete_Includes_By_TRIP_ID = new Params_Delete_Includes_By_TRIP_ID();
+Params_Delete_Tags_By_TRIP_ID oParams_Delete_Tags_By_TRIP_ID = new Params_Delete_Tags_By_TRIP_ID();
+#endregion
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Trip_With_Children");}
+ #region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+//-------------------------
+oParams_Delete_Features_By_TRIP_ID.TRIP_ID = i_Trip.TRIP_ID;
+Delete_Features_By_TRIP_ID(oParams_Delete_Features_By_TRIP_ID);
+oParams_Delete_Includes_By_TRIP_ID.TRIP_ID = i_Trip.TRIP_ID;
+Delete_Includes_By_TRIP_ID(oParams_Delete_Includes_By_TRIP_ID);
+oParams_Delete_Tags_By_TRIP_ID.TRIP_ID = i_Trip.TRIP_ID;
+Delete_Tags_By_TRIP_ID(oParams_Delete_Tags_By_TRIP_ID);
+//-------------------------
+
+//-------------------------
+oParams_Delete_Trip.TRIP_ID = i_Trip.TRIP_ID;
+Delete_Trip(oParams_Delete_Trip);
+//-------------------------
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Trip_With_Children");}
+}
+#endregion
 }
 }
