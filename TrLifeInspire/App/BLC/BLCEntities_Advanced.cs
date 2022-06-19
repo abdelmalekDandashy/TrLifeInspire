@@ -145,6 +145,13 @@ public partial class Trip
 #endregion
 }
 #endregion
+#region Uploaded_file
+public partial class Uploaded_file
+{
+#region Advanced Properties
+#endregion
+}
+#endregion
 #region User
 public partial class User
 {

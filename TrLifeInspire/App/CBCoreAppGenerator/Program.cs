@@ -98,25 +98,44 @@ namespace CodeGenerator
             //oCodeBooster.Tables_Static_Data.Add("[TBL_LOC_L4]");
             #endregion
             #region Uploaded_files
-            //oCodeBooster.Is_Uploaded_File_Feature = true;
-            //oCodeBooster.Uploaded_Files_BackEnd_Events = new List<Uploaded_File_BackEnd_Event>();
-            //oCodeBooster.Uploaded_Files_BackEnd_Events.Add
-            //    (
-            //        new Uploaded_File_BackEnd_Event() 
-            //        {
-            //            TBL_NAME = "[TBL_USER]", 
-            //            UI_METHOD_NAME = "Get_User_By_USER_ID", Mode = 1 
-            //        }
-            //    );
-            //oCodeBooster.Uploaded_Files_BackEnd_Events.Add
-            //   (
-            //       new Uploaded_File_BackEnd_Event()
-            //       {
-            //           TBL_NAME = "[TBL_USER]",
-            //           UI_METHOD_NAME = "Get_User_By_Where",
-            //           Mode = 1
-            //       }
-            //   );            
+            oCodeBooster.Is_Uploaded_File_Feature = true;
+            oCodeBooster.Uploaded_Files_BackEnd_Events = new List<Uploaded_File_BackEnd_Event>();
+            oCodeBooster.Uploaded_Files_BackEnd_Events.Add
+                (
+                    new Uploaded_File_BackEnd_Event()
+                    {
+                        TBL_NAME = "[TBL_TRIP]",
+                        UI_METHOD_NAME = "Get_Trip_By_Where",
+                        Mode = 0
+                    }
+                );
+            oCodeBooster.Uploaded_Files_BackEnd_Events.Add
+               (
+                   new Uploaded_File_BackEnd_Event()
+                   {
+                       TBL_NAME = "[TBL_FEATURES]",
+                       UI_METHOD_NAME = "Get_Features_By_Where",
+                       Mode = 0
+                   }
+               );
+            oCodeBooster.Uploaded_Files_BackEnd_Events.Add
+               (
+                   new Uploaded_File_BackEnd_Event()
+                   {
+                       TBL_NAME = "[TBL_INCLUDES]",
+                       UI_METHOD_NAME = "Get_Includes_By_Where",
+                       Mode = 0
+                   }
+               );
+            oCodeBooster.Uploaded_Files_BackEnd_Events.Add
+               (
+                   new Uploaded_File_BackEnd_Event()
+                   {
+                       TBL_NAME = "[TBL_SOCIAL_MEDIA_LINKS]",
+                       UI_METHOD_NAME = "Get_Social_media_links_By_Where",
+                       Mode = 0
+                   }
+               );
             #endregion
             #region Defining Non Setup Fields [Fields That ends with CODE by they are not Setup Fields]
             //oCodeBooster.NonSetup_Fields.Add("[LOC_L1_CODE]");
@@ -211,10 +230,44 @@ namespace CodeGenerator
             //oCodeBooster.APIMethodsSelection.Add("Delete_Car");
             //oCodeBooster.APIMethodsSelection.Add("Get_Car_By_OWNER_ID");
             //oCodeBooster.APIMethodsSelection.Add("Authenticate");
+
+
+            oCodeBooster.APIMethodsSelection.Add("Get_Trip_By_OWNER_ID");
             oCodeBooster.APIMethodsSelection.Add("Get_Trip_By_TRIP_ID");
             oCodeBooster.APIMethodsSelection.Add("Get_Trip_By_OWNER_ID");
+            oCodeBooster.APIMethodsSelection.Add("Get_Trip_By_Criteria");
+            oCodeBooster.APIMethodsSelection.Add("Get_Trip_By_Where");
             oCodeBooster.APIMethodsSelection.Add("Edit_Trip");
             oCodeBooster.APIMethodsSelection.Add("Delete_Trip");
+            
+            
+            
+            oCodeBooster.APIMethodsSelection.Add("Get_Features_By_Where");
+            oCodeBooster.APIMethodsSelection.Add("Edit_Features");
+            oCodeBooster.APIMethodsSelection.Add("Delete_Features");
+            oCodeBooster.APIMethodsSelection.Add("Delete_Uploaded_file");
+            
+            
+            oCodeBooster.APIMethodsSelection.Add("Get_Includes_By_Where");
+            oCodeBooster.APIMethodsSelection.Add("Edit_Includes");
+            oCodeBooster.APIMethodsSelection.Add("Delete_Includes");
+            
+            
+            oCodeBooster.APIMethodsSelection.Add("Get_Social_media_links_By_Where");
+            oCodeBooster.APIMethodsSelection.Add("Edit_Social_media_links");
+            oCodeBooster.APIMethodsSelection.Add("Delete_Social_media_links");
+            
+            
+            oCodeBooster.APIMethodsSelection.Add("Get_Staff_By_Where");
+            oCodeBooster.APIMethodsSelection.Add("Edit_Staff");
+            oCodeBooster.APIMethodsSelection.Add("Delete_Staff");
+
+
+
+
+
+
+
 
 
             //----------------------------
@@ -346,23 +399,123 @@ namespace CodeGenerator
                     oCodeBoosterClient.Cleanse_UI_Patch_Folder();
                     // --------------
 
-                    #region Person
+                    //#region TBL_TRIP
+                    //#region Search Screen
+                    //oUIFields_Criteria = new UIFields();
+                    //oUIFields_Criteria.MainTableName = "[TBL_TRIP]";
+                    //oUIFields_Criteria.Based_On_Type = "BLC.Params_Get_Trip_By_Where";
+
+                    //oUIFields_Result = new UIFields();
+                    //oUIFields_Result.MainTableName = "[TBL_TRIP]";
+                    //oUIFields_Result.Based_On_Type = "BLC.Trip";
+                    //oUIFields_Result.GetMethodName = "Get_Trip_By_Where";
+                    //oUIFields_Result.GridFields = new List<GridField>();
+
+                    //oUIFields_Result.Has_Related_Data = true;
+                    //oUIFields_Result.Has_Related_Files = true;
+
+
+
+                    //oSearch_AdvancedProp = new Search_AdvancedProp();
+                    //oSearch_AdvancedProp.ContainerMargins = "0,5,0,5";
+                    //oCodeBooster.Entity_FriendlyName = "Trip";
+                    //oCodeBoosterClient.Generate_ListUI(Enum_SearchMethod.With_Criteria_Section, oUIFields_Criteria, oUIFields_Result, oSearch_AdvancedProp);
+                    //#endregion
+                    //#endregion
+
+                    #region TBL_TRIP
                     #region Search Screen
                     oUIFields_Criteria = new UIFields();
-                    oUIFields_Criteria.MainTableName = "[TBL_PERSON]";
-                    oUIFields_Criteria.Based_On_Type = "BLC.Params_Get_Person_By_Criteria";
+                    oUIFields_Criteria.MainTableName = "[TBL_FEATURES]";
+                    oUIFields_Criteria.Based_On_Type = "BLC.Params_Get_Features_By_Where";
 
                     oUIFields_Result = new UIFields();
-                    oUIFields_Result.MainTableName = "[TBL_PERSON]";
-                    oUIFields_Result.Based_On_Type = "BLC.Person";
-                    oUIFields_Result.GetMethodName = "Get_Person_By_Criteria";
+                    oUIFields_Result.MainTableName = "[TBL_FEATURES]";
+                    oUIFields_Result.Based_On_Type = "BLC.Features";
+                    oUIFields_Result.GetMethodName = "Get_Features_By_Where";
                     oUIFields_Result.GridFields = new List<GridField>();
+
+                    oUIFields_Result.Has_Related_Data = true;
+                    oUIFields_Result.Has_Related_Files = true;
 
 
 
                     oSearch_AdvancedProp = new Search_AdvancedProp();
                     oSearch_AdvancedProp.ContainerMargins = "0,5,0,5";
-                    oCodeBooster.Entity_FriendlyName = "Person";
+                    oCodeBooster.Entity_FriendlyName = "Features";
+                    oCodeBoosterClient.Generate_ListUI(Enum_SearchMethod.With_Criteria_Section, oUIFields_Criteria, oUIFields_Result, oSearch_AdvancedProp);
+                    #endregion
+                    #endregion
+
+
+                    #region TBL_INCLUDES
+                    #region Search Screen
+                    oUIFields_Criteria = new UIFields();
+                    oUIFields_Criteria.MainTableName = "[TBL_INCLUDES]";
+                    oUIFields_Criteria.Based_On_Type = "BLC.Params_Get_Includes_By_Where";
+
+                    oUIFields_Result = new UIFields();
+                    oUIFields_Result.MainTableName = "[TBL_INCLUDES]";
+                    oUIFields_Result.Based_On_Type = "BLC.Includes";
+                    oUIFields_Result.GetMethodName = "Get_Includes_By_Where";
+                    oUIFields_Result.GridFields = new List<GridField>();
+
+                    oUIFields_Result.Has_Related_Data = true;
+                    oUIFields_Result.Has_Related_Files = true;
+
+
+
+                    oSearch_AdvancedProp = new Search_AdvancedProp();
+                    oSearch_AdvancedProp.ContainerMargins = "0,5,0,5";
+                    oCodeBooster.Entity_FriendlyName = "Includes";
+                    oCodeBoosterClient.Generate_ListUI(Enum_SearchMethod.With_Criteria_Section, oUIFields_Criteria, oUIFields_Result, oSearch_AdvancedProp);
+                    #endregion
+                    #endregion
+
+                    #region TBL_Social_media_links
+                    #region Search Screen
+                    oUIFields_Criteria = new UIFields();
+                    oUIFields_Criteria.MainTableName = "[TBL_SOCIAL_MEDIA_LINKS]";
+                    oUIFields_Criteria.Based_On_Type = "BLC.Params_Get_Social_media_links_By_Where";
+
+                    oUIFields_Result = new UIFields();
+                    oUIFields_Result.MainTableName = "[TBL_SOCIAL_MEDIA_LINKS]";
+                    oUIFields_Result.Based_On_Type = "BLC.Social_media_links";
+                    oUIFields_Result.GetMethodName = "Get_Social_media_links_By_Where";
+                    oUIFields_Result.GridFields = new List<GridField>();
+
+                    oUIFields_Result.Has_Related_Data = true;
+                    oUIFields_Result.Has_Related_Files = true;
+
+
+
+                    oSearch_AdvancedProp = new Search_AdvancedProp();
+                    oSearch_AdvancedProp.ContainerMargins = "0,5,0,5";
+                    oCodeBooster.Entity_FriendlyName = "Includes";
+                    oCodeBoosterClient.Generate_ListUI(Enum_SearchMethod.With_Criteria_Section, oUIFields_Criteria, oUIFields_Result, oSearch_AdvancedProp);
+                    #endregion
+                    #endregion
+
+                    #region staff
+                    #region Search Screen
+                    oUIFields_Criteria = new UIFields();
+                    oUIFields_Criteria.MainTableName = "[TBL_STAFF]";
+                    oUIFields_Criteria.Based_On_Type = "BLC.Params_Get_Staff_By_Where";
+
+                    oUIFields_Result = new UIFields();
+                    oUIFields_Result.MainTableName = "[TBL_STAFF]";
+                    oUIFields_Result.Based_On_Type = "BLC.Staff";
+                    oUIFields_Result.GetMethodName = "Get_Staff_By_Where";
+                    oUIFields_Result.GridFields = new List<GridField>();
+
+                    oUIFields_Result.Has_Related_Data = true;
+                    oUIFields_Result.Has_Related_Files = true;
+
+
+
+                    oSearch_AdvancedProp = new Search_AdvancedProp();
+                    oSearch_AdvancedProp.ContainerMargins = "0,5,0,5";
+                    oCodeBooster.Entity_FriendlyName = "Staff";
                     oCodeBoosterClient.Generate_ListUI(Enum_SearchMethod.With_Criteria_Section, oUIFields_Criteria, oUIFields_Result, oSearch_AdvancedProp);
                     #endregion
                     #endregion

@@ -165,6 +165,15 @@ public Int32? TRIP_ID {get;set;}
 #endregion
 }
 #endregion
+#region Params_Get_Uploaded_file_By_UPLOADED_FILE_ID
+public partial class Params_Get_Uploaded_file_By_UPLOADED_FILE_ID
+{
+#region Properties
+public long? UPLOADED_FILE_ID {get;set;}
+
+#endregion
+}
+#endregion
 #region Params_Get_User_By_USER_ID
 public partial class Params_Get_User_By_USER_ID
 {
@@ -316,6 +325,15 @@ public List<Int32?> TRIP_ID_LIST {get;set;}
 public partial class Params_Get_Trip_By_TRIP_ID_List_SP
 {
 public string TRIP_ID_LIST {get;set;}
+
+}
+public partial class Params_Get_Uploaded_file_By_UPLOADED_FILE_ID_List
+{
+public List<long?> UPLOADED_FILE_ID_LIST {get;set;}
+}
+public partial class Params_Get_Uploaded_file_By_UPLOADED_FILE_ID_List_SP
+{
+public string UPLOADED_FILE_ID_LIST {get;set;}
 
 }
 public partial class Params_Get_User_By_USER_ID_List
@@ -496,6 +514,29 @@ public Int32? TRIP_ID {get;set;}
 public partial class Params_Get_Trip_By_OWNER_ID
 {
 public Int32? OWNER_ID {get;set;}
+
+}
+public partial class Params_Get_Uploaded_file_By_OWNER_ID
+{
+public Int32? OWNER_ID {get;set;}
+
+}
+public partial class Params_Get_Uploaded_file_By_REL_ENTITY
+{
+public string REL_ENTITY {get;set;}
+
+}
+public partial class Params_Get_Uploaded_file_By_REL_ENTITY_REL_KEY
+{
+public string REL_ENTITY {get;set;}
+public long? REL_KEY {get;set;}
+
+}
+public partial class Params_Get_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD
+{
+public string REL_ENTITY {get;set;}
+public long? REL_KEY {get;set;}
+public string REL_FIELD {get;set;}
 
 }
 public partial class Params_Get_User_By_OWNER_ID
@@ -1006,6 +1047,30 @@ public string PRICE {get;set;}
 public string DISCOUNT_PRICE {get;set;}
 public string VIDEO_URL {get;set;}
 public string OFFER_HIGHLIGHT_TEXT {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
+public partial class Params_Get_Uploaded_file_By_Criteria
+{
+
+public Int32? OWNER_ID {get;set;}
+public string REL_ENTITY {get;set;}
+public string REL_FIELD {get;set;}
+public string EXTENSION {get;set;}
+public string STAMP {get;set;}
+public long? START_ROW {get;set;}
+public long? END_ROW {get;set;}
+public long? TOTAL_COUNT {get;set;}
+}
+public partial class Params_Get_Uploaded_file_By_Where
+{
+
+public Int32? OWNER_ID {get;set;}
+public string REL_ENTITY {get;set;}
+public string REL_FIELD {get;set;}
+public string EXTENSION {get;set;}
+public string STAMP {get;set;}
 public long? START_ROW {get;set;}
 public long? END_ROW {get;set;}
 public long? TOTAL_COUNT {get;set;}
@@ -1602,6 +1667,14 @@ public Int32? TRIP_ID {get;set;}
 #endregion
 }
 #endregion
+#region Params_Delete_Uploaded_file
+public partial class Params_Delete_Uploaded_file
+{
+#region Properties
+public long? UPLOADED_FILE_ID {get;set;}
+#endregion
+}
+#endregion
 #region Params_Delete_User
 public partial class Params_Delete_User
 {
@@ -1747,6 +1820,25 @@ public Int32? TRIP_ID {get;set;}
 public partial class Params_Delete_Trip_By_OWNER_ID
 {
 public Int32? OWNER_ID {get;set;}
+}
+public partial class Params_Delete_Uploaded_file_By_OWNER_ID
+{
+public Int32? OWNER_ID {get;set;}
+}
+public partial class Params_Delete_Uploaded_file_By_REL_ENTITY
+{
+public string REL_ENTITY {get;set;}
+}
+public partial class Params_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY
+{
+public string REL_ENTITY {get;set;}
+public long? REL_KEY {get;set;}
+}
+public partial class Params_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD
+{
+public string REL_ENTITY {get;set;}
+public long? REL_KEY {get;set;}
+public string REL_FIELD {get;set;}
 }
 public partial class Params_Delete_User_By_OWNER_ID
 {
@@ -1941,6 +2033,19 @@ public long? ENTRY_USER_ID {get;set;}
 public string ENTRY_DATE {get;set;}
 public Int32? OWNER_ID {get;set;}
 }
+public partial class Uploaded_file
+{
+public long? UPLOADED_FILE_ID {get;set;}
+public string REL_ENTITY {get;set;}
+public long? REL_KEY {get;set;}
+public string REL_FIELD {get;set;}
+public Int32? SIZE {get;set;}
+public string EXTENSION {get;set;}
+public string STAMP {get;set;}
+public long? ENTRY_USER_ID {get;set;}
+public string ENTRY_DATE {get;set;}
+public Int32? OWNER_ID {get;set;}
+}
 public partial class User
 {
 public long? USER_ID {get;set;}
@@ -2092,6 +2197,15 @@ public partial class Params_Edit_Trip_List
 #region Properties
 public List<Trip> My_List_To_Edit { get; set; }
 public List<Trip> My_List_To_Delete { get; set; }
+#endregion
+}
+#endregion
+#region Params_Edit_Uploaded_file_List
+public partial class Params_Edit_Uploaded_file_List
+{
+#region Properties
+public List<Uploaded_file> My_List_To_Edit { get; set; }
+public List<Uploaded_file> My_List_To_Delete { get; set; }
 #endregion
 }
 #endregion

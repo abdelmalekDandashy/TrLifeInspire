@@ -212,6 +212,38 @@ namespace BLC
         public string My_URL { get; set; }
     }
     #endregion
+    #region Trip
+    public partial class Trip
+    {
+        public List<Uploaded_file> My_Uploaded_files { get; set; }
+    }
+    #endregion
+    #region Features
+    public partial class Features
+    {
+        public List<Uploaded_file> My_Uploaded_files { get; set; }
+    }
+    #endregion
+    #region Includes
+    public partial class Includes
+    {
+        public List<Uploaded_file> My_Uploaded_files { get; set; }
+    }
+    #endregion
+    
+    #region social media links
+    public partial class Social_media_links
+    {
+        public List<Uploaded_file> My_Uploaded_files { get; set; }
+    }
+    #endregion
+    
+    #region staff
+    public partial class Staff
+    {
+        public List<Uploaded_file> My_Uploaded_files { get; set; }
+    }
+    #endregion
     #endregion
 }
 

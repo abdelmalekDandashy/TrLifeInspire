@@ -90,6 +90,8 @@ namespace BLC
             // ---------------------
             LoadMessages();
             SubscribeToEvents();
+            Register_Uploaded_Events_Handlers();
+
             //Initialize_Audit_Mechanism();
             // ---------------------
                       

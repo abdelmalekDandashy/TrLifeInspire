@@ -200,6 +200,18 @@ oTools.CopyPropValues_FromDataRecord(R, o);
 }
 return o;
 }
+public Uploaded_file Get_Uploaded_file_By_UPLOADED_FILE_ID ( long? UPLOADED_FILE_ID)
+{
+Uploaded_file o = new Uploaded_file();
+dynamic p = new ExpandoObject();
+p.UPLOADED_FILE_ID = UPLOADED_FILE_ID;
+IEnumerable<IDataRecord> Q = ExecuteSelectQuery("UPG_GET_UPLOADED_FILE_BY_UPLOADED_FILE_ID", p);
+var R = Q.FirstOrDefault();
+if (R != null){
+oTools.CopyPropValues_FromDataRecord(R, o);
+}
+return o;
+}
 public User Get_User_By_USER_ID ( long? USER_ID)
 {
 User o = new User();
@@ -646,6 +658,20 @@ p.TRIP_ID_LIST = string.Join(",", TRIP_ID_LIST.ToArray());
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_TRIP_BY_TRIP_ID_LIST", p);
 if (R != null) {foreach (var X in R) {
 Trip o = new Trip();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<Uploaded_file> Get_Uploaded_file_By_UPLOADED_FILE_ID_List ( List<long?> UPLOADED_FILE_ID_LIST)
+{
+List<Uploaded_file> oList = new List<Uploaded_file>();
+dynamic p = new ExpandoObject();
+p.UPLOADED_FILE_ID_LIST = string.Join(",", UPLOADED_FILE_ID_LIST.ToArray());
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_UPLOADED_FILE_BY_UPLOADED_FILE_ID_LIST", p);
+if (R != null) {foreach (var X in R) {
+Uploaded_file o = new Uploaded_file();
 oTools.CopyPropValues_FromDataRecord(X, o);
 oList.Add(o);
 }
@@ -1370,6 +1396,62 @@ p.OWNER_ID = OWNER_ID;
 IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_TRIP_BY_OWNER_ID", p);
 if (R != null) {foreach (var X in R) {
 Trip o = new Trip();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<Uploaded_file> Get_Uploaded_file_By_OWNER_ID ( Int32? OWNER_ID)
+{
+List<Uploaded_file> oList = new List<Uploaded_file>();
+dynamic p = new ExpandoObject();
+p.OWNER_ID = OWNER_ID;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_UPLOADED_FILE_BY_OWNER_ID", p);
+if (R != null) {foreach (var X in R) {
+Uploaded_file o = new Uploaded_file();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<Uploaded_file> Get_Uploaded_file_By_REL_ENTITY ( string REL_ENTITY)
+{
+List<Uploaded_file> oList = new List<Uploaded_file>();
+dynamic p = new ExpandoObject();
+p.REL_ENTITY = REL_ENTITY;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_UPLOADED_FILE_BY_REL_ENTITY", p);
+if (R != null) {foreach (var X in R) {
+Uploaded_file o = new Uploaded_file();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<Uploaded_file> Get_Uploaded_file_By_REL_ENTITY_REL_KEY ( string REL_ENTITY, long? REL_KEY)
+{
+List<Uploaded_file> oList = new List<Uploaded_file>();
+dynamic p = new ExpandoObject();
+p.REL_ENTITY = REL_ENTITY; p.REL_KEY = REL_KEY;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_UPLOADED_FILE_BY_REL_ENTITY_REL_KEY", p);
+if (R != null) {foreach (var X in R) {
+Uploaded_file o = new Uploaded_file();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<Uploaded_file> Get_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD ( string REL_ENTITY, long? REL_KEY, string REL_FIELD)
+{
+List<Uploaded_file> oList = new List<Uploaded_file>();
+dynamic p = new ExpandoObject();
+p.REL_ENTITY = REL_ENTITY; p.REL_KEY = REL_KEY; p.REL_FIELD = REL_FIELD;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_UPLOADED_FILE_BY_REL_ENTITY_REL_KEY_REL_FIELD", p);
+if (R != null) {foreach (var X in R) {
+Uploaded_file o = new Uploaded_file();
 oTools.CopyPropValues_FromDataRecord(X, o);
 oList.Add(o);
 }
@@ -2970,6 +3052,36 @@ oList.Add(o);
 TOTAL_COUNT = p.TOTAL_COUNT;
 return oList;
 }
+public List<Uploaded_file> Get_Uploaded_file_By_Criteria ( string REL_ENTITY, string REL_FIELD, string EXTENSION, string STAMP, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Uploaded_file> oList = new List<Uploaded_file>();
+dynamic p = new ExpandoObject();
+p.REL_ENTITY = REL_ENTITY; p.REL_FIELD = REL_FIELD; p.EXTENSION = EXTENSION; p.STAMP = STAMP; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_UPLOADED_FILE_BY_CRITERIA", p);
+if (R != null) {foreach (var X in R) {
+Uploaded_file o = new Uploaded_file();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
+public List<Uploaded_file> Get_Uploaded_file_By_Where ( string REL_ENTITY, string REL_FIELD, string EXTENSION, string STAMP, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
+{
+List<Uploaded_file> oList = new List<Uploaded_file>();
+dynamic p = new ExpandoObject();
+p.REL_ENTITY = REL_ENTITY; p.REL_FIELD = REL_FIELD; p.EXTENSION = EXTENSION; p.STAMP = STAMP; p.OWNER_ID = OWNER_ID; p.START_ROW = START_ROW; p.END_ROW = END_ROW; p.TOTAL_COUNT = TOTAL_COUNT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UPG_GET_UPLOADED_FILE_BY_WHERE", p);
+if (R != null) {foreach (var X in R) {
+Uploaded_file o = new Uploaded_file();
+oTools.CopyPropValues_FromDataRecord(X, o);
+oList.Add(o);
+}
+}
+TOTAL_COUNT = p.TOTAL_COUNT;
+return oList;
+}
 public List<User> Get_User_By_Criteria ( string USERNAME, string PASSWORD, string USER_TYPE_CODE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT)
 {
 List<User> oList = new List<User>();
@@ -4256,6 +4368,11 @@ public void Delete_Trip ( Int32? TRIP_ID)
 var p = new { TRIP_ID = TRIP_ID };
 ExecuteDelete("UPG_DELETE_TRIP", p);
 }
+public void Delete_Uploaded_file ( long? UPLOADED_FILE_ID)
+{
+var p = new { UPLOADED_FILE_ID = UPLOADED_FILE_ID };
+ExecuteDelete("UPG_DELETE_UPLOADED_FILE", p);
+}
 public void Delete_User ( long? USER_ID)
 {
 var p = new { USER_ID = USER_ID };
@@ -4426,6 +4543,26 @@ public void Delete_Trip_By_OWNER_ID ( Int32? OWNER_ID)
 var p = new { OWNER_ID = OWNER_ID };
 ExecuteDelete("UPG_DELETE_TRIP_BY_OWNER_ID", p);
 }
+public void Delete_Uploaded_file_By_OWNER_ID ( Int32? OWNER_ID)
+{
+var p = new { OWNER_ID = OWNER_ID };
+ExecuteDelete("UPG_DELETE_UPLOADED_FILE_BY_OWNER_ID", p);
+}
+public void Delete_Uploaded_file_By_REL_ENTITY ( string REL_ENTITY)
+{
+var p = new { REL_ENTITY = REL_ENTITY };
+ExecuteDelete("UPG_DELETE_UPLOADED_FILE_BY_REL_ENTITY", p);
+}
+public void Delete_Uploaded_file_By_REL_ENTITY_REL_KEY ( string REL_ENTITY, long? REL_KEY)
+{
+var p = new { REL_ENTITY = REL_ENTITY,REL_KEY = REL_KEY };
+ExecuteDelete("UPG_DELETE_UPLOADED_FILE_BY_REL_ENTITY_REL_KEY", p);
+}
+public void Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD ( string REL_ENTITY, long? REL_KEY, string REL_FIELD)
+{
+var p = new { REL_ENTITY = REL_ENTITY,REL_KEY = REL_KEY,REL_FIELD = REL_FIELD };
+ExecuteDelete("UPG_DELETE_UPLOADED_FILE_BY_REL_ENTITY_REL_KEY_REL_FIELD", p);
+}
 public void Delete_User_By_OWNER_ID ( Int32? OWNER_ID)
 {
 var p = new { OWNER_ID = OWNER_ID };
@@ -4547,6 +4684,13 @@ Trip oTrip = new Trip();
 oTrip.TRIP_ID = TRIP_ID;oTrip.TITLE = TITLE;oTrip.SUB_TITLE = SUB_TITLE;oTrip.DETAILS = DETAILS;oTrip.CITY = CITY;oTrip.PRICE = PRICE;oTrip.DISCOUNT_PRICE = DISCOUNT_PRICE;oTrip.VIDEO_URL = VIDEO_URL;oTrip.IS_AVAILABLE_OR_COMING_SOON = IS_AVAILABLE_OR_COMING_SOON;oTrip.OFFER_HIGHLIGHT_TEXT = OFFER_HIGHLIGHT_TEXT;oTrip.ENTRY_USER_ID = ENTRY_USER_ID;oTrip.ENTRY_DATE = ENTRY_DATE;oTrip.OWNER_ID = OWNER_ID;
 ExecuteEdit("UPG_EDIT_TRIP", oTrip, "TRIP_ID");
 return oTrip.TRIP_ID;
+}
+public long? Edit_Uploaded_file ( long? UPLOADED_FILE_ID, string REL_ENTITY, long? REL_KEY, string REL_FIELD, Int32? SIZE, string EXTENSION, string STAMP, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID)
+{
+Uploaded_file oUploaded_file = new Uploaded_file();
+oUploaded_file.UPLOADED_FILE_ID = UPLOADED_FILE_ID;oUploaded_file.REL_ENTITY = REL_ENTITY;oUploaded_file.REL_KEY = REL_KEY;oUploaded_file.REL_FIELD = REL_FIELD;oUploaded_file.SIZE = SIZE;oUploaded_file.EXTENSION = EXTENSION;oUploaded_file.STAMP = STAMP;oUploaded_file.ENTRY_USER_ID = ENTRY_USER_ID;oUploaded_file.ENTRY_DATE = ENTRY_DATE;oUploaded_file.OWNER_ID = OWNER_ID;
+ExecuteEdit("UPG_EDIT_UPLOADED_FILE", oUploaded_file, "UPLOADED_FILE_ID");
+return oUploaded_file.UPLOADED_FILE_ID;
 }
 public long? Edit_User ( long? USER_ID, Int32? OWNER_ID, string USERNAME, string PASSWORD, string USER_TYPE_CODE, bool? IS_ACTIVE, string ENTRY_DATE)
 {
@@ -4815,6 +4959,20 @@ IEnumerable<IDataRecord> R = ExecuteSelectQuery("UP_BULK_UPSERT_TRIP", p);
 if (R != null) {foreach (var X in R) {
 dynamic o = new ExpandoObject();
 o.TRIP_ID = GV<Int32>(X["TRIP_ID"]);o.TITLE = GV<String>(X["TITLE"]);o.SUB_TITLE = GV<String>(X["SUB_TITLE"]);o.DETAILS = GV<String>(X["DETAILS"]);o.CITY = GV<String>(X["CITY"]);o.PRICE = GV<String>(X["PRICE"]);o.DISCOUNT_PRICE = GV<String>(X["DISCOUNT_PRICE"]);o.VIDEO_URL = GV<String>(X["VIDEO_URL"]);o.IS_AVAILABLE_OR_COMING_SOON = GV<Boolean>(X["IS_AVAILABLE_OR_COMING_SOON"]);o.OFFER_HIGHLIGHT_TEXT = GV<String>(X["OFFER_HIGHLIGHT_TEXT"]);o.ENTRY_USER_ID = GV<Int64>(X["ENTRY_USER_ID"]);o.ENTRY_DATE = GV<String>(X["ENTRY_DATE"]);o.OWNER_ID = GV<Int32>(X["OWNER_ID"]);
+oList.Add(o);
+}
+}
+return oList;
+}
+public List<dynamic> UP_BULK_UPSERT_UPLOADED_FILE ( string JSON_CONTENT)
+{
+List<dynamic> oList = new List<dynamic>();
+dynamic p = new ExpandoObject();
+p.JSON_CONTENT = JSON_CONTENT;
+IEnumerable<IDataRecord> R = ExecuteSelectQuery("UP_BULK_UPSERT_UPLOADED_FILE", p);
+if (R != null) {foreach (var X in R) {
+dynamic o = new ExpandoObject();
+o.UPLOADED_FILE_ID = GV<Int64>(X["UPLOADED_FILE_ID"]);o.REL_ENTITY = GV<String>(X["REL_ENTITY"]);o.REL_KEY = GV<Int64>(X["REL_KEY"]);o.REL_FIELD = GV<String>(X["REL_FIELD"]);o.SIZE = GV<Int32>(X["SIZE"]);o.EXTENSION = GV<String>(X["EXTENSION"]);o.STAMP = GV<String>(X["STAMP"]);o.ENTRY_USER_ID = GV<Int64>(X["ENTRY_USER_ID"]);o.ENTRY_DATE = GV<String>(X["ENTRY_DATE"]);o.OWNER_ID = GV<Int32>(X["OWNER_ID"]);
 oList.Add(o);
 }
 }

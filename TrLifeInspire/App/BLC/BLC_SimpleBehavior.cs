@@ -41,6 +41,7 @@ private Social_media_links _Social_media_links;
 private Staff _Staff;
 private Tags _Tags;
 private Trip _Trip;
+private Uploaded_file _Uploaded_file;
 private User _User;
 #endregion
 #region Stop Executing Flags For Edit and Delete Operations
@@ -76,6 +77,8 @@ private bool _Stop_Edit_Tags_Execution;
 private bool _Stop_Delete_Tags_Execution;
 private bool _Stop_Edit_Trip_Execution;
 private bool _Stop_Delete_Trip_Execution;
+private bool _Stop_Edit_Uploaded_file_Execution;
+private bool _Stop_Delete_Uploaded_file_Execution;
 private bool _Stop_Edit_User_Execution;
 private bool _Stop_Delete_User_Execution;
 #endregion
@@ -271,6 +274,18 @@ oTools.CopyPropValues(oDBEntry, oTrip);
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Trip_By_TRIP_ID");}
 return oTrip;
+}
+public Uploaded_file Get_Uploaded_file_By_UPLOADED_FILE_ID(Params_Get_Uploaded_file_By_UPLOADED_FILE_ID i_Params_Get_Uploaded_file_By_UPLOADED_FILE_ID)
+{
+Uploaded_file oUploaded_file = null;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Uploaded_file_By_UPLOADED_FILE_ID");}
+#region Body Section.
+DALC.Uploaded_file oDBEntry = _AppContext.Get_Uploaded_file_By_UPLOADED_FILE_ID(i_Params_Get_Uploaded_file_By_UPLOADED_FILE_ID.UPLOADED_FILE_ID);
+oUploaded_file = new Uploaded_file();
+oTools.CopyPropValues(oDBEntry, oUploaded_file);
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Uploaded_file_By_UPLOADED_FILE_ID");}
+return oUploaded_file;
 }
 public User Get_User_By_USER_ID(Params_Get_User_By_USER_ID i_Params_Get_User_By_USER_ID)
 {
@@ -618,6 +633,27 @@ oList.Add(oTrip);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Trip_By_TRIP_ID_List");}
+return oList;
+}
+public List<Uploaded_file> Get_Uploaded_file_By_UPLOADED_FILE_ID_List(Params_Get_Uploaded_file_By_UPLOADED_FILE_ID_List i_Params_Get_Uploaded_file_By_UPLOADED_FILE_ID_List)
+{
+Uploaded_file oUploaded_file = null;
+List<Uploaded_file> oList = new List<Uploaded_file>();
+Params_Get_Uploaded_file_By_UPLOADED_FILE_ID_List_SP oParams_Get_Uploaded_file_By_UPLOADED_FILE_ID_List_SP = new Params_Get_Uploaded_file_By_UPLOADED_FILE_ID_List_SP();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Uploaded_file_By_UPLOADED_FILE_ID_List");}
+#region Body Section.
+List<DALC.Uploaded_file> oList_DBEntries = _AppContext.Get_Uploaded_file_By_UPLOADED_FILE_ID_List(i_Params_Get_Uploaded_file_By_UPLOADED_FILE_ID_List.UPLOADED_FILE_ID_LIST);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oUploaded_file = new Uploaded_file();
+oTools.CopyPropValues(oDBEntry, oUploaded_file);
+oList.Add(oUploaded_file);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Uploaded_file_By_UPLOADED_FILE_ID_List");}
 return oList;
 }
 public List<User> Get_User_By_USER_ID_List(Params_Get_User_By_USER_ID_List i_Params_Get_User_By_USER_ID_List)
@@ -1299,6 +1335,86 @@ oList.Add(oTrip);
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Trip_By_OWNER_ID");}
+return oList;
+}
+public List<Uploaded_file> Get_Uploaded_file_By_OWNER_ID(Params_Get_Uploaded_file_By_OWNER_ID i_Params_Get_Uploaded_file_By_OWNER_ID)
+{
+List<Uploaded_file> oList = new List<Uploaded_file>();
+Uploaded_file oUploaded_file = new Uploaded_file();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Uploaded_file_By_OWNER_ID");}
+#region Body Section.
+List<DALC.Uploaded_file> oList_DBEntries = _AppContext.Get_Uploaded_file_By_OWNER_ID(i_Params_Get_Uploaded_file_By_OWNER_ID.OWNER_ID);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oUploaded_file = new Uploaded_file();
+oTools.CopyPropValues(oDBEntry, oUploaded_file);
+oList.Add(oUploaded_file);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Uploaded_file_By_OWNER_ID");}
+return oList;
+}
+public List<Uploaded_file> Get_Uploaded_file_By_REL_ENTITY(Params_Get_Uploaded_file_By_REL_ENTITY i_Params_Get_Uploaded_file_By_REL_ENTITY)
+{
+List<Uploaded_file> oList = new List<Uploaded_file>();
+Uploaded_file oUploaded_file = new Uploaded_file();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Uploaded_file_By_REL_ENTITY");}
+#region Body Section.
+List<DALC.Uploaded_file> oList_DBEntries = _AppContext.Get_Uploaded_file_By_REL_ENTITY(i_Params_Get_Uploaded_file_By_REL_ENTITY.REL_ENTITY);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oUploaded_file = new Uploaded_file();
+oTools.CopyPropValues(oDBEntry, oUploaded_file);
+oList.Add(oUploaded_file);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Uploaded_file_By_REL_ENTITY");}
+return oList;
+}
+public List<Uploaded_file> Get_Uploaded_file_By_REL_ENTITY_REL_KEY(Params_Get_Uploaded_file_By_REL_ENTITY_REL_KEY i_Params_Get_Uploaded_file_By_REL_ENTITY_REL_KEY)
+{
+List<Uploaded_file> oList = new List<Uploaded_file>();
+Uploaded_file oUploaded_file = new Uploaded_file();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Uploaded_file_By_REL_ENTITY_REL_KEY");}
+#region Body Section.
+List<DALC.Uploaded_file> oList_DBEntries = _AppContext.Get_Uploaded_file_By_REL_ENTITY_REL_KEY(i_Params_Get_Uploaded_file_By_REL_ENTITY_REL_KEY.REL_ENTITY,i_Params_Get_Uploaded_file_By_REL_ENTITY_REL_KEY.REL_KEY);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oUploaded_file = new Uploaded_file();
+oTools.CopyPropValues(oDBEntry, oUploaded_file);
+oList.Add(oUploaded_file);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Uploaded_file_By_REL_ENTITY_REL_KEY");}
+return oList;
+}
+public List<Uploaded_file> Get_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD(Params_Get_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD i_Params_Get_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD)
+{
+List<Uploaded_file> oList = new List<Uploaded_file>();
+Uploaded_file oUploaded_file = new Uploaded_file();
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD");}
+#region Body Section.
+List<DALC.Uploaded_file> oList_DBEntries = _AppContext.Get_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD(i_Params_Get_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD.REL_ENTITY,i_Params_Get_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD.REL_KEY,i_Params_Get_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD.REL_FIELD);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oUploaded_file = new Uploaded_file();
+oTools.CopyPropValues(oDBEntry, oUploaded_file);
+oList.Add(oUploaded_file);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD");}
 return oList;
 }
 public List<User> Get_User_By_OWNER_ID(Params_Get_User_By_OWNER_ID i_Params_Get_User_By_OWNER_ID)
@@ -2512,6 +2628,12 @@ List<Trip> oList = new List<Trip>();
 Trip oTrip = new Trip();
 long? tmp_TOTAL_COUNT = 0;
 if (OnPreEvent_General != null){OnPreEvent_General("Get_Trip_By_Where");}
+#region PreEvent_Get_Trip_By_Where
+if (OnPreEvent_Get_Trip_By_Where != null)
+{
+OnPreEvent_Get_Trip_By_Where(i_Params_Get_Trip_By_Where);
+}
+#endregion
 #region Body Section.
 if ((i_Params_Get_Trip_By_Where.OWNER_ID == null) || (i_Params_Get_Trip_By_Where.OWNER_ID == 0)) { i_Params_Get_Trip_By_Where.OWNER_ID = this.OwnerID; }
 if (i_Params_Get_Trip_By_Where.START_ROW == null) { i_Params_Get_Trip_By_Where.START_ROW = 0; }
@@ -2528,7 +2650,63 @@ oList.Add(oTrip);
 }
 i_Params_Get_Trip_By_Where.TOTAL_COUNT = tmp_TOTAL_COUNT;
 #endregion
+#region PostEvent_Get_Trip_By_Where
+if (OnPostEvent_Get_Trip_By_Where != null)
+{
+OnPostEvent_Get_Trip_By_Where(ref oList,i_Params_Get_Trip_By_Where);
+}
+#endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Get_Trip_By_Where");}
+return oList;
+}
+public List<Uploaded_file> Get_Uploaded_file_By_Criteria(Params_Get_Uploaded_file_By_Criteria i_Params_Get_Uploaded_file_By_Criteria)
+{
+List<Uploaded_file> oList = new List<Uploaded_file>();
+Uploaded_file oUploaded_file = new Uploaded_file();
+long? tmp_TOTAL_COUNT = 0;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Uploaded_file_By_Criteria");}
+#region Body Section.
+if ((i_Params_Get_Uploaded_file_By_Criteria.OWNER_ID == null) || (i_Params_Get_Uploaded_file_By_Criteria.OWNER_ID == 0)) { i_Params_Get_Uploaded_file_By_Criteria.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Uploaded_file_By_Criteria.START_ROW == null) { i_Params_Get_Uploaded_file_By_Criteria.START_ROW = 0; }
+if ((i_Params_Get_Uploaded_file_By_Criteria.END_ROW == null) || (i_Params_Get_Uploaded_file_By_Criteria.END_ROW == 0)) { i_Params_Get_Uploaded_file_By_Criteria.END_ROW = 1000000; }
+List<DALC.Uploaded_file> oList_DBEntries = _AppContext.Get_Uploaded_file_By_Criteria(i_Params_Get_Uploaded_file_By_Criteria.REL_ENTITY,i_Params_Get_Uploaded_file_By_Criteria.REL_FIELD,i_Params_Get_Uploaded_file_By_Criteria.EXTENSION,i_Params_Get_Uploaded_file_By_Criteria.STAMP,i_Params_Get_Uploaded_file_By_Criteria.OWNER_ID,i_Params_Get_Uploaded_file_By_Criteria.START_ROW,i_Params_Get_Uploaded_file_By_Criteria.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oUploaded_file = new Uploaded_file();
+oTools.CopyPropValues(oDBEntry, oUploaded_file);
+oList.Add(oUploaded_file);
+}
+}
+i_Params_Get_Uploaded_file_By_Criteria.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Uploaded_file_By_Criteria");}
+return oList;
+}
+public List<Uploaded_file> Get_Uploaded_file_By_Where(Params_Get_Uploaded_file_By_Where i_Params_Get_Uploaded_file_By_Where)
+{
+List<Uploaded_file> oList = new List<Uploaded_file>();
+Uploaded_file oUploaded_file = new Uploaded_file();
+long? tmp_TOTAL_COUNT = 0;
+if (OnPreEvent_General != null){OnPreEvent_General("Get_Uploaded_file_By_Where");}
+#region Body Section.
+if ((i_Params_Get_Uploaded_file_By_Where.OWNER_ID == null) || (i_Params_Get_Uploaded_file_By_Where.OWNER_ID == 0)) { i_Params_Get_Uploaded_file_By_Where.OWNER_ID = this.OwnerID; }
+if (i_Params_Get_Uploaded_file_By_Where.START_ROW == null) { i_Params_Get_Uploaded_file_By_Where.START_ROW = 0; }
+if ((i_Params_Get_Uploaded_file_By_Where.END_ROW == null) || (i_Params_Get_Uploaded_file_By_Where.END_ROW == 0)) { i_Params_Get_Uploaded_file_By_Where.END_ROW = 1000000; }
+List<DALC.Uploaded_file> oList_DBEntries = _AppContext.Get_Uploaded_file_By_Where(i_Params_Get_Uploaded_file_By_Where.REL_ENTITY,i_Params_Get_Uploaded_file_By_Where.REL_FIELD,i_Params_Get_Uploaded_file_By_Where.EXTENSION,i_Params_Get_Uploaded_file_By_Where.STAMP,i_Params_Get_Uploaded_file_By_Where.OWNER_ID,i_Params_Get_Uploaded_file_By_Where.START_ROW,i_Params_Get_Uploaded_file_By_Where.END_ROW,ref tmp_TOTAL_COUNT);
+if (oList_DBEntries != null)
+{
+foreach (var oDBEntry in oList_DBEntries)
+{
+oUploaded_file = new Uploaded_file();
+oTools.CopyPropValues(oDBEntry, oUploaded_file);
+oList.Add(oUploaded_file);
+}
+}
+i_Params_Get_Uploaded_file_By_Where.TOTAL_COUNT = tmp_TOTAL_COUNT;
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Get_Uploaded_file_By_Where");}
 return oList;
 }
 public List<User> Get_User_By_Criteria(Params_Get_User_By_Criteria i_Params_Get_User_By_Criteria)
@@ -3363,9 +3541,14 @@ return oList;
 }
 public void Delete_Address(Params_Delete_Address i_Params_Delete_Address)
 {
+Params_Get_Address_By_ADDRESS_ID oParams_Get_Address_By_ADDRESS_ID = new Params_Get_Address_By_ADDRESS_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Address");}
 #region Body Section.
 try
+{
+oParams_Get_Address_By_ADDRESS_ID.ADDRESS_ID = i_Params_Delete_Address.ADDRESS_ID;
+_Address = Get_Address_By_ADDRESS_ID_Adv(oParams_Get_Address_By_ADDRESS_ID);
+if (_Address != null)
 {
 using (TransactionScope oScope = new TransactionScope())
 {
@@ -3376,6 +3559,7 @@ return;
 }
 _AppContext.Delete_Address(i_Params_Delete_Address.ADDRESS_ID);
 oScope.Complete();
+}
 }
 }
 catch (BLCException blcex)
@@ -3398,9 +3582,14 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Address");}
 }
 public void Delete_Contact(Params_Delete_Contact i_Params_Delete_Contact)
 {
+Params_Get_Contact_By_CONTACT_ID oParams_Get_Contact_By_CONTACT_ID = new Params_Get_Contact_By_CONTACT_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Contact");}
 #region Body Section.
 try
+{
+oParams_Get_Contact_By_CONTACT_ID.CONTACT_ID = i_Params_Delete_Contact.CONTACT_ID;
+_Contact = Get_Contact_By_CONTACT_ID_Adv(oParams_Get_Contact_By_CONTACT_ID);
+if (_Contact != null)
 {
 using (TransactionScope oScope = new TransactionScope())
 {
@@ -3411,6 +3600,7 @@ return;
 }
 _AppContext.Delete_Contact(i_Params_Delete_Contact.CONTACT_ID);
 oScope.Complete();
+}
 }
 }
 catch (BLCException blcex)
@@ -3433,9 +3623,14 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Contact");}
 }
 public void Delete_Features(Params_Delete_Features i_Params_Delete_Features)
 {
+Params_Get_Features_By_FEATURES_ID oParams_Get_Features_By_FEATURES_ID = new Params_Get_Features_By_FEATURES_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Features");}
 #region Body Section.
 try
+{
+oParams_Get_Features_By_FEATURES_ID.FEATURES_ID = i_Params_Delete_Features.FEATURES_ID;
+_Features = Get_Features_By_FEATURES_ID_Adv(oParams_Get_Features_By_FEATURES_ID);
+if (_Features != null)
 {
 using (TransactionScope oScope = new TransactionScope())
 {
@@ -3446,6 +3641,7 @@ return;
 }
 _AppContext.Delete_Features(i_Params_Delete_Features.FEATURES_ID);
 oScope.Complete();
+}
 }
 }
 catch (BLCException blcex)
@@ -3468,9 +3664,14 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Features");}
 }
 public void Delete_Includes(Params_Delete_Includes i_Params_Delete_Includes)
 {
+Params_Get_Includes_By_INCLUDES_ID oParams_Get_Includes_By_INCLUDES_ID = new Params_Get_Includes_By_INCLUDES_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Includes");}
 #region Body Section.
 try
+{
+oParams_Get_Includes_By_INCLUDES_ID.INCLUDES_ID = i_Params_Delete_Includes.INCLUDES_ID;
+_Includes = Get_Includes_By_INCLUDES_ID_Adv(oParams_Get_Includes_By_INCLUDES_ID);
+if (_Includes != null)
 {
 using (TransactionScope oScope = new TransactionScope())
 {
@@ -3481,6 +3682,7 @@ return;
 }
 _AppContext.Delete_Includes(i_Params_Delete_Includes.INCLUDES_ID);
 oScope.Complete();
+}
 }
 }
 catch (BLCException blcex)
@@ -3503,9 +3705,14 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Includes");}
 }
 public void Delete_Loc_l1(Params_Delete_Loc_l1 i_Params_Delete_Loc_l1)
 {
+Params_Get_Loc_l1_By_LOC_L1_ID oParams_Get_Loc_l1_By_LOC_L1_ID = new Params_Get_Loc_l1_By_LOC_L1_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Loc_l1");}
 #region Body Section.
 try
+{
+oParams_Get_Loc_l1_By_LOC_L1_ID.LOC_L1_ID = i_Params_Delete_Loc_l1.LOC_L1_ID;
+_Loc_l1 = Get_Loc_l1_By_LOC_L1_ID_Adv(oParams_Get_Loc_l1_By_LOC_L1_ID);
+if (_Loc_l1 != null)
 {
 using (TransactionScope oScope = new TransactionScope())
 {
@@ -3516,6 +3723,7 @@ return;
 }
 _AppContext.Delete_Loc_l1(i_Params_Delete_Loc_l1.LOC_L1_ID);
 oScope.Complete();
+}
 }
 }
 catch (BLCException blcex)
@@ -3538,9 +3746,14 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Loc_l1");}
 }
 public void Delete_Loc_l2(Params_Delete_Loc_l2 i_Params_Delete_Loc_l2)
 {
+Params_Get_Loc_l2_By_LOC_L2_ID oParams_Get_Loc_l2_By_LOC_L2_ID = new Params_Get_Loc_l2_By_LOC_L2_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Loc_l2");}
 #region Body Section.
 try
+{
+oParams_Get_Loc_l2_By_LOC_L2_ID.LOC_L2_ID = i_Params_Delete_Loc_l2.LOC_L2_ID;
+_Loc_l2 = Get_Loc_l2_By_LOC_L2_ID_Adv(oParams_Get_Loc_l2_By_LOC_L2_ID);
+if (_Loc_l2 != null)
 {
 using (TransactionScope oScope = new TransactionScope())
 {
@@ -3551,6 +3764,7 @@ return;
 }
 _AppContext.Delete_Loc_l2(i_Params_Delete_Loc_l2.LOC_L2_ID);
 oScope.Complete();
+}
 }
 }
 catch (BLCException blcex)
@@ -3573,9 +3787,14 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Loc_l2");}
 }
 public void Delete_Loc_l3(Params_Delete_Loc_l3 i_Params_Delete_Loc_l3)
 {
+Params_Get_Loc_l3_By_LOC_L3_ID oParams_Get_Loc_l3_By_LOC_L3_ID = new Params_Get_Loc_l3_By_LOC_L3_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Loc_l3");}
 #region Body Section.
 try
+{
+oParams_Get_Loc_l3_By_LOC_L3_ID.LOC_L3_ID = i_Params_Delete_Loc_l3.LOC_L3_ID;
+_Loc_l3 = Get_Loc_l3_By_LOC_L3_ID_Adv(oParams_Get_Loc_l3_By_LOC_L3_ID);
+if (_Loc_l3 != null)
 {
 using (TransactionScope oScope = new TransactionScope())
 {
@@ -3586,6 +3805,7 @@ return;
 }
 _AppContext.Delete_Loc_l3(i_Params_Delete_Loc_l3.LOC_L3_ID);
 oScope.Complete();
+}
 }
 }
 catch (BLCException blcex)
@@ -3608,9 +3828,14 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Loc_l3");}
 }
 public void Delete_Loc_l4(Params_Delete_Loc_l4 i_Params_Delete_Loc_l4)
 {
+Params_Get_Loc_l4_By_LOC_L4_ID oParams_Get_Loc_l4_By_LOC_L4_ID = new Params_Get_Loc_l4_By_LOC_L4_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Loc_l4");}
 #region Body Section.
 try
+{
+oParams_Get_Loc_l4_By_LOC_L4_ID.LOC_L4_ID = i_Params_Delete_Loc_l4.LOC_L4_ID;
+_Loc_l4 = Get_Loc_l4_By_LOC_L4_ID_Adv(oParams_Get_Loc_l4_By_LOC_L4_ID);
+if (_Loc_l4 != null)
 {
 using (TransactionScope oScope = new TransactionScope())
 {
@@ -3621,6 +3846,7 @@ return;
 }
 _AppContext.Delete_Loc_l4(i_Params_Delete_Loc_l4.LOC_L4_ID);
 oScope.Complete();
+}
 }
 }
 catch (BLCException blcex)
@@ -3678,9 +3904,14 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Owner");}
 }
 public void Delete_Person(Params_Delete_Person i_Params_Delete_Person)
 {
+Params_Get_Person_By_PERSON_ID oParams_Get_Person_By_PERSON_ID = new Params_Get_Person_By_PERSON_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Person");}
 #region Body Section.
 try
+{
+oParams_Get_Person_By_PERSON_ID.PERSON_ID = i_Params_Delete_Person.PERSON_ID;
+_Person = Get_Person_By_PERSON_ID_Adv(oParams_Get_Person_By_PERSON_ID);
+if (_Person != null)
 {
 using (TransactionScope oScope = new TransactionScope())
 {
@@ -3691,6 +3922,7 @@ return;
 }
 _AppContext.Delete_Person(i_Params_Delete_Person.PERSON_ID);
 oScope.Complete();
+}
 }
 }
 catch (BLCException blcex)
@@ -3713,9 +3945,14 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Person");}
 }
 public void Delete_Reservation_query(Params_Delete_Reservation_query i_Params_Delete_Reservation_query)
 {
+Params_Get_Reservation_query_By_RESERVATION_QUERY_ID oParams_Get_Reservation_query_By_RESERVATION_QUERY_ID = new Params_Get_Reservation_query_By_RESERVATION_QUERY_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Reservation_query");}
 #region Body Section.
 try
+{
+oParams_Get_Reservation_query_By_RESERVATION_QUERY_ID.RESERVATION_QUERY_ID = i_Params_Delete_Reservation_query.RESERVATION_QUERY_ID;
+_Reservation_query = Get_Reservation_query_By_RESERVATION_QUERY_ID_Adv(oParams_Get_Reservation_query_By_RESERVATION_QUERY_ID);
+if (_Reservation_query != null)
 {
 using (TransactionScope oScope = new TransactionScope())
 {
@@ -3726,6 +3963,7 @@ return;
 }
 _AppContext.Delete_Reservation_query(i_Params_Delete_Reservation_query.RESERVATION_QUERY_ID);
 oScope.Complete();
+}
 }
 }
 catch (BLCException blcex)
@@ -3748,9 +3986,14 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Reservation_query")
 }
 public void Delete_Review(Params_Delete_Review i_Params_Delete_Review)
 {
+Params_Get_Review_By_REVIEW_ID oParams_Get_Review_By_REVIEW_ID = new Params_Get_Review_By_REVIEW_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Review");}
 #region Body Section.
 try
+{
+oParams_Get_Review_By_REVIEW_ID.REVIEW_ID = i_Params_Delete_Review.REVIEW_ID;
+_Review = Get_Review_By_REVIEW_ID_Adv(oParams_Get_Review_By_REVIEW_ID);
+if (_Review != null)
 {
 using (TransactionScope oScope = new TransactionScope())
 {
@@ -3761,6 +4004,7 @@ return;
 }
 _AppContext.Delete_Review(i_Params_Delete_Review.REVIEW_ID);
 oScope.Complete();
+}
 }
 }
 catch (BLCException blcex)
@@ -3783,9 +4027,14 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Review");}
 }
 public void Delete_Social_media_links(Params_Delete_Social_media_links i_Params_Delete_Social_media_links)
 {
+Params_Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID oParams_Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID = new Params_Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Social_media_links");}
 #region Body Section.
 try
+{
+oParams_Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID.SOCIAL_MEDIA_LINKS_ID = i_Params_Delete_Social_media_links.SOCIAL_MEDIA_LINKS_ID;
+_Social_media_links = Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID_Adv(oParams_Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID);
+if (_Social_media_links != null)
 {
 using (TransactionScope oScope = new TransactionScope())
 {
@@ -3796,6 +4045,7 @@ return;
 }
 _AppContext.Delete_Social_media_links(i_Params_Delete_Social_media_links.SOCIAL_MEDIA_LINKS_ID);
 oScope.Complete();
+}
 }
 }
 catch (BLCException blcex)
@@ -3818,9 +4068,14 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Social_media_links"
 }
 public void Delete_Staff(Params_Delete_Staff i_Params_Delete_Staff)
 {
+Params_Get_Staff_By_STAFF_ID oParams_Get_Staff_By_STAFF_ID = new Params_Get_Staff_By_STAFF_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Staff");}
 #region Body Section.
 try
+{
+oParams_Get_Staff_By_STAFF_ID.STAFF_ID = i_Params_Delete_Staff.STAFF_ID;
+_Staff = Get_Staff_By_STAFF_ID_Adv(oParams_Get_Staff_By_STAFF_ID);
+if (_Staff != null)
 {
 using (TransactionScope oScope = new TransactionScope())
 {
@@ -3831,6 +4086,7 @@ return;
 }
 _AppContext.Delete_Staff(i_Params_Delete_Staff.STAFF_ID);
 oScope.Complete();
+}
 }
 }
 catch (BLCException blcex)
@@ -3853,9 +4109,14 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Staff");}
 }
 public void Delete_Tags(Params_Delete_Tags i_Params_Delete_Tags)
 {
+Params_Get_Tags_By_TAGS_ID oParams_Get_Tags_By_TAGS_ID = new Params_Get_Tags_By_TAGS_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Tags");}
 #region Body Section.
 try
+{
+oParams_Get_Tags_By_TAGS_ID.TAGS_ID = i_Params_Delete_Tags.TAGS_ID;
+_Tags = Get_Tags_By_TAGS_ID_Adv(oParams_Get_Tags_By_TAGS_ID);
+if (_Tags != null)
 {
 using (TransactionScope oScope = new TransactionScope())
 {
@@ -3866,6 +4127,7 @@ return;
 }
 _AppContext.Delete_Tags(i_Params_Delete_Tags.TAGS_ID);
 oScope.Complete();
+}
 }
 }
 catch (BLCException blcex)
@@ -3888,9 +4150,14 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Tags");}
 }
 public void Delete_Trip(Params_Delete_Trip i_Params_Delete_Trip)
 {
+Params_Get_Trip_By_TRIP_ID oParams_Get_Trip_By_TRIP_ID = new Params_Get_Trip_By_TRIP_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Trip");}
 #region Body Section.
 try
+{
+oParams_Get_Trip_By_TRIP_ID.TRIP_ID = i_Params_Delete_Trip.TRIP_ID;
+_Trip = Get_Trip_By_TRIP_ID_Adv(oParams_Get_Trip_By_TRIP_ID);
+if (_Trip != null)
 {
 using (TransactionScope oScope = new TransactionScope())
 {
@@ -3901,6 +4168,7 @@ return;
 }
 _AppContext.Delete_Trip(i_Params_Delete_Trip.TRIP_ID);
 oScope.Complete();
+}
 }
 }
 catch (BLCException blcex)
@@ -3921,11 +4189,51 @@ throw new Exception(ex.Message);
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Delete_Trip");}
 }
+public void Delete_Uploaded_file(Params_Delete_Uploaded_file i_Params_Delete_Uploaded_file)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Uploaded_file");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Uploaded_file_Execution)
+{
+_Stop_Delete_Uploaded_file_Execution = false;
+return;
+}
+_AppContext.Delete_Uploaded_file(i_Params_Delete_Uploaded_file.UPLOADED_FILE_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Uploaded_file");}
+}
 public void Delete_User(Params_Delete_User i_Params_Delete_User)
 {
+Params_Get_User_By_USER_ID oParams_Get_User_By_USER_ID = new Params_Get_User_By_USER_ID();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_User");}
 #region Body Section.
 try
+{
+oParams_Get_User_By_USER_ID.USER_ID = i_Params_Delete_User.USER_ID;
+_User = Get_User_By_USER_ID_Adv(oParams_Get_User_By_USER_ID);
+if (_User != null)
 {
 using (TransactionScope oScope = new TransactionScope())
 {
@@ -3936,6 +4244,7 @@ return;
 }
 _AppContext.Delete_User(i_Params_Delete_User.USER_ID);
 oScope.Complete();
+}
 }
 }
 catch (BLCException blcex)
@@ -3958,6 +4267,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_User");}
 }
 public void Delete_Address_By_PERSON_ID(Params_Delete_Address_By_PERSON_ID i_Params_Delete_Address_By_PERSON_ID)
 {
+Params_Get_Address_By_PERSON_ID oParams_Get_Address_By_PERSON_ID = new Params_Get_Address_By_PERSON_ID();
+List<Address> _List_Address = new List<Address>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Address_By_PERSON_ID");}
 #region Body Section.
 try
@@ -3993,6 +4304,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Address_By_PERSON_I
 }
 public void Delete_Address_By_LOC_L1_ID(Params_Delete_Address_By_LOC_L1_ID i_Params_Delete_Address_By_LOC_L1_ID)
 {
+Params_Get_Address_By_LOC_L1_ID oParams_Get_Address_By_LOC_L1_ID = new Params_Get_Address_By_LOC_L1_ID();
+List<Address> _List_Address = new List<Address>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Address_By_LOC_L1_ID");}
 #region Body Section.
 try
@@ -4028,6 +4341,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Address_By_LOC_L1_I
 }
 public void Delete_Address_By_LOC_L2_ID(Params_Delete_Address_By_LOC_L2_ID i_Params_Delete_Address_By_LOC_L2_ID)
 {
+Params_Get_Address_By_LOC_L2_ID oParams_Get_Address_By_LOC_L2_ID = new Params_Get_Address_By_LOC_L2_ID();
+List<Address> _List_Address = new List<Address>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Address_By_LOC_L2_ID");}
 #region Body Section.
 try
@@ -4063,6 +4378,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Address_By_LOC_L2_I
 }
 public void Delete_Address_By_LOC_L3_ID(Params_Delete_Address_By_LOC_L3_ID i_Params_Delete_Address_By_LOC_L3_ID)
 {
+Params_Get_Address_By_LOC_L3_ID oParams_Get_Address_By_LOC_L3_ID = new Params_Get_Address_By_LOC_L3_ID();
+List<Address> _List_Address = new List<Address>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Address_By_LOC_L3_ID");}
 #region Body Section.
 try
@@ -4098,6 +4415,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Address_By_LOC_L3_I
 }
 public void Delete_Address_By_OWNER_ID(Params_Delete_Address_By_OWNER_ID i_Params_Delete_Address_By_OWNER_ID)
 {
+Params_Get_Address_By_OWNER_ID oParams_Get_Address_By_OWNER_ID = new Params_Get_Address_By_OWNER_ID();
+List<Address> _List_Address = new List<Address>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Address_By_OWNER_ID");}
 #region Body Section.
 try
@@ -4133,6 +4452,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Address_By_OWNER_ID
 }
 public void Delete_Address_By_PERSON_ID_ADDRESS_TYPE_CODE(Params_Delete_Address_By_PERSON_ID_ADDRESS_TYPE_CODE i_Params_Delete_Address_By_PERSON_ID_ADDRESS_TYPE_CODE)
 {
+Params_Get_Address_By_PERSON_ID_ADDRESS_TYPE_CODE oParams_Get_Address_By_PERSON_ID_ADDRESS_TYPE_CODE = new Params_Get_Address_By_PERSON_ID_ADDRESS_TYPE_CODE();
+List<Address> _List_Address = new List<Address>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Address_By_PERSON_ID_ADDRESS_TYPE_CODE");}
 #region Body Section.
 try
@@ -4168,6 +4489,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Address_By_PERSON_I
 }
 public void Delete_Address_By_LOC_L4_ID(Params_Delete_Address_By_LOC_L4_ID i_Params_Delete_Address_By_LOC_L4_ID)
 {
+Params_Get_Address_By_LOC_L4_ID oParams_Get_Address_By_LOC_L4_ID = new Params_Get_Address_By_LOC_L4_ID();
+List<Address> _List_Address = new List<Address>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Address_By_LOC_L4_ID");}
 #region Body Section.
 try
@@ -4203,6 +4526,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Address_By_LOC_L4_I
 }
 public void Delete_Contact_By_PERSON_ID(Params_Delete_Contact_By_PERSON_ID i_Params_Delete_Contact_By_PERSON_ID)
 {
+Params_Get_Contact_By_PERSON_ID oParams_Get_Contact_By_PERSON_ID = new Params_Get_Contact_By_PERSON_ID();
+List<Contact> _List_Contact = new List<Contact>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Contact_By_PERSON_ID");}
 #region Body Section.
 try
@@ -4238,6 +4563,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Contact_By_PERSON_I
 }
 public void Delete_Contact_By_PERSON_ID_CONTACT_TYPE_CODE_CONTACT(Params_Delete_Contact_By_PERSON_ID_CONTACT_TYPE_CODE_CONTACT i_Params_Delete_Contact_By_PERSON_ID_CONTACT_TYPE_CODE_CONTACT)
 {
+Params_Get_Contact_By_PERSON_ID_CONTACT_TYPE_CODE_CONTACT oParams_Get_Contact_By_PERSON_ID_CONTACT_TYPE_CODE_CONTACT = new Params_Get_Contact_By_PERSON_ID_CONTACT_TYPE_CODE_CONTACT();
+List<Contact> _List_Contact = new List<Contact>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Contact_By_PERSON_ID_CONTACT_TYPE_CODE_CONTACT");}
 #region Body Section.
 try
@@ -4273,6 +4600,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Contact_By_PERSON_I
 }
 public void Delete_Contact_By_OWNER_ID(Params_Delete_Contact_By_OWNER_ID i_Params_Delete_Contact_By_OWNER_ID)
 {
+Params_Get_Contact_By_OWNER_ID oParams_Get_Contact_By_OWNER_ID = new Params_Get_Contact_By_OWNER_ID();
+List<Contact> _List_Contact = new List<Contact>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Contact_By_OWNER_ID");}
 #region Body Section.
 try
@@ -4308,6 +4637,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Contact_By_OWNER_ID
 }
 public void Delete_Features_By_OWNER_ID(Params_Delete_Features_By_OWNER_ID i_Params_Delete_Features_By_OWNER_ID)
 {
+Params_Get_Features_By_OWNER_ID oParams_Get_Features_By_OWNER_ID = new Params_Get_Features_By_OWNER_ID();
+List<Features> _List_Features = new List<Features>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Features_By_OWNER_ID");}
 #region Body Section.
 try
@@ -4343,6 +4674,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Features_By_OWNER_I
 }
 public void Delete_Features_By_TRIP_ID(Params_Delete_Features_By_TRIP_ID i_Params_Delete_Features_By_TRIP_ID)
 {
+Params_Get_Features_By_TRIP_ID oParams_Get_Features_By_TRIP_ID = new Params_Get_Features_By_TRIP_ID();
+List<Features> _List_Features = new List<Features>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Features_By_TRIP_ID");}
 #region Body Section.
 try
@@ -4378,6 +4711,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Features_By_TRIP_ID
 }
 public void Delete_Includes_By_OWNER_ID(Params_Delete_Includes_By_OWNER_ID i_Params_Delete_Includes_By_OWNER_ID)
 {
+Params_Get_Includes_By_OWNER_ID oParams_Get_Includes_By_OWNER_ID = new Params_Get_Includes_By_OWNER_ID();
+List<Includes> _List_Includes = new List<Includes>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Includes_By_OWNER_ID");}
 #region Body Section.
 try
@@ -4413,6 +4748,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Includes_By_OWNER_I
 }
 public void Delete_Includes_By_TRIP_ID(Params_Delete_Includes_By_TRIP_ID i_Params_Delete_Includes_By_TRIP_ID)
 {
+Params_Get_Includes_By_TRIP_ID oParams_Get_Includes_By_TRIP_ID = new Params_Get_Includes_By_TRIP_ID();
+List<Includes> _List_Includes = new List<Includes>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Includes_By_TRIP_ID");}
 #region Body Section.
 try
@@ -4448,6 +4785,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Includes_By_TRIP_ID
 }
 public void Delete_Loc_l1_By_CODE(Params_Delete_Loc_l1_By_CODE i_Params_Delete_Loc_l1_By_CODE)
 {
+Params_Get_Loc_l1_By_CODE oParams_Get_Loc_l1_By_CODE = new Params_Get_Loc_l1_By_CODE();
+List<Loc_l1> _List_Loc_l1 = new List<Loc_l1>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Loc_l1_By_CODE");}
 #region Body Section.
 try
@@ -4483,6 +4822,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Loc_l1_By_CODE");}
 }
 public void Delete_Loc_l1_By_OWNER_ID(Params_Delete_Loc_l1_By_OWNER_ID i_Params_Delete_Loc_l1_By_OWNER_ID)
 {
+Params_Get_Loc_l1_By_OWNER_ID oParams_Get_Loc_l1_By_OWNER_ID = new Params_Get_Loc_l1_By_OWNER_ID();
+List<Loc_l1> _List_Loc_l1 = new List<Loc_l1>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Loc_l1_By_OWNER_ID");}
 #region Body Section.
 try
@@ -4518,6 +4859,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Loc_l1_By_OWNER_ID"
 }
 public void Delete_Loc_l2_By_LOC_L1_ID_CODE(Params_Delete_Loc_l2_By_LOC_L1_ID_CODE i_Params_Delete_Loc_l2_By_LOC_L1_ID_CODE)
 {
+Params_Get_Loc_l2_By_LOC_L1_ID_CODE oParams_Get_Loc_l2_By_LOC_L1_ID_CODE = new Params_Get_Loc_l2_By_LOC_L1_ID_CODE();
+List<Loc_l2> _List_Loc_l2 = new List<Loc_l2>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Loc_l2_By_LOC_L1_ID_CODE");}
 #region Body Section.
 try
@@ -4553,6 +4896,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Loc_l2_By_LOC_L1_ID
 }
 public void Delete_Loc_l2_By_LOC_L1_ID(Params_Delete_Loc_l2_By_LOC_L1_ID i_Params_Delete_Loc_l2_By_LOC_L1_ID)
 {
+Params_Get_Loc_l2_By_LOC_L1_ID oParams_Get_Loc_l2_By_LOC_L1_ID = new Params_Get_Loc_l2_By_LOC_L1_ID();
+List<Loc_l2> _List_Loc_l2 = new List<Loc_l2>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Loc_l2_By_LOC_L1_ID");}
 #region Body Section.
 try
@@ -4588,6 +4933,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Loc_l2_By_LOC_L1_ID
 }
 public void Delete_Loc_l2_By_OWNER_ID(Params_Delete_Loc_l2_By_OWNER_ID i_Params_Delete_Loc_l2_By_OWNER_ID)
 {
+Params_Get_Loc_l2_By_OWNER_ID oParams_Get_Loc_l2_By_OWNER_ID = new Params_Get_Loc_l2_By_OWNER_ID();
+List<Loc_l2> _List_Loc_l2 = new List<Loc_l2>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Loc_l2_By_OWNER_ID");}
 #region Body Section.
 try
@@ -4623,6 +4970,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Loc_l2_By_OWNER_ID"
 }
 public void Delete_Loc_l3_By_LOC_L2_ID_CODE(Params_Delete_Loc_l3_By_LOC_L2_ID_CODE i_Params_Delete_Loc_l3_By_LOC_L2_ID_CODE)
 {
+Params_Get_Loc_l3_By_LOC_L2_ID_CODE oParams_Get_Loc_l3_By_LOC_L2_ID_CODE = new Params_Get_Loc_l3_By_LOC_L2_ID_CODE();
+List<Loc_l3> _List_Loc_l3 = new List<Loc_l3>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Loc_l3_By_LOC_L2_ID_CODE");}
 #region Body Section.
 try
@@ -4658,6 +5007,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Loc_l3_By_LOC_L2_ID
 }
 public void Delete_Loc_l3_By_LOC_L2_ID(Params_Delete_Loc_l3_By_LOC_L2_ID i_Params_Delete_Loc_l3_By_LOC_L2_ID)
 {
+Params_Get_Loc_l3_By_LOC_L2_ID oParams_Get_Loc_l3_By_LOC_L2_ID = new Params_Get_Loc_l3_By_LOC_L2_ID();
+List<Loc_l3> _List_Loc_l3 = new List<Loc_l3>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Loc_l3_By_LOC_L2_ID");}
 #region Body Section.
 try
@@ -4693,6 +5044,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Loc_l3_By_LOC_L2_ID
 }
 public void Delete_Loc_l3_By_OWNER_ID(Params_Delete_Loc_l3_By_OWNER_ID i_Params_Delete_Loc_l3_By_OWNER_ID)
 {
+Params_Get_Loc_l3_By_OWNER_ID oParams_Get_Loc_l3_By_OWNER_ID = new Params_Get_Loc_l3_By_OWNER_ID();
+List<Loc_l3> _List_Loc_l3 = new List<Loc_l3>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Loc_l3_By_OWNER_ID");}
 #region Body Section.
 try
@@ -4728,6 +5081,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Loc_l3_By_OWNER_ID"
 }
 public void Delete_Loc_l4_By_LOC_L3_ID_CODE(Params_Delete_Loc_l4_By_LOC_L3_ID_CODE i_Params_Delete_Loc_l4_By_LOC_L3_ID_CODE)
 {
+Params_Get_Loc_l4_By_LOC_L3_ID_CODE oParams_Get_Loc_l4_By_LOC_L3_ID_CODE = new Params_Get_Loc_l4_By_LOC_L3_ID_CODE();
+List<Loc_l4> _List_Loc_l4 = new List<Loc_l4>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Loc_l4_By_LOC_L3_ID_CODE");}
 #region Body Section.
 try
@@ -4763,6 +5118,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Loc_l4_By_LOC_L3_ID
 }
 public void Delete_Loc_l4_By_LOC_L3_ID(Params_Delete_Loc_l4_By_LOC_L3_ID i_Params_Delete_Loc_l4_By_LOC_L3_ID)
 {
+Params_Get_Loc_l4_By_LOC_L3_ID oParams_Get_Loc_l4_By_LOC_L3_ID = new Params_Get_Loc_l4_By_LOC_L3_ID();
+List<Loc_l4> _List_Loc_l4 = new List<Loc_l4>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Loc_l4_By_LOC_L3_ID");}
 #region Body Section.
 try
@@ -4798,6 +5155,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Loc_l4_By_LOC_L3_ID
 }
 public void Delete_Loc_l4_By_OWNER_ID(Params_Delete_Loc_l4_By_OWNER_ID i_Params_Delete_Loc_l4_By_OWNER_ID)
 {
+Params_Get_Loc_l4_By_OWNER_ID oParams_Get_Loc_l4_By_OWNER_ID = new Params_Get_Loc_l4_By_OWNER_ID();
+List<Loc_l4> _List_Loc_l4 = new List<Loc_l4>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Loc_l4_By_OWNER_ID");}
 #region Body Section.
 try
@@ -4833,6 +5192,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Loc_l4_By_OWNER_ID"
 }
 public void Delete_Person_By_OWNER_ID(Params_Delete_Person_By_OWNER_ID i_Params_Delete_Person_By_OWNER_ID)
 {
+Params_Get_Person_By_OWNER_ID oParams_Get_Person_By_OWNER_ID = new Params_Get_Person_By_OWNER_ID();
+List<Person> _List_Person = new List<Person>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Person_By_OWNER_ID");}
 #region Body Section.
 try
@@ -4868,6 +5229,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Person_By_OWNER_ID"
 }
 public void Delete_Reservation_query_By_OWNER_ID(Params_Delete_Reservation_query_By_OWNER_ID i_Params_Delete_Reservation_query_By_OWNER_ID)
 {
+Params_Get_Reservation_query_By_OWNER_ID oParams_Get_Reservation_query_By_OWNER_ID = new Params_Get_Reservation_query_By_OWNER_ID();
+List<Reservation_query> _List_Reservation_query = new List<Reservation_query>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Reservation_query_By_OWNER_ID");}
 #region Body Section.
 try
@@ -4903,6 +5266,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Reservation_query_B
 }
 public void Delete_Review_By_OWNER_ID(Params_Delete_Review_By_OWNER_ID i_Params_Delete_Review_By_OWNER_ID)
 {
+Params_Get_Review_By_OWNER_ID oParams_Get_Review_By_OWNER_ID = new Params_Get_Review_By_OWNER_ID();
+List<Review> _List_Review = new List<Review>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Review_By_OWNER_ID");}
 #region Body Section.
 try
@@ -4938,6 +5303,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Review_By_OWNER_ID"
 }
 public void Delete_Social_media_links_By_OWNER_ID(Params_Delete_Social_media_links_By_OWNER_ID i_Params_Delete_Social_media_links_By_OWNER_ID)
 {
+Params_Get_Social_media_links_By_OWNER_ID oParams_Get_Social_media_links_By_OWNER_ID = new Params_Get_Social_media_links_By_OWNER_ID();
+List<Social_media_links> _List_Social_media_links = new List<Social_media_links>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Social_media_links_By_OWNER_ID");}
 #region Body Section.
 try
@@ -4973,6 +5340,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Social_media_links_
 }
 public void Delete_Staff_By_OWNER_ID(Params_Delete_Staff_By_OWNER_ID i_Params_Delete_Staff_By_OWNER_ID)
 {
+Params_Get_Staff_By_OWNER_ID oParams_Get_Staff_By_OWNER_ID = new Params_Get_Staff_By_OWNER_ID();
+List<Staff> _List_Staff = new List<Staff>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Staff_By_OWNER_ID");}
 #region Body Section.
 try
@@ -5008,6 +5377,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Staff_By_OWNER_ID")
 }
 public void Delete_Tags_By_OWNER_ID(Params_Delete_Tags_By_OWNER_ID i_Params_Delete_Tags_By_OWNER_ID)
 {
+Params_Get_Tags_By_OWNER_ID oParams_Get_Tags_By_OWNER_ID = new Params_Get_Tags_By_OWNER_ID();
+List<Tags> _List_Tags = new List<Tags>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Tags_By_OWNER_ID");}
 #region Body Section.
 try
@@ -5043,6 +5414,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Tags_By_OWNER_ID");
 }
 public void Delete_Tags_By_TRIP_ID(Params_Delete_Tags_By_TRIP_ID i_Params_Delete_Tags_By_TRIP_ID)
 {
+Params_Get_Tags_By_TRIP_ID oParams_Get_Tags_By_TRIP_ID = new Params_Get_Tags_By_TRIP_ID();
+List<Tags> _List_Tags = new List<Tags>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Tags_By_TRIP_ID");}
 #region Body Section.
 try
@@ -5078,6 +5451,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_Tags_By_TRIP_ID");}
 }
 public void Delete_Trip_By_OWNER_ID(Params_Delete_Trip_By_OWNER_ID i_Params_Delete_Trip_By_OWNER_ID)
 {
+Params_Get_Trip_By_OWNER_ID oParams_Get_Trip_By_OWNER_ID = new Params_Get_Trip_By_OWNER_ID();
+List<Trip> _List_Trip = new List<Trip>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_Trip_By_OWNER_ID");}
 #region Body Section.
 try
@@ -5111,8 +5486,150 @@ throw new Exception(ex.Message);
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Delete_Trip_By_OWNER_ID");}
 }
+public void Delete_Uploaded_file_By_OWNER_ID(Params_Delete_Uploaded_file_By_OWNER_ID i_Params_Delete_Uploaded_file_By_OWNER_ID)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Uploaded_file_By_OWNER_ID");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Uploaded_file_Execution)
+{
+_Stop_Delete_Uploaded_file_Execution = false;
+return;
+}
+_AppContext.Delete_Uploaded_file_By_OWNER_ID(i_Params_Delete_Uploaded_file_By_OWNER_ID.OWNER_ID);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Uploaded_file_By_OWNER_ID");}
+}
+public void Delete_Uploaded_file_By_REL_ENTITY(Params_Delete_Uploaded_file_By_REL_ENTITY i_Params_Delete_Uploaded_file_By_REL_ENTITY)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Uploaded_file_By_REL_ENTITY");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Uploaded_file_Execution)
+{
+_Stop_Delete_Uploaded_file_Execution = false;
+return;
+}
+_AppContext.Delete_Uploaded_file_By_REL_ENTITY(i_Params_Delete_Uploaded_file_By_REL_ENTITY.REL_ENTITY);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Uploaded_file_By_REL_ENTITY");}
+}
+public void Delete_Uploaded_file_By_REL_ENTITY_REL_KEY(Params_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY i_Params_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Uploaded_file_By_REL_ENTITY_REL_KEY");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Uploaded_file_Execution)
+{
+_Stop_Delete_Uploaded_file_Execution = false;
+return;
+}
+_AppContext.Delete_Uploaded_file_By_REL_ENTITY_REL_KEY(i_Params_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY.REL_ENTITY,i_Params_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY.REL_KEY);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Uploaded_file_By_REL_ENTITY_REL_KEY");}
+}
+public void Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD(Params_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD i_Params_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD");}
+#region Body Section.
+try
+{
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Delete_Uploaded_file_Execution)
+{
+_Stop_Delete_Uploaded_file_Execution = false;
+return;
+}
+_AppContext.Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD(i_Params_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD.REL_ENTITY,i_Params_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD.REL_KEY,i_Params_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD.REL_FIELD);
+oScope.Complete();
+}
+}
+catch (BLCException blcex)
+{
+throw new BLCException(blcex.Message);
+}
+catch (Exception ex)
+{
+if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint"))
+{
+throw new BLCException("Cannot be deleted because of related records in other tables");
+}
+else
+{
+throw new Exception(ex.Message);
+}
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD");}
+}
 public void Delete_User_By_OWNER_ID(Params_Delete_User_By_OWNER_ID i_Params_Delete_User_By_OWNER_ID)
 {
+Params_Get_User_By_OWNER_ID oParams_Get_User_By_OWNER_ID = new Params_Get_User_By_OWNER_ID();
+List<User> _List_User = new List<User>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_User_By_OWNER_ID");}
 #region Body Section.
 try
@@ -5148,6 +5665,8 @@ if (OnPostEvent_General != null){OnPostEvent_General("Delete_User_By_OWNER_ID");
 }
 public void Delete_User_By_USERNAME(Params_Delete_User_By_USERNAME i_Params_Delete_User_By_USERNAME)
 {
+Params_Get_User_By_USERNAME oParams_Get_User_By_USERNAME = new Params_Get_User_By_USERNAME();
+List<User> _List_User = new List<User>();
 if (OnPreEvent_General != null){OnPreEvent_General("Delete_User_By_USERNAME");}
 #region Body Section.
 try
@@ -5764,6 +6283,44 @@ oScope.Complete();
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Edit_Trip");}
+}
+public void Edit_Uploaded_file(Uploaded_file i_Uploaded_file) 
+{
+Enum_EditMode oEditMode_Flag = Enum_EditMode.Update;
+if (i_Uploaded_file.UPLOADED_FILE_ID == -1)
+{
+oEditMode_Flag = Enum_EditMode.Add;
+}
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Uploaded_file");}
+#region Body Section.
+if ((i_Uploaded_file.UPLOADED_FILE_ID == null) || (i_Uploaded_file.UPLOADED_FILE_ID == 0)) { throw new BLCException("Missing primary key while calling Edit_Uploaded_file"); }
+i_Uploaded_file.ENTRY_USER_ID = this.UserID;
+i_Uploaded_file.ENTRY_DATE    = oTools.GetDateString(DateTime.Today);
+i_Uploaded_file.OWNER_ID      = this.OwnerID;
+using (TransactionScope oScope = new TransactionScope())
+{
+if (_Stop_Edit_Uploaded_file_Execution)
+{
+_Stop_Edit_Uploaded_file_Execution = false;
+return;
+}
+i_Uploaded_file.UPLOADED_FILE_ID = _AppContext.Edit_Uploaded_file
+(
+i_Uploaded_file.UPLOADED_FILE_ID
+,i_Uploaded_file.REL_ENTITY
+,i_Uploaded_file.REL_KEY
+,i_Uploaded_file.REL_FIELD
+,i_Uploaded_file.SIZE
+,i_Uploaded_file.EXTENSION
+,i_Uploaded_file.STAMP
+,i_Uploaded_file.ENTRY_USER_ID
+,i_Uploaded_file.ENTRY_DATE
+,i_Uploaded_file.OWNER_ID
+);
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Uploaded_file");}
 }
 public void Edit_User(User i_User) 
 {
@@ -6486,6 +7043,49 @@ oScope.Complete();
 }
 #endregion
 if (OnPostEvent_General != null){OnPostEvent_General("Edit_Trip_List");}
+}
+public void Edit_Uploaded_file_List(List<Uploaded_file> i_List_Uploaded_file)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Uploaded_file_List");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+if (i_List_Uploaded_file != null)
+{
+foreach (var oRow in i_List_Uploaded_file)
+{
+Edit_Uploaded_file(oRow);
+}
+}
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Uploaded_file_List");}
+}
+public void Edit_Uploaded_file_List(Params_Edit_Uploaded_file_List i_Params_Edit_Uploaded_file_List)
+{
+if (OnPreEvent_General != null){OnPreEvent_General("Edit_Uploaded_file_List");}
+#region Body Section.
+using (TransactionScope oScope = new TransactionScope())
+{
+if (i_Params_Edit_Uploaded_file_List.My_List_To_Delete != null)
+{
+foreach (var oRow in i_Params_Edit_Uploaded_file_List.My_List_To_Delete)
+{
+Delete_Uploaded_file(new Params_Delete_Uploaded_file() { UPLOADED_FILE_ID = oRow.UPLOADED_FILE_ID });
+}
+}
+if (i_Params_Edit_Uploaded_file_List.My_List_To_Edit != null)
+{
+foreach (var oRow in i_Params_Edit_Uploaded_file_List.My_List_To_Edit)
+{
+Edit_Uploaded_file(oRow);
+}
+}
+oScope.Complete();
+}
+#endregion
+if (OnPostEvent_General != null){OnPostEvent_General("Edit_Uploaded_file_List");}
 }
 public void Edit_User_List(List<User> i_List_User)
 {

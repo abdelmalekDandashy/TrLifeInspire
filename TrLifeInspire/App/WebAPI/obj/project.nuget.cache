@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2fia/qpExehQNjJ+nwx5m8mJ5FSeRurdf83Hi57ayUOp34XMkgC+C9ILdRIRhHyYNigcT4Im7/M714bxQDXGNw==",
+  "dgSpecHash": "Evk+5CMw5XPxBDjiaDz7rH76eBeHSJMJ9OH8Ui1IR+o9N2gwFOjlHK1uezy4gFOBfNJ2QivvhMSHhBbBciMYOA==",
   "success": true,
   "projectFilePath": "D:\\hadiProject\\TrLifeInspire\\App\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
@@ -39,9 +39,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.10\\microsoft.netcore.app.host.win-x64.3.1.10.nupkg.sha512"
+    "C:\\Users\\Admin\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

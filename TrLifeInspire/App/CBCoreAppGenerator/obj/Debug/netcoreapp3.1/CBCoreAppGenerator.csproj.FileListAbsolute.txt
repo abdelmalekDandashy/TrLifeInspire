@@ -163,7 +163,6 @@ D:\hadiProject\TrLifeInspire\App\CBCoreAppGenerator\bin\Debug\netcoreapp3.1\CBCo
 D:\hadiProject\TrLifeInspire\App\CBCoreAppGenerator\bin\Debug\netcoreapp3.1\CBCoreCommon.dll
 D:\hadiProject\TrLifeInspire\App\CBCoreAppGenerator\bin\Debug\netcoreapp3.1\CBCoreProxy.dll
 D:\hadiProject\TrLifeInspire\App\CBCoreAppGenerator\bin\Debug\netcoreapp3.1\CoreTools.dll
-D:\hadiProject\TrLifeInspire\App\CBCoreAppGenerator\obj\Debug\netcoreapp3.1\CBCoreAppGenerator.csprojAssemblyReference.cache
 D:\hadiProject\TrLifeInspire\App\CBCoreAppGenerator\obj\Debug\netcoreapp3.1\CBCoreAppGenerator.AssemblyInfoInputs.cache
 D:\hadiProject\TrLifeInspire\App\CBCoreAppGenerator\obj\Debug\netcoreapp3.1\CBCoreAppGenerator.AssemblyInfo.cs
 D:\hadiProject\TrLifeInspire\App\CBCoreAppGenerator\obj\Debug\netcoreapp3.1\CBCoreAppGenerator.csproj.CoreCompileInputs.cache
@@ -171,3 +170,4 @@ D:\hadiProject\TrLifeInspire\App\CBCoreAppGenerator\obj\Debug\netcoreapp3.1\CBCo
 D:\hadiProject\TrLifeInspire\App\CBCoreAppGenerator\obj\Debug\netcoreapp3.1\CBCoreAppGenerator.dll
 D:\hadiProject\TrLifeInspire\App\CBCoreAppGenerator\obj\Debug\netcoreapp3.1\CBCoreAppGenerator.pdb
 D:\hadiProject\TrLifeInspire\App\CBCoreAppGenerator\obj\Debug\netcoreapp3.1\CBCoreAppGenerator.genruntimeconfig.cache
+D:\hadiProject\TrLifeInspire\App\CBCoreAppGenerator\obj\Debug\netcoreapp3.1\CBCoreAppGenerator.csprojAssemblyReference.cache

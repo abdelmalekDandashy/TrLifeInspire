@@ -200,6 +200,19 @@ public long? ENTRY_USER_ID {get;set;}
 public string ENTRY_DATE {get;set;}
 public Int32? OWNER_ID {get;set;}
 }
+public partial class Uploaded_file
+{
+public long? UPLOADED_FILE_ID {get;set;}
+public string REL_ENTITY {get;set;}
+public long? REL_KEY {get;set;}
+public string REL_FIELD {get;set;}
+public Int32? SIZE {get;set;}
+public string EXTENSION {get;set;}
+public string STAMP {get;set;}
+public long? ENTRY_USER_ID {get;set;}
+public string ENTRY_DATE {get;set;}
+public Int32? OWNER_ID {get;set;}
+}
 public partial class User
 {
 public long? USER_ID {get;set;}
@@ -229,6 +242,7 @@ Social_media_links Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID ( Int32? SOCI
 Staff Get_Staff_By_STAFF_ID ( Int32? STAFF_ID);
 Tags Get_Tags_By_TAGS_ID ( long? TAGS_ID);
 Trip Get_Trip_By_TRIP_ID ( Int32? TRIP_ID);
+Uploaded_file Get_Uploaded_file_By_UPLOADED_FILE_ID ( long? UPLOADED_FILE_ID);
 User Get_User_By_USER_ID ( long? USER_ID);
 Address Get_Address_By_ADDRESS_ID_Adv ( long? ADDRESS_ID);
 Contact Get_Contact_By_CONTACT_ID_Adv ( Int32? CONTACT_ID);
@@ -262,6 +276,7 @@ List<Social_media_links> Get_Social_media_links_By_SOCIAL_MEDIA_LINKS_ID_List ( 
 List<Staff> Get_Staff_By_STAFF_ID_List ( List<Int32?> STAFF_ID_LIST);
 List<Tags> Get_Tags_By_TAGS_ID_List ( List<long?> TAGS_ID_LIST);
 List<Trip> Get_Trip_By_TRIP_ID_List ( List<Int32?> TRIP_ID_LIST);
+List<Uploaded_file> Get_Uploaded_file_By_UPLOADED_FILE_ID_List ( List<long?> UPLOADED_FILE_ID_LIST);
 List<User> Get_User_By_USER_ID_List ( List<long?> USER_ID_LIST);
 List<Address> Get_Address_By_ADDRESS_ID_List_Adv ( List<long?> ADDRESS_ID_LIST);
 List<Contact> Get_Contact_By_CONTACT_ID_List_Adv ( List<Int32?> CONTACT_ID_LIST);
@@ -312,6 +327,10 @@ List<Staff> Get_Staff_By_OWNER_ID ( Int32? OWNER_ID);
 List<Tags> Get_Tags_By_OWNER_ID ( Int32? OWNER_ID);
 List<Tags> Get_Tags_By_TRIP_ID ( Int32? TRIP_ID);
 List<Trip> Get_Trip_By_OWNER_ID ( Int32? OWNER_ID);
+List<Uploaded_file> Get_Uploaded_file_By_OWNER_ID ( Int32? OWNER_ID);
+List<Uploaded_file> Get_Uploaded_file_By_REL_ENTITY ( string REL_ENTITY);
+List<Uploaded_file> Get_Uploaded_file_By_REL_ENTITY_REL_KEY ( string REL_ENTITY, long? REL_KEY);
+List<Uploaded_file> Get_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD ( string REL_ENTITY, long? REL_KEY, string REL_FIELD);
 List<User> Get_User_By_OWNER_ID ( Int32? OWNER_ID);
 List<User> Get_User_By_USERNAME ( string USERNAME);
 List<Address> Get_Address_By_PERSON_ID_Adv ( long? PERSON_ID);
@@ -411,6 +430,8 @@ List<Tags> Get_Tags_By_Criteria ( string TAG, Int32? OWNER_ID, Int64? START_ROW,
 List<Tags> Get_Tags_By_Where ( string TAG, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Trip> Get_Trip_By_Criteria ( string TITLE, string SUB_TITLE, string DETAILS, string CITY, string PRICE, string DISCOUNT_PRICE, string VIDEO_URL, string OFFER_HIGHLIGHT_TEXT, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Trip> Get_Trip_By_Where ( string TITLE, string SUB_TITLE, string DETAILS, string CITY, string PRICE, string DISCOUNT_PRICE, string VIDEO_URL, string OFFER_HIGHLIGHT_TEXT, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Uploaded_file> Get_Uploaded_file_By_Criteria ( string REL_ENTITY, string REL_FIELD, string EXTENSION, string STAMP, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
+List<Uploaded_file> Get_Uploaded_file_By_Where ( string REL_ENTITY, string REL_FIELD, string EXTENSION, string STAMP, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<User> Get_User_By_Criteria ( string USERNAME, string PASSWORD, string USER_TYPE_CODE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<User> Get_User_By_Where ( string USERNAME, string PASSWORD, string USER_TYPE_CODE, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
 List<Address> Get_Address_By_Criteria_Adv ( string ADDRESS_TYPE_CODE, string STREET, string BUILDING, string FLOOR, string POBOX, Int32? OWNER_ID, Int64? START_ROW, Int64? END_ROW,ref  Int64? TOTAL_COUNT);
@@ -501,6 +522,7 @@ void Delete_Social_media_links ( Int32? SOCIAL_MEDIA_LINKS_ID);
 void Delete_Staff ( Int32? STAFF_ID);
 void Delete_Tags ( long? TAGS_ID);
 void Delete_Trip ( Int32? TRIP_ID);
+void Delete_Uploaded_file ( long? UPLOADED_FILE_ID);
 void Delete_User ( long? USER_ID);
 void Delete_Address_By_PERSON_ID ( long? PERSON_ID);
 void Delete_Address_By_LOC_L1_ID ( long? LOC_L1_ID);
@@ -535,6 +557,10 @@ void Delete_Staff_By_OWNER_ID ( Int32? OWNER_ID);
 void Delete_Tags_By_OWNER_ID ( Int32? OWNER_ID);
 void Delete_Tags_By_TRIP_ID ( Int32? TRIP_ID);
 void Delete_Trip_By_OWNER_ID ( Int32? OWNER_ID);
+void Delete_Uploaded_file_By_OWNER_ID ( Int32? OWNER_ID);
+void Delete_Uploaded_file_By_REL_ENTITY ( string REL_ENTITY);
+void Delete_Uploaded_file_By_REL_ENTITY_REL_KEY ( string REL_ENTITY, long? REL_KEY);
+void Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD ( string REL_ENTITY, long? REL_KEY, string REL_FIELD);
 void Delete_User_By_OWNER_ID ( Int32? OWNER_ID);
 void Delete_User_By_USERNAME ( string USERNAME);
 long? Edit_Address ( long? ADDRESS_ID, long? PERSON_ID, string ADDRESS_TYPE_CODE, long? LOC_L1_ID, long? LOC_L2_ID, long? LOC_L3_ID, long? LOC_L4_ID, string STREET, string BUILDING, string FLOOR, string POBOX, string VALID_DATE_START, string VALID_DATE_END, string NOTES, string ENTRY_DATE, long? ENTRY_USER_ID, Int32? OWNER_ID);
@@ -553,6 +579,7 @@ Int32? Edit_Social_media_links ( Int32? SOCIAL_MEDIA_LINKS_ID, string TITLE, str
 Int32? Edit_Staff ( Int32? STAFF_ID, string TITLE, string DESCRIPTION, string EMAIL, string PHONE, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID);
 long? Edit_Tags ( long? TAGS_ID, Int32? TRIP_ID, string TAG, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID);
 Int32? Edit_Trip ( Int32? TRIP_ID, string TITLE, string SUB_TITLE, string DETAILS, string CITY, string PRICE, string DISCOUNT_PRICE, string VIDEO_URL, bool? IS_AVAILABLE_OR_COMING_SOON, string OFFER_HIGHLIGHT_TEXT, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID);
+long? Edit_Uploaded_file ( long? UPLOADED_FILE_ID, string REL_ENTITY, long? REL_KEY, string REL_FIELD, Int32? SIZE, string EXTENSION, string STAMP, long? ENTRY_USER_ID, string ENTRY_DATE, Int32? OWNER_ID);
 long? Edit_User ( long? USER_ID, Int32? OWNER_ID, string USERNAME, string PASSWORD, string USER_TYPE_CODE, bool? IS_ACTIVE, string ENTRY_DATE);
 List<dynamic> GET_DISTINCT_SETUP_TBL ( Int32? OWNER_ID);
 List<dynamic> GET_NEXT_VALUE ( string STARTER_CODE);
@@ -573,6 +600,7 @@ List<dynamic> UP_BULK_UPSERT_SOCIAL_MEDIA_LINKS ( string JSON_CONTENT);
 List<dynamic> UP_BULK_UPSERT_STAFF ( string JSON_CONTENT);
 List<dynamic> UP_BULK_UPSERT_TAGS ( string JSON_CONTENT);
 List<dynamic> UP_BULK_UPSERT_TRIP ( string JSON_CONTENT);
+List<dynamic> UP_BULK_UPSERT_UPLOADED_FILE ( string JSON_CONTENT);
 List<dynamic> UP_BULK_UPSERT_USER ( string JSON_CONTENT);
 List<dynamic> UP_CHECK_USER_EXISTENCE ( Int32? OWNER_ID, string USERNAME,ref  bool? EXISTS);
 List<dynamic> UP_EDIT_SETUP ( Int32? OWNER_ID, string TBL_NAME, string CODE_NAME, bool? ISSYSTEM, bool? ISDELETEABLE, bool? ISUPDATEABLE, bool? ISVISIBLE, bool? ISDELETED, Int32? DISPLAY_ORDER, string CODE_VALUE_EN, string CODE_VALUE_FR, string CODE_VALUE_AR, string ENTRY_DATE, long? ENTRY_USER_ID, string NOTES);

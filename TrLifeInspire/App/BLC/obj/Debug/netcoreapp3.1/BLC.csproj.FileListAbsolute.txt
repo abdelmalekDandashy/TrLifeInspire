@@ -1,7 +1,6 @@
 D:\hadiProject\TrLifeInspire\App\BLC\bin\Debug\netcoreapp3.1\BLC.deps.json
 D:\hadiProject\TrLifeInspire\App\BLC\bin\Debug\netcoreapp3.1\BLC.dll
 D:\hadiProject\TrLifeInspire\App\BLC\bin\Debug\netcoreapp3.1\BLC.pdb
-D:\hadiProject\TrLifeInspire\App\BLC\obj\Debug\netcoreapp3.1\BLC.csprojAssemblyReference.cache
 D:\hadiProject\TrLifeInspire\App\BLC\obj\Debug\netcoreapp3.1\BLC.AssemblyInfoInputs.cache
 D:\hadiProject\TrLifeInspire\App\BLC\obj\Debug\netcoreapp3.1\BLC.AssemblyInfo.cs
 D:\hadiProject\TrLifeInspire\App\BLC\obj\Debug\netcoreapp3.1\BLC.csproj.CoreCompileInputs.cache
@@ -13,3 +12,5 @@ D:\hadiProject\TrLifeInspire\App\BLC\bin\Debug\netcoreapp3.1\CoreTools.dll
 D:\hadiProject\TrLifeInspire\App\BLC\obj\Debug\netcoreapp3.1\BLC.csproj.CopyComplete
 D:\hadiProject\TrLifeInspire\App\BLC\bin\Debug\netcoreapp3.1\DALC.dll
 D:\hadiProject\TrLifeInspire\App\BLC\bin\Debug\netcoreapp3.1\DALC.pdb
+D:\hadiProject\TrLifeInspire\App\BLC\obj\Debug\netcoreapp3.1\BLC.csproj.AssemblyReference.cache
+D:\hadiProject\TrLifeInspire\App\BLC\obj\Debug\netcoreapp3.1\BLC.GeneratedMSBuildEditorConfig.editorconfig

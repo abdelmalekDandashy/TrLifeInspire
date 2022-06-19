@@ -20,5 +20,15 @@
     <ProjectReference Include="..\BLC\BLC.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Files\Uploaded\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="CoreTools">
+      <HintPath>..\DLL\CoreTools.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 
 </Project>

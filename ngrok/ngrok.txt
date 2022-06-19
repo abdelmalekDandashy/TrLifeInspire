@@ -1,0 +1,13 @@
+how it works:
+-run powershell in the folder that contains (ngrok.exe).
+-run one of these commands:
+
+NET core forwared:
+
+./ngrok http https://localhost:5001/
+
+
+
+Angular forward:
+
+./ngrok http 4200 -host-header="localhost:4200"
