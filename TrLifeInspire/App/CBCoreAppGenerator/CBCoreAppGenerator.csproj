@@ -36,6 +36,12 @@
     <Reference Include="CBCoreProxy">
       <HintPath>bin\DLL\CBCoreProxy.dll</HintPath>
     </Reference>
+    <Reference Include="CoreCrypto">
+      <HintPath>..\DLL\CoreCrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreHasher">
+      <HintPath>..\DLL\CoreHasher.dll</HintPath>
+    </Reference>
     <Reference Include="CoreTools">
       <HintPath>bin\DLL\CoreTools.dll</HintPath>
     </Reference>

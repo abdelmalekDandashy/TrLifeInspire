@@ -170,4 +170,7 @@ D:\hadiProject\TrLifeInspire\App\CBCoreAppGenerator\obj\Debug\netcoreapp3.1\CBCo
 D:\hadiProject\TrLifeInspire\App\CBCoreAppGenerator\obj\Debug\netcoreapp3.1\CBCoreAppGenerator.dll
 D:\hadiProject\TrLifeInspire\App\CBCoreAppGenerator\obj\Debug\netcoreapp3.1\CBCoreAppGenerator.pdb
 D:\hadiProject\TrLifeInspire\App\CBCoreAppGenerator\obj\Debug\netcoreapp3.1\CBCoreAppGenerator.genruntimeconfig.cache
-D:\hadiProject\TrLifeInspire\App\CBCoreAppGenerator\obj\Debug\netcoreapp3.1\CBCoreAppGenerator.csprojAssemblyReference.cache
+D:\hadiProject\TrLifeInspire\App\CBCoreAppGenerator\bin\Debug\netcoreapp3.1\CoreCrypto.dll
+D:\hadiProject\TrLifeInspire\App\CBCoreAppGenerator\bin\Debug\netcoreapp3.1\CoreHasher.dll
+D:\hadiProject\TrLifeInspire\App\CBCoreAppGenerator\obj\Debug\netcoreapp3.1\CBCoreAppGenerator.csproj.AssemblyReference.cache
+D:\hadiProject\TrLifeInspire\App\CBCoreAppGenerator\obj\Debug\netcoreapp3.1\CBCoreAppGenerator.GeneratedMSBuildEditorConfig.editorconfig

@@ -286,7 +286,7 @@ namespace CodeGenerator
             //oCodeBooster.Is_MemCached_Enabled = true;
             #endregion
 
-            oCodeBoosterClient.Local_Patch_Folder = @"D:\patches";
+            oCodeBoosterClient.Local_Patch_Folder = @"E:\patches";
             oCodeBoosterClient.Is_Apply_CB_Rules = true;
             oCodeBoosterClient.Show_Embedded_TSql_Exceptions = false;
             oCodeBooster.Is_Profiling_Enabled = false;

@@ -16,6 +16,8 @@
           "CBCoreClient": "1.0.0.0",
           "CBCoreCommon": "1.0.0.0",
           "CBCoreProxy": "1.0.0.0",
+          "CoreCrypto": "1.0.0.0",
+          "CoreHasher": "1.0.0.0",
           "CoreTools": "1.0.0.0"
         },
         "runtime": {
@@ -1093,6 +1095,22 @@
           }
         }
       },
+      "CoreCrypto/1.0.0.0": {
+        "runtime": {
+          "CoreCrypto.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "CoreHasher/1.0.0.0": {
+        "runtime": {
+          "CoreHasher.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "CoreTools/1.0.0.0": {
         "runtime": {
           "CoreTools.dll": {
@@ -1855,6 +1873,16 @@
       "sha512": ""
     },
     "CBCoreProxy/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CoreCrypto/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CoreHasher/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
