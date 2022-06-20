@@ -1,6 +1,6 @@
 const INITIAL_STATE = {
   rightOrLeft: 'rtl',
-  language: 'en'
+  language: 'ar'
 };
 
 export default function (state = INITIAL_STATE, action) {

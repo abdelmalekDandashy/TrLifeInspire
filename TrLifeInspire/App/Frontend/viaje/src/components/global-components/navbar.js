@@ -1,6 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
+import Select from 'react-select';
+import { useSelector } from "react-redux";
+import en from '../../assets/img/en.jpg'
+import ar from '../../assets/img/ar.png'
+
 const Navbar = () => {
 
 
@@ -8,7 +13,15 @@ const Navbar = () => {
 	const { t } = useTranslation();
 	let publicUrl = process.env.PUBLIC_URL + '/'
 	let imgattr = 'logo'
-	let anchor = '#'
+	var countries =
+		[
+			{ value: 'en', label: <div><img src={en} height="30px" width="30px" />En </div> },
+			{ value: 'ar', label: <div><img src={ar} height="30px" width="30px" />عربي </div> }
+		];
+	const [selectedOption, setSelectedOption] = useState(null);
+	const language = useSelector(
+		(state) => state.settings.language
+	);
 	return (
 		<nav className="navbar navbar-area navbar-expand-lg nav-style-01 viaje-go-top justify-content-end" >
 			<div className="container nav-container">
@@ -32,14 +45,11 @@ const Navbar = () => {
 							</li>
 							<li className="tp-lang">
 								<div className="tp-lang-wrap">
-									<select className="select single-select">
-										<option value={1}>ENG</option>
-										<option value={1}>{t("fill-all-fields")}</option>
-										<option value={2}>BAN</option>
-										<option value={2}>BAN</option>
-										<option value={3}>Chinese</option>
-										<option value={3}>Spanish</option>
-									</select>
+									<Select
+										defaultValue={selectedOption}
+										onChange={setSelectedOption}
+										options={countries}
+									/>
 								</div>
 							</li>
 							<li className="search">
@@ -107,25 +117,12 @@ const Navbar = () => {
 					</ul>
 				</div>
 				<div className="nav-right-content">
-					<ul>
-						<li>
-							<Link className="btn btn-yellow" to="/tour-details">Book Now <i className="fa fa-paper-plane" /></Link>
-						</li>
-						<li className="tp-lang">
-							<div className="tp-lang-wrap">
-								<select className="select single-select">
-									<option value={1}>ENG</option>
-									<option value={2}>BAN</option>
-									<option value={3}>Chinese</option>
-									<option value={3}>Spanish</option>
-									<option value={1}>{t("fill-all-fields")}</option>
-								</select>
-							</div>
-						</li>
-						<li className="search">
-							<i className="ti-search" />
-						</li>
-					</ul>
+					<Select
+						placeholder={language}
+						defaultValue={selectedOption}
+						onChange={setSelectedOption}
+						options={countries}
+					/>
 				</div>
 			</div>
 		</nav>
