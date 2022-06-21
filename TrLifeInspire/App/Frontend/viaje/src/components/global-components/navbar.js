@@ -2,9 +2,11 @@ import React, { Component, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
 import Select from 'react-select';
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import en from '../../assets/img/en.jpg'
 import ar from '../../assets/img/ar.png'
+import * as actions from "../../store/actions/settings";
+import i18n from "i18next";
 
 const Navbar = () => {
 
@@ -15,13 +17,20 @@ const Navbar = () => {
 	let imgattr = 'logo'
 	var countries =
 		[
-			{ value: 'en', label: <div><img src={en} height="30px" width="30px" />En </div> },
-			{ value: 'ar', label: <div><img src={ar} height="30px" width="30px" />عربي </div> }
+			{ value: { language: 'en', rightOrLeft: 'ltr' }, label: <div style={{ display: 'flex', justifyContent: 'space-between' }}><img src={en} height="15px" width="15px" />EN </div> },
+			{ value: { language: 'ar', rightOrLeft: 'rtl' }, label: <div style={{ display: 'flex', justifyContent: 'space-between' }}><img src={ar} height="15px" width="15px" />AR </div> }
 		];
 	const [selectedOption, setSelectedOption] = useState(null);
+	const dispatch = useDispatch();
 	const language = useSelector(
 		(state) => state.settings.language
 	);
+	async function handleLanguageChange(e) {
+		// const { value } = e.target.value;
+		console.log(e)
+		dispatch(actions.changeLanguage(e.value));
+		i18n.changeLanguage(e.value.language)
+	}
 	return (
 		<nav className="navbar navbar-area navbar-expand-lg nav-style-01 viaje-go-top justify-content-end" >
 			<div className="container nav-container">
@@ -46,8 +55,10 @@ const Navbar = () => {
 							<li className="tp-lang">
 								<div className="tp-lang-wrap">
 									<Select
+										placeholder={language}
+										styles={{ width: 300 }}
 										defaultValue={selectedOption}
-										onChange={setSelectedOption}
+										onChange={(e) => { handleLanguageChange(e) }}
 										options={countries}
 									/>
 								</div>
@@ -74,7 +85,7 @@ const Navbar = () => {
 					</div>
 					<ul className="navbar-nav">
 						<li className="menu-item-has-children">
-							<Link to="/">Home</Link>
+							<Link to="/">{t("Home")}</Link>
 							<ul className="sub-menu">
 								<li><Link to="/">Home 01</Link></li>
 								<li><Link to="/home-v2">Home 02</Link></li>
@@ -118,9 +129,10 @@ const Navbar = () => {
 				</div>
 				<div className="nav-right-content">
 					<Select
+						styles={{ width: 300 }}
 						placeholder={language}
 						defaultValue={selectedOption}
-						onChange={setSelectedOption}
+						onChange={handleLanguageChange}
 						options={countries}
 					/>
 				</div>

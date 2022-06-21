@@ -7,7 +7,7 @@ const state = store.getState();
 console.log(state)
 
 i18n.use(initReactI18next).init({
-    fallbackLng: 'en',
+    fallbackLng: state.settings.language,
     lng: state.settings.language,
     resources: {
         en: {

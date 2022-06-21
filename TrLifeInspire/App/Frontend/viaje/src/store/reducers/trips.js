@@ -1,16 +1,17 @@
 const INITIAL_STATE = {
-  rightOrLeft: 'ltr',
-  language: 'en'
+  allTrips: 'ltr',
+  error: false
 };
 
 export default function (state = INITIAL_STATE, action) {
   console.log(action.payload)
   switch (action.type) {
-    case "SET_LANGUAGE":
+    case "GET_ALL_TRIPS":
       return {
         ...state,
-        rightOrLeft: action.payload.rightOrLeft,
-        language: action.payload.language,
+        allTrips: action.payload.Trips,
+        error: action.payload.error,
+
       };
     default:
       return state;
