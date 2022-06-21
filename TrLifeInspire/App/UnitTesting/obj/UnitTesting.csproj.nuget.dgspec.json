@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\hadiProject\\TrLifeInspire\\App\\UnitTesting\\UnitTesting.csproj": {}
+    "C:\\projects\\TrLifeInspire\\TrLifeInspire\\App\\UnitTesting\\UnitTesting.csproj": {}
   },
   "projects": {
-    "D:\\hadiProject\\TrLifeInspire\\App\\BLC\\BLC.csproj": {
+    "C:\\projects\\TrLifeInspire\\TrLifeInspire\\App\\BLC\\BLC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\hadiProject\\TrLifeInspire\\App\\BLC\\BLC.csproj",
+        "projectUniqueName": "C:\\projects\\TrLifeInspire\\TrLifeInspire\\App\\BLC\\BLC.csproj",
         "projectName": "BLC",
-        "projectPath": "D:\\hadiProject\\TrLifeInspire\\App\\BLC\\BLC.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\hadiProject\\TrLifeInspire\\App\\BLC\\obj\\",
+        "projectPath": "C:\\projects\\TrLifeInspire\\TrLifeInspire\\App\\BLC\\BLC.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\projects\\TrLifeInspire\\TrLifeInspire\\App\\BLC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\hadiProject\\TrLifeInspire\\App\\DALC\\DALC.csproj": {
-                "projectPath": "D:\\hadiProject\\TrLifeInspire\\App\\DALC\\DALC.csproj"
+              "C:\\projects\\TrLifeInspire\\TrLifeInspire\\App\\DALC\\DALC.csproj": {
+                "projectPath": "C:\\projects\\TrLifeInspire\\TrLifeInspire\\App\\DALC\\DALC.csproj"
               }
             }
           }
@@ -76,21 +76,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\hadiProject\\TrLifeInspire\\App\\DALC\\DALC.csproj": {
+    "C:\\projects\\TrLifeInspire\\TrLifeInspire\\App\\DALC\\DALC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\hadiProject\\TrLifeInspire\\App\\DALC\\DALC.csproj",
+        "projectUniqueName": "C:\\projects\\TrLifeInspire\\TrLifeInspire\\App\\DALC\\DALC.csproj",
         "projectName": "DALC",
-        "projectPath": "D:\\hadiProject\\TrLifeInspire\\App\\DALC\\DALC.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\hadiProject\\TrLifeInspire\\App\\DALC\\obj\\",
+        "projectPath": "C:\\projects\\TrLifeInspire\\TrLifeInspire\\App\\DALC\\DALC.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\projects\\TrLifeInspire\\TrLifeInspire\\App\\DALC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -136,21 +136,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\hadiProject\\TrLifeInspire\\App\\UnitTesting\\UnitTesting.csproj": {
+    "C:\\projects\\TrLifeInspire\\TrLifeInspire\\App\\UnitTesting\\UnitTesting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\hadiProject\\TrLifeInspire\\App\\UnitTesting\\UnitTesting.csproj",
+        "projectUniqueName": "C:\\projects\\TrLifeInspire\\TrLifeInspire\\App\\UnitTesting\\UnitTesting.csproj",
         "projectName": "UnitTesting",
-        "projectPath": "D:\\hadiProject\\TrLifeInspire\\App\\UnitTesting\\UnitTesting.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\hadiProject\\TrLifeInspire\\App\\UnitTesting\\obj\\",
+        "projectPath": "C:\\projects\\TrLifeInspire\\TrLifeInspire\\App\\UnitTesting\\UnitTesting.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\projects\\TrLifeInspire\\TrLifeInspire\\App\\UnitTesting\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -164,8 +164,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\hadiProject\\TrLifeInspire\\App\\BLC\\BLC.csproj": {
-                "projectPath": "D:\\hadiProject\\TrLifeInspire\\App\\BLC\\BLC.csproj"
+              "C:\\projects\\TrLifeInspire\\TrLifeInspire\\App\\BLC\\BLC.csproj": {
+                "projectPath": "C:\\projects\\TrLifeInspire\\TrLifeInspire\\App\\BLC\\BLC.csproj"
               }
             }
           }
@@ -200,7 +200,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

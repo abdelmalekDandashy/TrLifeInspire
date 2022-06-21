@@ -27,7 +27,7 @@ export async function Delete_Table(data, methodName) {
   }
 }
 export async function Get_Table(data, methodName) {
-  // //console.log(JSON.stringify({ data, methodName }));
+  //console.log(JSON.stringify({ data, methodName }));
   try {
     let result = await myProxy.Get_Table(data, methodName);
     // //console.log(result)

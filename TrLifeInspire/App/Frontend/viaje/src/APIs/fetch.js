@@ -1,6 +1,6 @@
 export class Proxy {
   constructor() {
-    this.APIBaseUrl = "";
+    this.APIBaseUrl = "https://localhost:5001/api/Data";
     this.url = "";
     this.Ticket = "";
     this.TicketMode = "header";
@@ -88,4 +88,4 @@ export class Proxy {
   }
 }
 
-export class Param { }
+export class Param {}

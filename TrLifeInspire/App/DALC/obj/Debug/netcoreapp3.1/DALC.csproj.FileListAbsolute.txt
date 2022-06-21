@@ -10,3 +10,14 @@ D:\hadiProject\TrLifeInspire\App\DALC\obj\Debug\netcoreapp3.1\DALC.dll
 D:\hadiProject\TrLifeInspire\App\DALC\obj\Debug\netcoreapp3.1\DALC.pdb
 D:\hadiProject\TrLifeInspire\App\DALC\obj\Debug\netcoreapp3.1\DALC.csproj.AssemblyReference.cache
 D:\hadiProject\TrLifeInspire\App\DALC\obj\Debug\netcoreapp3.1\DALC.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\TrLifeInspire\TrLifeInspire\App\DALC\bin\Debug\netcoreapp3.1\DALC.deps.json
+C:\projects\TrLifeInspire\TrLifeInspire\App\DALC\bin\Debug\netcoreapp3.1\DALC.dll
+C:\projects\TrLifeInspire\TrLifeInspire\App\DALC\bin\Debug\netcoreapp3.1\DALC.pdb
+C:\projects\TrLifeInspire\TrLifeInspire\App\DALC\bin\Debug\netcoreapp3.1\CoreTools.dll
+C:\projects\TrLifeInspire\TrLifeInspire\App\DALC\obj\Debug\netcoreapp3.1\DALC.csproj.AssemblyReference.cache
+C:\projects\TrLifeInspire\TrLifeInspire\App\DALC\obj\Debug\netcoreapp3.1\DALC.AssemblyInfoInputs.cache
+C:\projects\TrLifeInspire\TrLifeInspire\App\DALC\obj\Debug\netcoreapp3.1\DALC.AssemblyInfo.cs
+C:\projects\TrLifeInspire\TrLifeInspire\App\DALC\obj\Debug\netcoreapp3.1\DALC.csproj.CoreCompileInputs.cache
+C:\projects\TrLifeInspire\TrLifeInspire\App\DALC\obj\Debug\netcoreapp3.1\DALC.csproj.CopyComplete
+C:\projects\TrLifeInspire\TrLifeInspire\App\DALC\obj\Debug\netcoreapp3.1\DALC.dll
+C:\projects\TrLifeInspire\TrLifeInspire\App\DALC\obj\Debug\netcoreapp3.1\DALC.pdb

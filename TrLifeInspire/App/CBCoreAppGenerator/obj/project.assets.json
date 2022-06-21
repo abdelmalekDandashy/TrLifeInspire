@@ -6083,19 +6083,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\hadiProject\\TrLifeInspire\\App\\CBCoreAppGenerator\\CBCoreAppGenerator.csproj",
+      "projectUniqueName": "C:\\projects\\TrLifeInspire\\TrLifeInspire\\App\\CBCoreAppGenerator\\CBCoreAppGenerator.csproj",
       "projectName": "CBCoreAppGenerator",
-      "projectPath": "D:\\hadiProject\\TrLifeInspire\\App\\CBCoreAppGenerator\\CBCoreAppGenerator.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\hadiProject\\TrLifeInspire\\App\\CBCoreAppGenerator\\obj\\",
+      "projectPath": "C:\\projects\\TrLifeInspire\\TrLifeInspire\\App\\CBCoreAppGenerator\\CBCoreAppGenerator.csproj",
+      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+      "outputPath": "C:\\projects\\TrLifeInspire\\TrLifeInspire\\App\\CBCoreAppGenerator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6157,7 +6157,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
