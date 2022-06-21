@@ -88,4 +88,4 @@ export class Proxy {
   }
 }
 
-export class Param {}
+export class Param { }
