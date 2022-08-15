@@ -8,6 +8,7 @@ namespace BLC
 {
 public partial class BLCException : Exception
 {
+public string Code { get; set; }
 #region Constructors
 public BLCException(string i_MessageContent): base(i_MessageContent)
 {

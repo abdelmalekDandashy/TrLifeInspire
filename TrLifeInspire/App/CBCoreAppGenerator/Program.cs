@@ -136,6 +136,15 @@ namespace CodeGenerator
                        Mode = 0
                    }
                );
+            oCodeBooster.Uploaded_Files_BackEnd_Events.Add
+               (
+                   new Uploaded_File_BackEnd_Event()
+                   {
+                       TBL_NAME = "[TBL_FEATURES]",
+                       UI_METHOD_NAME = "Get_Features_By_TRIP_ID",
+                       Mode = 0
+                   }
+               );
             #endregion
             #region Defining Non Setup Fields [Fields That ends with CODE by they are not Setup Fields]
             //oCodeBooster.NonSetup_Fields.Add("[LOC_L1_CODE]");
@@ -243,6 +252,7 @@ namespace CodeGenerator
             
             
             oCodeBooster.APIMethodsSelection.Add("Get_Features_By_Where");
+            oCodeBooster.APIMethodsSelection.Add("Get_Features_By_TRIP_ID");
             oCodeBooster.APIMethodsSelection.Add("Edit_Features");
             oCodeBooster.APIMethodsSelection.Add("Delete_Features");
             oCodeBooster.APIMethodsSelection.Add("Delete_Uploaded_file");

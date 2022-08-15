@@ -1,0 +1,13 @@
+1- add sale price
+2- keep video in top of main screen (add field in db for it).
+3- keep contact us page as it is.
+4- remove pages,blogs.
+5- keep about us but:
+	-make paragraphs dynamic
+	-remove our history
+	-keep our team(dynamic)
+	-remove newsletter
+	
+
+home:
+1- 

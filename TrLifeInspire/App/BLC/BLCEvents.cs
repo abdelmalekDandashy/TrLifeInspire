@@ -14,11 +14,26 @@ public partial class BLC
 #region Enum_API_Method
 public enum Enum_API_Method
 {
-Get_Trip_By_TRIP_ID,
 Get_Trip_By_OWNER_ID,
+Get_Trip_By_TRIP_ID,
 Get_Trip_By_Criteria,
+Get_Trip_By_Where,
 Edit_Trip,
-Delete_Trip
+Delete_Trip,
+Get_Features_By_Where,
+Get_Features_By_TRIP_ID,
+Edit_Features,
+Delete_Features,
+Delete_Uploaded_file,
+Get_Includes_By_Where,
+Edit_Includes,
+Delete_Includes,
+Get_Social_media_links_By_Where,
+Edit_Social_media_links,
+Delete_Social_media_links,
+Get_Staff_By_Where,
+Edit_Staff,
+Delete_Staff
 }
 #endregion
 
@@ -62,10 +77,38 @@ public delegate BLCInitializer PostEvent_Handler_BLC_Init(string i_Ticket, Enum_
 public event PreEvent_Handler_BLC_Init OnPreEvent_BLC_Init;
 public event PostEvent_Handler_BLC_Init OnPostEvent_BLC_Init;
 #endregion
+public  delegate void PreEvent_Handler_Delete_Uploaded_file(Params_Delete_Uploaded_file i_Params_Delete_Uploaded_file);
+public  delegate void  PostEvent_Handler_Delete_Uploaded_file(Params_Delete_Uploaded_file i_Params_Delete_Uploaded_file);
+public event PreEvent_Handler_Delete_Uploaded_file OnPreEvent_Delete_Uploaded_file;
+public event PostEvent_Handler_Delete_Uploaded_file OnPostEvent_Delete_Uploaded_file;
+public  delegate void PreEvent_Handler_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD(Params_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD i_Params_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD);
+public  delegate void  PostEvent_Handler_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD(Params_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD i_Params_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD);
+public event PreEvent_Handler_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD OnPreEvent_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD;
+public event PostEvent_Handler_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD OnPostEvent_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD;
+public  delegate void PreEvent_Handler_Edit_Uploaded_file(Uploaded_file i_Uploaded_file,Enum_EditMode i_Enum_EditMode);
+public  delegate void  PostEvent_Handler_Edit_Uploaded_file(Uploaded_file i_Uploaded_file,Enum_EditMode i_Enum_EditMode);
+public event PreEvent_Handler_Edit_Uploaded_file OnPreEvent_Edit_Uploaded_file;
+public event PostEvent_Handler_Edit_Uploaded_file OnPostEvent_Edit_Uploaded_file;
+public  delegate void PreEvent_Handler_Get_Features_By_Where(Params_Get_Features_By_Where i_Params_Get_Features_By_Where);
+public  delegate void  PostEvent_Handler_Get_Features_By_Where(ref List<Features>  i_Result, Params_Get_Features_By_Where i_Params_Get_Features_By_Where);
+public event PreEvent_Handler_Get_Features_By_Where OnPreEvent_Get_Features_By_Where;
+public event PostEvent_Handler_Get_Features_By_Where OnPostEvent_Get_Features_By_Where;
+public  delegate void PreEvent_Handler_Get_Includes_By_Where(Params_Get_Includes_By_Where i_Params_Get_Includes_By_Where);
+public  delegate void  PostEvent_Handler_Get_Includes_By_Where(ref List<Includes>  i_Result, Params_Get_Includes_By_Where i_Params_Get_Includes_By_Where);
+public event PreEvent_Handler_Get_Includes_By_Where OnPreEvent_Get_Includes_By_Where;
+public event PostEvent_Handler_Get_Includes_By_Where OnPostEvent_Get_Includes_By_Where;
+public  delegate void PreEvent_Handler_Get_Social_media_links_By_Where(Params_Get_Social_media_links_By_Where i_Params_Get_Social_media_links_By_Where);
+public  delegate void  PostEvent_Handler_Get_Social_media_links_By_Where(ref List<Social_media_links>  i_Result, Params_Get_Social_media_links_By_Where i_Params_Get_Social_media_links_By_Where);
+public event PreEvent_Handler_Get_Social_media_links_By_Where OnPreEvent_Get_Social_media_links_By_Where;
+public event PostEvent_Handler_Get_Social_media_links_By_Where OnPostEvent_Get_Social_media_links_By_Where;
 public  delegate void PreEvent_Handler_Get_Trip_By_Where(Params_Get_Trip_By_Where i_Params_Get_Trip_By_Where);
 public  delegate void  PostEvent_Handler_Get_Trip_By_Where(ref List<Trip>  i_Result, Params_Get_Trip_By_Where i_Params_Get_Trip_By_Where);
 public event PreEvent_Handler_Get_Trip_By_Where OnPreEvent_Get_Trip_By_Where;
 public event PostEvent_Handler_Get_Trip_By_Where OnPostEvent_Get_Trip_By_Where;
+public  delegate void PreEvent_Handler_Get_Features_By_TRIP_ID(Params_Get_Features_By_TRIP_ID i_Params_Get_Features_By_TRIP_ID);
+public  delegate void  PostEvent_Handler_Get_Features_By_TRIP_ID(ref List<Features>  i_Result, Params_Get_Features_By_TRIP_ID i_Params_Get_Features_By_TRIP_ID);
+public event PreEvent_Handler_Get_Features_By_TRIP_ID OnPreEvent_Get_Features_By_TRIP_ID;
+public event PostEvent_Handler_Get_Features_By_TRIP_ID OnPostEvent_Get_Features_By_TRIP_ID;
 #region Uploaded Files Events Handlers
 #region Register_Uploaded_Events_Handlers
 public void Register_Uploaded_Events_Handlers()
@@ -73,10 +116,14 @@ public void Register_Uploaded_Events_Handlers()
 #region Declaration And Initialization Section.
 #endregion
 #region Body Section.
-//this.OnPreEvent_Edit_Uploaded_file += BLC_OnPreEvent_Edit_Uploaded_file;
-//this.OnPreEvent_Delete_Uploaded_file += BLC_OnPreEvent_Delete_Uploaded_file;
-//this.OnPreEvent_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD += BLC_OnPreEvent_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD;
+this.OnPreEvent_Edit_Uploaded_file += BLC_OnPreEvent_Edit_Uploaded_file;
+this.OnPreEvent_Delete_Uploaded_file += BLC_OnPreEvent_Delete_Uploaded_file;
+this.OnPreEvent_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD += BLC_OnPreEvent_Delete_Uploaded_file_By_REL_ENTITY_REL_KEY_REL_FIELD;
 this.OnPostEvent_Get_Trip_By_Where += BLC_OnPostEvent_Get_Trip_By_Where_Uploaded_Files;
+this.OnPostEvent_Get_Features_By_Where += BLC_OnPostEvent_Get_Features_By_Where_Uploaded_Files;
+this.OnPostEvent_Get_Includes_By_Where += BLC_OnPostEvent_Get_Includes_By_Where_Uploaded_Files;
+this.OnPostEvent_Get_Social_media_links_By_Where += BLC_OnPostEvent_Get_Social_media_links_By_Where_Uploaded_Files;
+this.OnPostEvent_Get_Features_By_TRIP_ID += BLC_OnPostEvent_Get_Features_By_TRIP_ID_Uploaded_Files;
 #endregion
 }
 #endregion
@@ -97,6 +144,110 @@ oRow_Trip.My_Uploaded_files = Get_Uploaded_Files("[TBL_TRIP]", "TRIP_IMAGE", oRo
 if (oRow_Trip.My_Uploaded_files != null)
 {
 foreach (var oRow_Uploaded_file in oRow_Trip.My_Uploaded_files)
+{
+oRow_Uploaded_file.My_URL = string.Format("{0}/Files/Uploaded/{1}.{2}", str_WEB_PATH, oRow_Uploaded_file.UPLOADED_FILE_ID.ToString(), oRow_Uploaded_file.EXTENSION);
+}
+}
+#endregion
+}
+}
+}
+#endregion
+#region BLC_OnPostEvent_Get_Features_By_Where_Uploaded_Files
+private void BLC_OnPostEvent_Get_Features_By_Where_Uploaded_Files(ref List<Features> i_Result, Params_Get_Features_By_Where i_Params_Get_Features_By_Where)
+{
+#region Declaration And Initialization Section.
+Uploaded_file oUploaded_file = new Uploaded_file();
+List<Uploaded_file> oList_Uploaded_files = new List<Uploaded_file>();
+string str_WEB_PATH = ConfigurationManager.AppSettings["WEB_PATH"].ToString();
+#endregion
+if (i_Result != null)
+{
+foreach (var oRow_Features in i_Result)
+{
+#region Images
+oRow_Features.My_Uploaded_files = Get_Uploaded_Files("[TBL_FEATURES]", "FEATURES_IMAGE", oRow_Features.FEATURES_ID);
+if (oRow_Features.My_Uploaded_files != null)
+{
+foreach (var oRow_Uploaded_file in oRow_Features.My_Uploaded_files)
+{
+oRow_Uploaded_file.My_URL = string.Format("{0}/Files/Uploaded/{1}.{2}", str_WEB_PATH, oRow_Uploaded_file.UPLOADED_FILE_ID.ToString(), oRow_Uploaded_file.EXTENSION);
+}
+}
+#endregion
+}
+}
+}
+#endregion
+#region BLC_OnPostEvent_Get_Includes_By_Where_Uploaded_Files
+private void BLC_OnPostEvent_Get_Includes_By_Where_Uploaded_Files(ref List<Includes> i_Result, Params_Get_Includes_By_Where i_Params_Get_Includes_By_Where)
+{
+#region Declaration And Initialization Section.
+Uploaded_file oUploaded_file = new Uploaded_file();
+List<Uploaded_file> oList_Uploaded_files = new List<Uploaded_file>();
+string str_WEB_PATH = ConfigurationManager.AppSettings["WEB_PATH"].ToString();
+#endregion
+if (i_Result != null)
+{
+foreach (var oRow_Includes in i_Result)
+{
+#region Images
+oRow_Includes.My_Uploaded_files = Get_Uploaded_Files("[TBL_INCLUDES]", "INCLUDES_IMAGE", oRow_Includes.INCLUDES_ID);
+if (oRow_Includes.My_Uploaded_files != null)
+{
+foreach (var oRow_Uploaded_file in oRow_Includes.My_Uploaded_files)
+{
+oRow_Uploaded_file.My_URL = string.Format("{0}/Files/Uploaded/{1}.{2}", str_WEB_PATH, oRow_Uploaded_file.UPLOADED_FILE_ID.ToString(), oRow_Uploaded_file.EXTENSION);
+}
+}
+#endregion
+}
+}
+}
+#endregion
+#region BLC_OnPostEvent_Get_Social_media_links_By_Where_Uploaded_Files
+private void BLC_OnPostEvent_Get_Social_media_links_By_Where_Uploaded_Files(ref List<Social_media_links> i_Result, Params_Get_Social_media_links_By_Where i_Params_Get_Social_media_links_By_Where)
+{
+#region Declaration And Initialization Section.
+Uploaded_file oUploaded_file = new Uploaded_file();
+List<Uploaded_file> oList_Uploaded_files = new List<Uploaded_file>();
+string str_WEB_PATH = ConfigurationManager.AppSettings["WEB_PATH"].ToString();
+#endregion
+if (i_Result != null)
+{
+foreach (var oRow_Social_media_links in i_Result)
+{
+#region Images
+oRow_Social_media_links.My_Uploaded_files = Get_Uploaded_Files("[TBL_SOCIAL_MEDIA_LINKS]", "SOCIAL_MEDIA_LINKS_IMAGE", oRow_Social_media_links.SOCIAL_MEDIA_LINKS_ID);
+if (oRow_Social_media_links.My_Uploaded_files != null)
+{
+foreach (var oRow_Uploaded_file in oRow_Social_media_links.My_Uploaded_files)
+{
+oRow_Uploaded_file.My_URL = string.Format("{0}/Files/Uploaded/{1}.{2}", str_WEB_PATH, oRow_Uploaded_file.UPLOADED_FILE_ID.ToString(), oRow_Uploaded_file.EXTENSION);
+}
+}
+#endregion
+}
+}
+}
+#endregion
+#region BLC_OnPostEvent_Get_Features_By_TRIP_ID_Uploaded_Files
+private void BLC_OnPostEvent_Get_Features_By_TRIP_ID_Uploaded_Files(ref List<Features> i_Result, Params_Get_Features_By_TRIP_ID i_Params_Get_Features_By_TRIP_ID)
+{
+#region Declaration And Initialization Section.
+Uploaded_file oUploaded_file = new Uploaded_file();
+List<Uploaded_file> oList_Uploaded_files = new List<Uploaded_file>();
+string str_WEB_PATH = ConfigurationManager.AppSettings["WEB_PATH"].ToString();
+#endregion
+if (i_Result != null)
+{
+foreach (var oRow_Features in i_Result)
+{
+#region Images
+oRow_Features.My_Uploaded_files = Get_Uploaded_Files("[TBL_FEATURES]", "FEATURES_IMAGE", oRow_Features.FEATURES_ID);
+if (oRow_Features.My_Uploaded_files != null)
+{
+foreach (var oRow_Uploaded_file in oRow_Features.My_Uploaded_files)
 {
 oRow_Uploaded_file.My_URL = string.Format("{0}/Files/Uploaded/{1}.{2}", str_WEB_PATH, oRow_Uploaded_file.UPLOADED_FILE_ID.ToString(), oRow_Uploaded_file.EXTENSION);
 }

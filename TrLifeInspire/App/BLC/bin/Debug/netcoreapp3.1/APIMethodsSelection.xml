@@ -24,6 +24,9 @@
 <ENTRY>Get_Features_By_Where</ENTRY>
 </API_METHOD>
 <API_METHOD>
+<ENTRY>Get_Features_By_TRIP_ID</ENTRY>
+</API_METHOD>
+<API_METHOD>
 <ENTRY>Edit_Features</ENTRY>
 </API_METHOD>
 <API_METHOD>
